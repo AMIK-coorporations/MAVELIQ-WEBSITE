@@ -1,0 +1,23 @@
+-- MAVELIQ — placeholder (not part of the build)
+--
+-- This project does NOT use Supabase. The planned database backend is
+-- insforge.dev, which will be added later — until then the site runs fully
+-- without any database:
+--
+--   • catalogue  -> data/products.json, data/categories.json
+--   • cart       -> browser localStorage
+--   • orders     -> browser localStorage (clearly labelled demo mode)
+--   • settings   -> browser localStorage (admin → Settings)
+--   • admin auth -> labelled demo sign-in gate (UX only, not real security)
+--
+-- When insforge.dev is connected, the integration point is the service layer:
+--   js/services/product-service.js
+--   js/services/order-service.js
+--   js/services/settings-service.js
+--   js/services/auth-service.js
+--
+-- The backend must re-validate prices, stock and totals server-side; frontend
+-- data is never authoritative in production. See README.md → "Backend (later)".
+--
+-- This file is intentionally empty of schema so it cannot be mistaken for a
+-- working database setup.

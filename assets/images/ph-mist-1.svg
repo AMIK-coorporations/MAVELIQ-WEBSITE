@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Citrus body mist spray placeholder">
+  <defs>
+    <linearGradient id="bgB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FCF7E9"/><stop offset="1" stop-color="#F1E4C0"/>
+    </linearGradient>
+    <linearGradient id="mistB" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#EDD69A"/><stop offset="0.5" stop-color="#FAEFCF"/><stop offset="1" stop-color="#DFC383"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgB)"/>
+  <circle cx="455" cy="155" r="115" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="140" cy="595" r="88" fill="#C9A86A" opacity="0.2"/>
+  <ellipse cx="300" cy="646" rx="115" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="278" y="176" width="44" height="40" rx="8" fill="#2A2724"/>
+  <path d="M262 216 h76 l-8 28 h-60 Z" fill="#4A443D"/>
+  <rect x="248" y="242" width="104" height="404" rx="24" fill="url(#mistB)" stroke="#CBAE6E" stroke-width="2"/>
+  <rect x="264" y="272" width="13" height="340" rx="6.5" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="330" cy="200" r="4" fill="#C9A86A" opacity="0.7"/>
+  <circle cx="352" cy="182" r="3" fill="#C9A86A" opacity="0.55"/>
+  <circle cx="346" cy="216" r="2.5" fill="#C9A86A" opacity="0.5"/>
+  <rect x="248" y="400" width="104" height="100" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="300" cy="440" r="26" fill="#E8B94E" opacity="0.6"/>
+  <rect x="268" y="478" width="64" height="7" rx="3.5" fill="#8B867E" opacity="0.55"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

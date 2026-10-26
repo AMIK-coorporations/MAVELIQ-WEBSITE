@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Micellar water bottle placeholder">
+  <defs>
+    <linearGradient id="bgM" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4F7FA"/><stop offset="1" stop-color="#DDE7EF"/>
+    </linearGradient>
+    <linearGradient id="bottleM" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D8E4ED"/><stop offset="0.5" stop-color="#F2F7FA"/><stop offset="1" stop-color="#C7D6E2"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgM)"/>
+  <circle cx="150" cy="150" r="105" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="470" cy="600" r="95" fill="#3D6A82" opacity="0.12"/>
+  <ellipse cx="300" cy="650" rx="125" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="272" y="170" width="56" height="46" rx="8" fill="#2A2724"/>
+  <rect x="258" y="212" width="84" height="34" rx="8" fill="#4A443D"/>
+  <rect x="240" y="242" width="120" height="406" rx="24" fill="url(#bottleM)" stroke="#B4C6D3" stroke-width="2"/>
+  <rect x="258" y="270" width="14" height="340" rx="7" fill="#FFFFFF" opacity="0.65"/>
+  <rect x="240" y="420" width="120" height="110" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="264" y="450" width="72" height="9" rx="4.5" fill="#3D6A82" opacity="0.55"/>
+  <rect x="276" y="472" width="48" height="7" rx="3.5" fill="#8B867E" opacity="0.5"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

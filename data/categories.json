@@ -1,0 +1,130 @@
+{
+  "categories": [
+    {
+      "id": "lip-makeup",
+      "name": "Lipsticks & Lip Makeup",
+      "slug": "lip-makeup",
+      "description": "Lipsticks, lip glosses and lip care for every look — from everyday nudes to bold statement shades.",
+      "image": "assets/images/ph-lip-1.svg",
+      "active": true,
+      "sortOrder": 1
+    },
+    {
+      "id": "face-wash",
+      "name": "Face Wash & Cleansers",
+      "slug": "face-wash",
+      "description": "Gentle daily cleansers that remove dirt, oil and makeup without stripping the skin.",
+      "image": "assets/images/ph-cleanser-1.svg",
+      "active": true,
+      "sortOrder": 2
+    },
+    {
+      "id": "facial-skincare",
+      "name": "Facial Skincare",
+      "slug": "facial-skincare",
+      "description": "Serums, moisturisers and targeted treatments for a healthy, balanced complexion.",
+      "image": "assets/images/ph-skincare-1.svg",
+      "active": true,
+      "sortOrder": 3
+    },
+    {
+      "id": "wax-hair-removal",
+      "name": "Waxing & Hair Removal",
+      "slug": "wax-hair-removal",
+      "description": "Wax strips, waxes and after-care products for smooth, salon-quality results at home.",
+      "image": "assets/images/ph-wax-1.svg",
+      "active": true,
+      "sortOrder": 4
+    },
+    {
+      "id": "perfumes",
+      "name": "Perfumes & Fragrances",
+      "slug": "perfumes",
+      "description": "Signature scents and everyday fragrances for him and her.",
+      "image": "assets/images/ph-perfume-1.svg",
+      "active": true,
+      "sortOrder": 5
+    },
+    {
+      "id": "body-mists",
+      "name": "Body Mists",
+      "slug": "body-mists",
+      "description": "Light, refreshing body mists for a fresh burst of fragrance any time of day.",
+      "image": "assets/images/ph-mist-1.svg",
+      "active": true,
+      "sortOrder": 6
+    },
+    {
+      "id": "primers",
+      "name": "Primers",
+      "slug": "primers",
+      "description": "Makeup primers that smooth, hydrate and help your base last longer.",
+      "image": "assets/images/ph-primer-1.svg",
+      "active": true,
+      "sortOrder": 7
+    },
+    {
+      "id": "vitamin-c",
+      "name": "Vitamin C Skincare",
+      "slug": "vitamin-c",
+      "description": "Vitamin C serums and creams formulated to brighten and even out skin tone.",
+      "image": "assets/images/ph-vitc-1.svg",
+      "active": true,
+      "sortOrder": 8
+    },
+    {
+      "id": "hair-developers",
+      "name": "Hair Developers",
+      "slug": "hair-developers",
+      "description": "Oxidising developers for hair colouring and bleaching routines.",
+      "image": "assets/images/ph-developer-1.svg",
+      "active": true,
+      "sortOrder": 9
+    },
+    {
+      "id": "bb-cream-foundation",
+      "name": "BB Creams & Foundations",
+      "slug": "bb-cream-foundation",
+      "description": "Base makeup for light-to-full coverage, available in a range of shades.",
+      "image": "assets/images/ph-foundation-1.svg",
+      "active": true,
+      "sortOrder": 10
+    },
+    {
+      "id": "body-lotions",
+      "name": "Body Lotions",
+      "slug": "body-lotions",
+      "description": "Nourishing body lotions and creams for soft, hydrated skin.",
+      "image": "assets/images/ph-lotion-1.svg",
+      "active": true,
+      "sortOrder": 11
+    },
+    {
+      "id": "hair-colour",
+      "name": "Hair Colour",
+      "slug": "hair-colour",
+      "description": "Permanent and temporary hair colour products for at-home use.",
+      "image": "assets/images/ph-haircolour-1.svg",
+      "active": true,
+      "sortOrder": 12
+    },
+    {
+      "id": "compact-powders",
+      "name": "Compact Powders",
+      "slug": "compact-powders",
+      "description": "Pressed and compact powders to set your makeup with a smooth finish.",
+      "image": "assets/images/ph-powder-1.svg",
+      "active": true,
+      "sortOrder": 13
+    },
+    {
+      "id": "other",
+      "name": "Other Products",
+      "slug": "other",
+      "description": "Everything else in the Maveliq catalogue.",
+      "image": "assets/images/ph-other-1.svg",
+      "active": true,
+      "sortOrder": 99
+    }
+  ]
+}

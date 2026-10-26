@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Hair developer bottle placeholder">
+  <defs>
+    <linearGradient id="bgD" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F3F5F7"/><stop offset="1" stop-color="#DCE2E8"/>
+    </linearGradient>
+    <linearGradient id="devB" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D5DCE4"/><stop offset="0.5" stop-color="#F2F5F8"/><stop offset="1" stop-color="#C4CDD6"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgD)"/>
+  <circle cx="452" cy="152" r="116" fill="#FFFFFF" opacity="0.42"/>
+  <circle cx="140" cy="594" r="88" fill="#3D6A82" opacity="0.12"/>
+  <ellipse cx="300" cy="646" rx="126" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="268" y="152" width="64" height="54" rx="10" fill="#2A2724"/>
+  <rect x="276" y="204" width="48" height="44" rx="8" fill="#E8A94E"/>
+  <path d="M244 244 h112 q14 0 14 16 l10 340 q0 22 -22 22 h-134 q-22 0 -22 -22 l10 -340 q0 -16 12 -16 Z" fill="url(#devB)" stroke="#B4BEC8" stroke-width="2"/>
+  <rect x="264" y="276" width="14" height="320" rx="7" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="238" y="420" width="124" height="110" rx="6" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="258" y="448" width="84" height="10" rx="5" fill="#2F5D96" opacity="0.55"/>
+  <rect x="272" y="474" width="56" height="7" rx="3.5" fill="#8B867E" opacity="0.5"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

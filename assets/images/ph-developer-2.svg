@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Oxidising developer bottle placeholder">
+  <defs>
+    <linearGradient id="bgD2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7F8FA"/><stop offset="1" stop-color="#E3E7EC"/>
+    </linearGradient>
+    <linearGradient id="devB2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E4E8ED"/><stop offset="0.5" stop-color="#FAFBFC"/><stop offset="1" stop-color="#D2D8DE"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgD2)"/>
+  <circle cx="148" cy="160" r="106" fill="#FFFFFF" opacity="0.45"/>
+  <circle cx="462" cy="588" r="90" fill="#2F5D96" opacity="0.12"/>
+  <ellipse cx="300" cy="648" rx="120" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="274" y="158" width="52" height="48" rx="10" fill="#4A443D"/>
+  <rect x="282" y="204" width="36" height="34" rx="6" fill="#E8A94E"/>
+  <rect x="246" y="234" width="108" height="412" rx="24" fill="url(#devB2)" stroke="#BFC7CF" stroke-width="2"/>
+  <rect x="264" y="264" width="13" height="346" rx="6.5" fill="#FFFFFF" opacity="0.65"/>
+  <rect x="246" y="412" width="108" height="104" rx="6" fill="#FFFFFF" opacity="0.6"/>
+  <path d="M300 438 l4 12 12 1 -9 8 3 12 -10 -7 -10 7 3 -12 -9 -8 12 -1 Z" fill="#E8A94E" opacity="0.75"/>
+  <rect x="268" y="482" width="64" height="7" rx="3.5" fill="#8B867E" opacity="0.5"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

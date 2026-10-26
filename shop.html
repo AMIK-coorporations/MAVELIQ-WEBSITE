@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop | Maveliq — Beauty &amp; Personal Care</title>
+  <meta name="description" content="Browse the full Maveliq catalogue — skincare, fragrance, lip makeup, hair care and personal care. Search, filter by category and price, and sort your way." />
+  <link rel="canonical" href="https://www.maveliq.com/shop.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Maveliq" />
+  <meta property="og:title" content="Shop | Maveliq" />
+  <meta property="og:description" content="Browse the full Maveliq beauty and personal-care catalogue." />
+  <meta property="og:image" content="https://www.maveliq.com/assets/images/hero.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/product.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="shop">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div id="site-header"></div>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Shop</li>
+        </ol>
+      </nav>
+    </div>
+
+    <section class="page-hero">
+      <div class="container">
+        <h1>Shop Beauty, Skincare and Personal-Care Essentials</h1>
+        <p>Explore the Maveliq range — skincare, fragrance, lip makeup, hair care and everyday personal care. Search and filter by category, brand, price and availability. All prices in PKR.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container shop-layout">
+
+        <!-- ============ Filters ============ -->
+        <aside class="filters" id="filtersPanel" aria-label="Product filters">
+          <!-- Built by js/products.js from live facet data -->
+        </aside>
+
+        <!-- ============ Results ============ -->
+        <div class="shop-results">
+          <form class="search-field" id="shopSearchForm" role="search" style="margin-bottom:16px">
+            <label class="sr-only" for="shopSearchInput">Search products</label>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input class="input" id="shopSearchInput" type="search" placeholder="Search by product name, brand or category…" autocomplete="off" />
+          </form>
+
+          <div class="shop-toolbar">
+            <span class="shop-toolbar__count" id="resultsCount">Loading products…</span>
+            <div class="shop-toolbar__right">
+              <button class="btn btn--outline btn--sm filters-toggle" type="button" id="filtersToggle">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+                Filters
+              </button>
+              <label class="sr-only" for="sortSelect">Sort products</label>
+              <select class="select" id="sortSelect">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="price-asc">Lowest price</option>
+                <option value="price-desc">Highest price</option>
+                <option value="rating">Top rated</option>
+                <option value="name">Name A–Z</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="active-filters" id="activeFilters"></div>
+
+          <div class="product-grid" id="resultsGrid">
+            <!-- Populated by js/products.js -->
+          </div>
+
+          <nav class="pagination" id="pagination" aria-label="Product pages"></nav>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

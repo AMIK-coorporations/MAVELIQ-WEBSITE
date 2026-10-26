@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Hand cream trio placeholder">
+  <defs>
+    <linearGradient id="bgO" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBF4F1"/><stop offset="1" stop-color="#EEE0DA"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgO)"/>
+  <circle cx="452" cy="150" r="116" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="140" cy="596" r="88" fill="#C98F86" opacity="0.16"/>
+  <ellipse cx="300" cy="632" rx="170" ry="24" fill="#1B1A18" opacity="0.1"/>
+  <g>
+    <path d="M180 300 h64 q10 0 10 10 l14 300 q2 16 -14 16 h-74 q-16 0 -14 -16 l14 -300 q0 -10 10 -10 Z" fill="#DCA9A0" stroke="#C08D84" stroke-width="2"/>
+    <rect x="196" y="270" width="32" height="32" rx="6" fill="#2A2724"/>
+    <rect x="186" y="420" width="52" height="60" rx="5" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+  <g>
+    <path d="M268 280 h64 q10 0 10 10 l14 320 q2 16 -14 16 h-74 q-16 0 -14 -16 l14 -320 q0 -10 10 -10 Z" fill="#C9D6C2" stroke="#A9BCA0" stroke-width="2"/>
+    <rect x="284" y="250" width="32" height="32" rx="6" fill="#2A2724"/>
+    <rect x="274" y="420" width="52" height="60" rx="5" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+  <g>
+    <path d="M356 306 h64 q10 0 10 10 l14 294 q2 16 -14 16 h-74 q-16 0 -14 -16 l14 -294 q0 -10 10 -10 Z" fill="#E8CFA8" stroke="#CDB186" stroke-width="2"/>
+    <rect x="372" y="276" width="32" height="32" rx="6" fill="#2A2724"/>
+    <rect x="362" y="426" width="52" height="60" rx="5" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Rose body mist bottle placeholder">
+  <defs>
+    <linearGradient id="bgB2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FCF2F0"/><stop offset="1" stop-color="#F2DCD7"/>
+    </linearGradient>
+    <linearGradient id="mistB2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#EAC7BF"/><stop offset="0.5" stop-color="#FAECE8"/><stop offset="1" stop-color="#DCB4AA"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgB2)"/>
+  <circle cx="148" cy="160" r="106" fill="#FFFFFF" opacity="0.42"/>
+  <circle cx="462" cy="588" r="92" fill="#C98F86" opacity="0.18"/>
+  <ellipse cx="300" cy="646" rx="115" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="280" y="180" width="40" height="42" rx="8" fill="#A98A54"/>
+  <rect x="288" y="220" width="24" height="22" fill="#8B867E" opacity="0.6"/>
+  <rect x="250" y="240" width="100" height="406" rx="22" fill="url(#mistB2)" stroke="#CE9E93" stroke-width="2"/>
+  <rect x="266" y="270" width="12" height="340" rx="6" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="250" y="404" width="100" height="98" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="300" cy="442" r="24" fill="#C98F86" opacity="0.55"/>
+  <circle cx="300" cy="442" r="10" fill="#FFFFFF" opacity="0.7"/>
+  <rect x="270" y="478" width="60" height="7" rx="3.5" fill="#8B867E" opacity="0.55"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

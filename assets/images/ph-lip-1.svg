@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Lipstick product placeholder">
+  <defs>
+    <linearGradient id="bgL" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8EFE9"/><stop offset="1" stop-color="#EBD8CF"/>
+    </linearGradient>
+    <linearGradient id="caseL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2A2724"/><stop offset="0.5" stop-color="#4A443D"/><stop offset="1" stop-color="#24211E"/>
+    </linearGradient>
+    <linearGradient id="bulletL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#B9736A"/><stop offset="1" stop-color="#8E4F47"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgL)"/>
+  <circle cx="470" cy="150" r="130" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="120" cy="600" r="90" fill="#C98F86" opacity="0.18"/>
+  <ellipse cx="300" cy="648" rx="140" ry="24" fill="#1B1A18" opacity="0.1"/>
+  <rect x="258" y="330" width="84" height="310" rx="10" fill="url(#caseL)"/>
+  <rect x="258" y="330" width="84" height="16" rx="8" fill="#A98A54" opacity="0.85"/>
+  <path d="M272 330 L272 200 Q272 172 300 160 Q328 172 328 200 L328 330 Z" fill="url(#bulletL)"/>
+  <path d="M300 160 L328 200 L328 330 L316 330 L316 205 Z" fill="#FFFFFF" opacity="0.12"/>
+  <rect x="252" y="640" width="96" height="12" rx="6" fill="#1B1A18" opacity="0.18"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

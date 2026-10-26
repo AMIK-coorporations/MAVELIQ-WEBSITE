@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Slim perfume bottle placeholder">
+  <defs>
+    <linearGradient id="bgP2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBF6F2"/><stop offset="1" stop-color="#EFE0D8"/>
+    </linearGradient>
+    <linearGradient id="flaconP2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#EFD9CF"/><stop offset="0.5" stop-color="#FBF1EB"/><stop offset="1" stop-color="#E2C6BA"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgP2)"/>
+  <circle cx="145" cy="165" r="108" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="465" cy="585" r="92" fill="#C98F86" opacity="0.16"/>
+  <ellipse cx="300" cy="642" rx="112" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="278" y="170" width="44" height="60" rx="10" fill="#A98A54"/>
+  <rect x="290" y="228" width="20" height="22" fill="#8B867E" opacity="0.6"/>
+  <rect x="238" y="248" width="124" height="392" rx="34" fill="url(#flaconP2)" stroke="#D2B3A6" stroke-width="2"/>
+  <rect x="256" y="280" width="14" height="320" rx="7" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="300" cy="440" r="42" fill="#FFFFFF" opacity="0.55"/>
+  <path d="M300 418 c14 10 22 20 22 32 a22 22 0 0 1 -44 0 c0 -12 8 -22 22 -32 Z" fill="#C98F86" opacity="0.75"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

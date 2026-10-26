@@ -1,0 +1,21 @@
+# robots.txt — https://www.maveliq.com
+# https://developers.google.com/robots/robots_txt
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /checkout.html
+Disallow: /cart.html
+Disallow: /order-confirmation.html
+
+# Cart, checkout and order confirmation are private flows and offer no value
+# to search engines. The admin dashboard is never indexed.
+
+# Product detail pages are loaded from a query string in this build and are
+# marked noindex until product URLs are migrated to clean, server-rendered
+# slugs — see the SEO section of README.md.
+
+User-agent: AI
+Disallow: /
+
+Sitemap: https://www.maveliq.com/sitemap.xml

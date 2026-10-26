@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Hydrating primer tube placeholder">
+  <defs>
+    <linearGradient id="bgPr2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F0F7F8"/><stop offset="1" stop-color="#D8E9EC"/>
+    </linearGradient>
+    <linearGradient id="prTube2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#CDE0E3"/><stop offset="0.5" stop-color="#EFF7F8"/><stop offset="1" stop-color="#BCD3D7"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgPr2)"/>
+  <circle cx="145" cy="162" r="106" fill="#FFFFFF" opacity="0.42"/>
+  <circle cx="462" cy="588" r="90" fill="#3D6A82" opacity="0.12"/>
+  <ellipse cx="300" cy="646" rx="112" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="276" y="176" width="48" height="30" rx="8" fill="#2A2724"/>
+  <path d="M266 206 h68 l-10 32 h-48 Z" fill="#A98A54"/>
+  <path d="M262 238 h76 q12 0 12 12 l12 372 q0 16 -16 16 h-92 q-16 0 -16 -16 l12 -372 q0 -12 12 -12 Z" fill="url(#prTube2)" stroke="#A9C4C9" stroke-width="2"/>
+  <rect x="270" y="268" width="12" height="322" rx="6" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="256" y="420" width="88" height="92" rx="6" fill="#FFFFFF" opacity="0.55"/>
+  <rect x="274" y="446" width="52" height="8" rx="4" fill="#3D6A82" opacity="0.5"/>
+  <path d="M300 470 c10 8 16 15 16 23 a16 16 0 0 1 -32 0 c0 -8 6 -15 16 -23 Z" fill="#7FB3BF" opacity="0.7"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

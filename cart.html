@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shopping Cart | Maveliq</title>
+  <meta name="description" content="Review the items in your Maveliq shopping cart — quantities, variants, delivery charge and total in PKR." />
+  <link rel="canonical" href="https://www.maveliq.com/cart.html" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/product.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="cart">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div id="site-header"></div>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">Cart</li>
+        </ol>
+      </nav>
+
+      <div class="cart-head">
+        <h1>Your Shopping Cart</h1>
+        <span class="price-note">Prices in PKR · Delivery across Pakistan</span>
+      </div>
+      <p class="text-soft" style="max-width:60ch">Review the products you have selected before continuing to checkout.</p>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="cartEmpty" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <h3>Your Cart Is Empty</h3>
+        <p>Browse the catalogue and add products you love — they'll appear here.</p>
+        <a class="btn btn--primary btn--lg" href="shop.html">Continue Shopping</a>
+      </div>
+
+      <!-- Cart layout -->
+      <div class="cart-layout" id="cartLayout" hidden>
+        <div>
+          <div class="cart-items" id="cartItems">
+            <!-- Populated by js/cart.js -->
+          </div>
+
+          <div class="discount-row" style="max-width:420px;margin-top:24px">
+            <label class="sr-only" for="cartPromo">Discount code</label>
+            <input class="input" id="cartPromo" type="text" placeholder="Discount code (optional)" autocomplete="off" />
+            <button class="btn btn--outline" type="button" id="cartPromoApply">Apply</button>
+          </div>
+          <p class="price-note">Only discount codes configured by the store owner can be applied.</p>
+        </div>
+
+        <aside class="summary" id="cartSummary" aria-label="Order summary">
+          <!-- Populated by js/cart.js -->
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module">
+    // Wire the cart-page promo box to the shared Cart module.
+    // The cart UI itself is rendered by js/app.js; this only applies the code
+    // and asks it to repaint via the maveliq:cart-refresh event.
+    import { Cart } from "./js/cart.js";
+    import { toast } from "./js/utils.js";
+    import settings from "./js/services/settings-service.js";
+
+    document.getElementById("cartPromoApply")?.addEventListener("click", () => {
+      const input = document.getElementById("cartPromo");
+      const code = (input?.value || "").trim().toUpperCase();
+      if (!code) return;
+      const codes = settings.get("discountCodes", {}) || {};
+      if (!codes[code]) {
+        Cart.discountCode = "";
+        toast("That discount code is not valid.", "error");
+        return;
+      }
+      Cart.discountCode = code;
+      toast(`Discount "${code}" applied.`, "success");
+      window.dispatchEvent(new Event("maveliq:cart-refresh"));
+    });
+  </script>
+</body>
+</html>

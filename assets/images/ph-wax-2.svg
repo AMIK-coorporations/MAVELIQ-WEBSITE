@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Post-wax soothing lotion tube placeholder">
+  <defs>
+    <linearGradient id="bgW2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4F8F2"/><stop offset="1" stop-color="#E0EBDC"/>
+    </linearGradient>
+    <linearGradient id="tubeW2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D3E0CD"/><stop offset="0.5" stop-color="#F0F6ED"/><stop offset="1" stop-color="#C4D4BD"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgW2)"/>
+  <circle cx="150" cy="160" r="105" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="465" cy="590" r="92" fill="#6F8268" opacity="0.15"/>
+  <ellipse cx="300" cy="648" rx="118" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="282" y="182" width="36" height="26" rx="6" fill="#2A2724"/>
+  <path d="M262 208 h76 l-10 34 h-56 Z" fill="#4A443D"/>
+  <path d="M258 240 h84 q10 0 10 12 l14 380 q0 14 -14 14 h-94 q-14 0 -14 -14 l14 -380 q0 -12 10 -12 Z" fill="url(#tubeW2)" stroke="#B4C6AD" stroke-width="2"/>
+  <rect x="266" y="270" width="12" height="300" rx="6" fill="#FFFFFF" opacity="0.55"/>
+  <rect x="252" y="430" width="96" height="90" rx="6" fill="#FFFFFF" opacity="0.55"/>
+  <rect x="272" y="456" width="56" height="8" rx="4" fill="#6F8268" opacity="0.6"/>
+  <rect x="282" y="476" width="36" height="6" rx="3" fill="#8B867E" opacity="0.5"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Shea body lotion pump bottle placeholder">
+  <defs>
+    <linearGradient id="bgLo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBF6EE"/><stop offset="1" stop-color="#EFE2CE"/>
+    </linearGradient>
+    <linearGradient id="lotB" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E5D3B6"/><stop offset="0.5" stop-color="#F8F0E1"/><stop offset="1" stop-color="#D6C09C"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" y="0" height="750" fill="url(#bgLo)"/>
+  <circle cx="452" cy="152" r="116" fill="#FFFFFF" opacity="0.4"/>
+  <circle cx="140" cy="594" r="88" fill="#A98A54" opacity="0.18"/>
+  <ellipse cx="300" cy="650" rx="130" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="288" y="146" width="26" height="52" fill="#2A2724"/>
+  <path d="M288 156 L244 156 L244 178 L288 178 Z" fill="#2A2724"/>
+  <rect x="274" y="196" width="54" height="36" rx="6" fill="#4A443D"/>
+  <rect x="238" y="228" width="124" height="420" rx="26" fill="url(#lotB)" stroke="#C6B091" stroke-width="2"/>
+  <rect x="256" y="260" width="15" height="348" rx="7.5" fill="#FFFFFF" opacity="0.6"/>
+  <rect x="238" y="406" width="124" height="112" rx="8" fill="#FFFFFF" opacity="0.6"/>
+  <path d="M300 434 q-20 24 -20 40 a20 20 0 0 0 40 0 q0 -16 -20 -40 Z" fill="#C9B295" opacity="0.7"/>
+  <rect x="266" y="492" width="68" height="7" rx="3.5" fill="#8B867E" opacity="0.5"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

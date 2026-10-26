@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Track Your Order | Maveliq</title>
+  <meta name="description" content="Track your Maveliq order using your order reference and the phone number you used at checkout." />
+  <link rel="canonical" href="https://www.maveliq.com/track-order.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Maveliq" />
+  <meta property="og:title" content="Track Your Order | Maveliq" />
+  <meta property="og:description" content="Track your Maveliq order with your reference number and phone." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/product.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="tracking">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container track-hero">
+        <span class="section-head__eyebrow" style="display:block">Order tracking</span>
+        <h1>Track your order</h1>
+        <p>Enter your order reference and the phone number used at checkout. For your security, both are required — we never show other customers' details.</p>
+
+        <form class="track-form" id="trackForm" style="margin-top:28px;align-items:flex-start" novalidate>
+          <div style="flex:1" class="field">
+            <label class="sr-only" for="trackRef">Order reference</label>
+            <input class="input" id="trackRef" name="reference" type="text"
+                   placeholder="Order reference (MV-…)" autocomplete="off"
+                   style="text-transform:uppercase" />
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <div style="flex:1" class="field">
+            <label class="sr-only" for="trackPhone">Phone number</label>
+            <input class="input" id="trackPhone" name="phone" type="tel"
+                   placeholder="Phone number used at checkout" autocomplete="tel" />
+            <span class="field-error" aria-live="polite"></span>
+          </div>
+          <button class="btn btn--primary" type="submit" style="margin-top:26px">Track order</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container container--narrow">
+        <div class="track-result" id="trackResult" hidden>
+          <!-- Rendered by js/tracking.js -->
+        </div>
+
+        <div class="card text-center" style="margin-top:8px">
+          <h3 style="font-size:1rem;margin-bottom:8px">Need help?</h3>
+          <p class="text-soft" style="font-size:0.875rem">
+            If you can't find your order, check your reference number in the confirmation email or SMS, or
+            <a href="contact.html">contact our support team</a>. You can also read the
+            <a href="faq.html">frequently asked questions</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

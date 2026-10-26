@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Confirmation | Maveliq</title>
+  <meta name="description" content="Your Maveliq order has been received. Keep your reference number to track the order at any time." />
+  <link rel="canonical" href="https://www.maveliq.com/order-confirmation.html" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/product.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="confirmation">
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div id="site-header"></div>
+
+  <main id="main">
+    <!-- ============ Confirmation hero ============ -->
+    <section class="confirm-hero">
+      <div class="container">
+        <div class="confirm-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h1>Thank you — your order is confirmed</h1>
+        <p class="text-soft" style="max-width:54ch;margin-inline:auto">
+          We've received your order and will contact you on your phone to confirm the details before dispatch.
+        </p>
+
+        <div class="confirm-ref">
+          <span class="price-note">Reference</span>
+          <strong id="orderRef">MV-••••••••</strong>
+          <button class="icon-btn" type="button" id="copyRef" aria-label="Copy order reference" title="Copy reference">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          </button>
+        </div>
+
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:0.8rem;color:var(--c-ink-soft);margin-top:8px">
+          <span>Placed: <strong id="orderPlaced">—</strong></span>
+          <span id="orderStatus"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Details (rendered by js/orders.js) ============ -->
+    <section class="section">
+      <div class="container container--narrow" id="confirmationBody">
+        <div class="empty-state">
+          <h3>Loading your order…</h3>
+          <p>Please wait while we fetch the confirmation details.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module">
+    // Copy the reference number to the clipboard
+    document.getElementById("copyRef")?.addEventListener("click", async () => {
+      const ref = document.getElementById("orderRef")?.textContent?.trim();
+      if (!ref || ref.includes("•")) return;
+      try {
+        await navigator.clipboard.writeText(ref);
+        const btn = document.getElementById("copyRef");
+        btn.setAttribute("title", "Copied!");
+        setTimeout(() => btn.setAttribute("title", "Copy reference"), 1600);
+      } catch {
+        /* clipboard unavailable (http) — reference stays visible for manual copy */
+      }
+    });
+  </script>
+</body>
+</html>

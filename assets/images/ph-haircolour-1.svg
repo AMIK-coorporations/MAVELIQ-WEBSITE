@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Hair colour kit carton placeholder">
+  <defs>
+    <linearGradient id="bgH" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4F0EC"/><stop offset="1" stop-color="#DFD6CD"/>
+    </linearGradient>
+    <linearGradient id="boxH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3A342E"/><stop offset="0.5" stop-color="#544C43"/><stop offset="1" stop-color="#312B26"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgH)"/>
+  <circle cx="452" cy="150" r="116" fill="#FFFFFF" opacity="0.35"/>
+  <circle cx="140" cy="596" r="88" fill="#A98A54" opacity="0.16"/>
+  <ellipse cx="300" cy="648" rx="150" ry="24" fill="#1B1A18" opacity="0.1"/>
+  <rect x="212" y="248" width="176" height="400" rx="12" fill="url(#boxH)"/>
+  <rect x="212" y="248" width="176" height="86" rx="12" fill="#A98A54" opacity="0.85"/>
+  <circle cx="300" cy="440" r="56" fill="#FFFFFF" opacity="0.14"/>
+  <path d="M300 402 c26 16 40 34 40 54 a40 40 0 0 1 -80 0 c0 -20 14 -38 40 -54 Z" fill="#C98F86" opacity="0.85"/>
+  <rect x="248" y="530" width="104" height="10" rx="5" fill="#FFFFFF" opacity="0.5"/>
+  <rect x="264" y="556" width="72" height="7" rx="3.5" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="404" y="392" width="64" height="256" rx="10" fill="#FFFFFF" opacity="0.85" stroke="#D6CDBF" stroke-width="1.5"/>
+  <rect x="416" y="416" width="40" height="7" rx="3.5" fill="#D6CDBF"/>
+  <rect x="416" y="434" width="40" height="7" rx="3.5" fill="#D6CDBF"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

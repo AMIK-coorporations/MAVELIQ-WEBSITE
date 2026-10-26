@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Temporary colour spray can placeholder">
+  <defs>
+    <linearGradient id="bgH2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6EFF1"/><stop offset="1" stop-color="#E4D2D8"/>
+    </linearGradient>
+    <linearGradient id="canH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7A3540"/><stop offset="0.5" stop-color="#A24B58"/><stop offset="1" stop-color="#6A2C36"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgH2)"/>
+  <circle cx="148" cy="158" r="106" fill="#FFFFFF" opacity="0.35"/>
+  <circle cx="462" cy="590" r="90" fill="#7A3540" opacity="0.14"/>
+  <ellipse cx="300" cy="650" rx="112" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="276" y="150" width="48" height="26" rx="6" fill="#2A2724"/>
+  <rect x="286" y="176" width="28" height="16" fill="#8B867E" opacity="0.6"/>
+  <rect x="252" y="190" width="96" height="26" rx="8" fill="#4A443D"/>
+  <rect x="252" y="212" width="96" height="436" rx="18" fill="url(#canH)" stroke="#57242D" stroke-width="2"/>
+  <rect x="268" y="242" width="13" height="360" rx="6.5" fill="#FFFFFF" opacity="0.28"/>
+  <rect x="252" y="420" width="96" height="98" rx="6" fill="#FFFFFF" opacity="0.85"/>
+  <path d="M276 452 h48 M276 470 h48 M276 488 h32" stroke="#A24B58" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

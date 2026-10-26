@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Loose setting powder jar placeholder">
+  <defs>
+    <linearGradient id="bgPow2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7F5F2"/><stop offset="1" stop-color="#E4E0DA"/>
+    </linearGradient>
+    <linearGradient id="lpJar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E6E1D8"/><stop offset="0.5" stop-color="#F8F6F1"/><stop offset="1" stop-color="#D5CFC4"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgPow2)"/>
+  <circle cx="148" cy="160" r="106" fill="#FFFFFF" opacity="0.45"/>
+  <circle cx="462" cy="590" r="90" fill="#8B867E" opacity="0.14"/>
+  <ellipse cx="300" cy="622" rx="146" ry="24" fill="#1B1A18" opacity="0.1"/>
+  <rect x="212" y="392" width="176" height="222" rx="24" fill="url(#lpJar)" stroke="#C4BDB0" stroke-width="2"/>
+  <rect x="200" y="332" width="200" height="66" rx="18" fill="#2A2724"/>
+  <rect x="200" y="332" width="200" height="12" rx="6" fill="#A98A54" opacity="0.7"/>
+  <g fill="#FFFFFF" opacity="0.7">
+    <circle cx="262" cy="452" r="4"/><circle cx="288" cy="466" r="4"/><circle cx="316" cy="448" r="4"/>
+    <circle cx="338" cy="470" r="4"/><circle cx="274" cy="492" r="4"/><circle cx="306" cy="500" r="4"/>
+    <circle cx="332" cy="518" r="4"/><circle cx="258" cy="524" r="4"/><circle cx="296" cy="540" r="4"/>
+  </g>
+  <rect x="228" y="440" width="16" height="140" rx="8" fill="#FFFFFF" opacity="0.45"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="Vitamin C serum dropper bottle placeholder">
+  <defs>
+    <linearGradient id="bgV" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FDF6E9"/><stop offset="1" stop-color="#F5E4C4"/>
+    </linearGradient>
+    <linearGradient id="amberV" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#B4762B"/><stop offset="0.5" stop-color="#DFA34F"/><stop offset="1" stop-color="#9C6320"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgV)"/>
+  <circle cx="455" cy="155" r="118" fill="#FFFFFF" opacity="0.42"/>
+  <circle cx="138" cy="595" r="88" fill="#E8A94E" opacity="0.22"/>
+  <ellipse cx="300" cy="640" rx="120" ry="22" fill="#1B1A18" opacity="0.1"/>
+  <rect x="276" y="164" width="48" height="64" rx="10" fill="#2A2724"/>
+  <rect x="288" y="226" width="24" height="18" fill="#4A443D"/>
+  <rect x="284" y="244" width="32" height="96" rx="4" fill="#7FB3BF" opacity="0.75"/>
+  <rect x="244" y="336" width="112" height="304" rx="20" fill="url(#amberV)" stroke="#8A5A1C" stroke-width="2"/>
+  <rect x="262" y="364" width="14" height="248" rx="7" fill="#FFFFFF" opacity="0.35"/>
+  <rect x="244" y="456" width="112" height="86" fill="#FBF3E4" opacity="0.85"/>
+  <circle cx="300" cy="484" r="18" fill="#E8A94E" opacity="0.8"/>
+  <rect x="266" y="512" width="68" height="7" rx="3.5" fill="#8B867E" opacity="0.6"/>
+  <text x="300" y="706" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="9" fill="#8B867E">MAVELIQ</text>
+</svg>
