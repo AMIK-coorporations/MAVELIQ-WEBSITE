@@ -1,130 +1,116 @@
 {
   "categories": [
     {
-      "id": "lip-makeup",
+      "id": "lipsticks",
       "name": "Lipsticks & Lip Makeup",
-      "slug": "lip-makeup",
-      "description": "Lipsticks, lip glosses and lip care for every look — from everyday nudes to bold statement shades.",
-      "image": "assets/images/ph-lip-1.svg",
+      "slug": "lipsticks",
+      "description": "Lipsticks and lip liners in a wide range of shades and finishes. Check each listing for its shade options, price and details.",
+      "intro": [
+        "A good lip colour can change your whole look in seconds. Our lip collection brings together DIEFEI 3D matte lipsticks, a shade-matched lip pencil range and a ready-made four-piece lipstick set, so you can pick a single favourite or build a small wardrobe of colours.",
+        "Every listing shows the shade numbers that are currently available, so you can see what is in stock before you order. Colours can look slightly different on screen than in person, so treat the photos as a guide and choose by undertone: warmer shades suit golden skin tones, cooler pinks and berries suit rosy undertones, and nudes work for everyday wear."
+      ],
+      "button": "Explore Lipsticks",
+      "image": "assets/images/products/3d-matte-lipstick-1.webp",
       "active": true,
       "sortOrder": 1
     },
     {
-      "id": "face-wash",
-      "name": "Face Wash & Cleansers",
-      "slug": "face-wash",
-      "description": "Gentle daily cleansers that remove dirt, oil and makeup without stripping the skin.",
-      "image": "assets/images/ph-cleanser-1.svg",
+      "id": "face-washes",
+      "name": "Face Washes & Cleansers",
+      "slug": "face-washes",
+      "description": "Facial cleansers for different skincare routines. Check each product's description and directions to pick the one that suits you.",
+      "intro": [
+        "Cleansing is the first step of any routine, and the right face wash depends on your skin. This collection covers foaming gels with fruit and plant extracts, options made for oily or breakout-prone skin, creamy cleansers for drier skin and a gentle cleansing milk for removing makeup.",
+        "Most people do well washing twice a day — once in the morning and once before bed. If your skin feels tight afterwards, try a milder formula or wash once a day. Always read the label, and patch-test a new cleanser before using it on your whole face."
+      ],
+      "button": "Explore Face Washes",
+      "image": "assets/images/products/tea-tree-facial-foam-face-wash-1.webp",
       "active": true,
       "sortOrder": 2
     },
     {
-      "id": "facial-skincare",
-      "name": "Facial Skincare",
-      "slug": "facial-skincare",
-      "description": "Serums, moisturisers and targeted treatments for a healthy, balanced complexion.",
-      "image": "assets/images/ph-skincare-1.svg",
+      "id": "skincare",
+      "name": "Skincare & Serums",
+      "slug": "skincare",
+      "description": "Serums, creams, masks, scrubs, toners and sun care. Review each product's ingredients and directions before use.",
+      "intro": [
+        "Our skincare shelf brings together DIEFEI 3D serums, day and night creams, wash-off and peel-off masks, scrubs, toners, aloe gel and daily sun protection. Many items come in more than one size, from travel tubes to larger salon-style tubs.",
+        "When you add something new to your routine, introduce one product at a time and patch-test it first. Exfoliating scrubs and masks are usually used a few times a week rather than every day, and sunscreen is worth applying every morning — even on cloudy days and when you are mostly indoors near windows."
+      ],
+      "button": "Explore Skincare",
+      "image": "assets/images/products/vitamin-c-day-cream-1.webp",
       "active": true,
       "sortOrder": 3
     },
     {
-      "id": "wax-hair-removal",
-      "name": "Waxing & Hair Removal",
-      "slug": "wax-hair-removal",
-      "description": "Wax strips, waxes and after-care products for smooth, salon-quality results at home.",
-      "image": "assets/images/ph-wax-1.svg",
+      "id": "perfumes-body-mists",
+      "name": "Perfumes & Body Mists",
+      "slug": "perfumes-body-mists",
+      "description": "Perfumes and lighter body mists for everyday wear, outings and special occasions.",
+      "intro": [
+        "Choose between DIEFEI 3D perfumes for a fuller scent and perfume-and-body-mist sprays for a lighter, everyday option. The mists come in two bottle sizes, and the tester set lets you try eight fragrances before committing to a full bottle.",
+        "How long a fragrance lasts depends on your skin, the weather and where you apply it. For longer wear, spray onto moisturised skin at the pulse points — wrists, neck and behind the ears — or lightly onto clothing, and store bottles away from heat and direct sunlight."
+      ],
+      "button": "Explore Fragrances",
+      "image": "assets/images/products/bright-crystal-perfume-body-mist-1.webp",
       "active": true,
       "sortOrder": 4
     },
     {
-      "id": "perfumes",
-      "name": "Perfumes & Fragrances",
-      "slug": "perfumes",
-      "description": "Signature scents and everyday fragrances for him and her.",
-      "image": "assets/images/ph-perfume-1.svg",
+      "id": "makeup",
+      "name": "Makeup Essentials",
+      "slug": "makeup",
+      "description": "Products for preparing, finishing and refreshing your look — primer, BB foundation, compact powder, eye makeup and nail colour.",
+      "intro": [
+        "Build a complete look with DIEFEI 3D makeup basics: an HD primer base to prepare the skin, BB foundation cream and matte compact powder for the complexion, mascara, liquid eyeliner, lashes and an eyeshadow palette for the eyes, plus nail paint in dozens of shades.",
+        "Shade-based products list every shade we currently carry. Match foundation and powder to your jawline in natural daylight, and remember to remove all makeup before you sleep so your skin can breathe overnight."
+      ],
+      "button": "Explore Makeup",
+      "image": "assets/images/products/bb-foundation-cream-1.webp",
       "active": true,
       "sortOrder": 5
     },
     {
-      "id": "body-mists",
-      "name": "Body Mists",
-      "slug": "body-mists",
-      "description": "Light, refreshing body mists for a fresh burst of fragrance any time of day.",
-      "image": "assets/images/ph-mist-1.svg",
+      "id": "hair-colour",
+      "name": "Hair Colour & Hair Care",
+      "slug": "hair-colour",
+      "description": "Hair colour, lightening powder and shampoo. Check shade options, directions and precautions before purchasing.",
+      "intro": [
+        "Refresh your colour at home with DIEFEI 3D hair colour in black and brown, lighten with Blonder lightening powder in three pack sizes, and keep hair clean and manageable with MaxCare shampoo.",
+        "Colouring and lightening products must always be used exactly as the pack directs. Do an allergy test and a strand test 48 hours before every application — even if you have used the product before — and wear the gloves supplied."
+      ],
+      "button": "Explore Hair Colour",
+      "image": "assets/images/products/hair-colour-1.webp",
       "active": true,
       "sortOrder": 6
     },
     {
-      "id": "primers",
-      "name": "Primers",
-      "slug": "primers",
-      "description": "Makeup primers that smooth, hydrate and help your base last longer.",
-      "image": "assets/images/ph-primer-1.svg",
+      "id": "personal-care",
+      "name": "Personal Care & Body",
+      "slug": "personal-care",
+      "description": "Finger waxes for hair removal and body lotions for everyday moisture. Read each product's directions before use.",
+      "intro": [
+        "This collection covers everyday body care: sugar-based DIEFEI 3D finger waxes in six fruit and plant variants for at-home hair removal, and body lotions in three sizes for daily moisture.",
+        "For waxing, start with clean, dry skin and always test a small patch first. For lotions, apply after a bath while the skin is still slightly damp to help lock in moisture."
+      ],
+      "button": "Explore Personal Care",
+      "image": "assets/images/products/aloe-vera-finger-wax-1.webp",
       "active": true,
       "sortOrder": 7
     },
     {
-      "id": "vitamin-c",
-      "name": "Vitamin C Skincare",
-      "slug": "vitamin-c",
-      "description": "Vitamin C serums and creams formulated to brighten and even out skin tone.",
-      "image": "assets/images/ph-vitc-1.svg",
+      "id": "bundles-kits",
+      "name": "Bundles & Kits",
+      "slug": "bundles-kits",
+      "description": "Ready-made sets that combine several products into one routine or gift.",
+      "intro": [
+        "Bundles bring several matching products together in one order — complete skincare routines built around rice and shea butter, hyaluronic acid or vitamin C, salon-style facial kits, an eye makeup set and a perfume tester box.",
+        "Kits are a simple way to try a full routine or to put together a gift. Each listing names what is inside the set; if you are unsure whether a kit suits your skin, contact us before ordering."
+      ],
+      "button": "Explore Bundles",
+      "image": "assets/images/products/rice-shea-butter-brightening-kit-1.webp",
       "active": true,
       "sortOrder": 8
-    },
-    {
-      "id": "hair-developers",
-      "name": "Hair Developers",
-      "slug": "hair-developers",
-      "description": "Oxidising developers for hair colouring and bleaching routines.",
-      "image": "assets/images/ph-developer-1.svg",
-      "active": true,
-      "sortOrder": 9
-    },
-    {
-      "id": "bb-cream-foundation",
-      "name": "BB Creams & Foundations",
-      "slug": "bb-cream-foundation",
-      "description": "Base makeup for light-to-full coverage, available in a range of shades.",
-      "image": "assets/images/ph-foundation-1.svg",
-      "active": true,
-      "sortOrder": 10
-    },
-    {
-      "id": "body-lotions",
-      "name": "Body Lotions",
-      "slug": "body-lotions",
-      "description": "Nourishing body lotions and creams for soft, hydrated skin.",
-      "image": "assets/images/ph-lotion-1.svg",
-      "active": true,
-      "sortOrder": 11
-    },
-    {
-      "id": "hair-colour",
-      "name": "Hair Colour",
-      "slug": "hair-colour",
-      "description": "Permanent and temporary hair colour products for at-home use.",
-      "image": "assets/images/ph-haircolour-1.svg",
-      "active": true,
-      "sortOrder": 12
-    },
-    {
-      "id": "compact-powders",
-      "name": "Compact Powders",
-      "slug": "compact-powders",
-      "description": "Pressed and compact powders to set your makeup with a smooth finish.",
-      "image": "assets/images/ph-powder-1.svg",
-      "active": true,
-      "sortOrder": 13
-    },
-    {
-      "id": "other",
-      "name": "Other Products",
-      "slug": "other",
-      "description": "Everything else in the Maveliq catalogue.",
-      "image": "assets/images/ph-other-1.svg",
-      "active": true,
-      "sortOrder": 99
     }
   ]
 }

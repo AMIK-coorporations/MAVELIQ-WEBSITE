@@ -15,7 +15,7 @@
   /* Ink */
   --c-ink:           #1B1A18;   /* primary text — near-black */
   --c-ink-soft:      #56534D;   /* secondary text */
-  --c-ink-mute:      #8B867E;   /* meta text, placeholders */
+  --c-ink-mute:      #6F6A62;   /* meta text, placeholders — 5.1:1 on --c-bg (WCAG AA) */
   --c-line:          #E7E0D6;   /* hairline borders */
   --c-line-strong:   #D6CDBF;
 
@@ -42,7 +42,7 @@
   --font-display: "Fraunces", "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body: "Jost", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 
-  --fs-3xs: 0.6875rem;   /* 11px */
+  --fs-3xs: 0.75rem;     /* 12px — smallest size used anywhere (accessibility floor) */
   --fs-2xs: 0.75rem;     /* 12px */
   --fs-xs:  0.8125rem;   /* 13px */
   --fs-sm:  0.875rem;    /* 14px */
@@ -365,7 +365,7 @@ table { width: 100%; border-collapse: collapse; }
   border-radius: var(--radius-pill);
   background: var(--c-sage);
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 18px;
   text-align: center;
@@ -550,7 +550,7 @@ table { width: 100%; border-collapse: collapse; }
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-xs);
   padding: 3px 9px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #CFC9C0;

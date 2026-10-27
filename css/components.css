@@ -633,7 +633,7 @@ legend {
   border-radius: var(--radius-pill);
   background: var(--c-ink);
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
   display: flex; align-items: center; justify-content: center;
 }
 .mini-item__name { font-size: var(--fs-2xs); line-height: 1.4; }
@@ -647,4 +647,154 @@ legend {
   font-size: var(--fs-2xs);
   text-align: center;
   padding: var(--sp-2) var(--sp-4);
+}
+
+/* ==========================================================================
+   Additions — finalizing-website (same tokens, same visual language)
+   ========================================================================== */
+
+/* ---------- Real product photography -------------------------------------- */
+/* Supplier photos are square packshots on white: show them whole on a white
+   tile instead of cropping them into the 4:5 frame. */
+.product-card__media { background: var(--c-surface); }
+.product-card__media img { object-fit: contain; padding: var(--sp-3); }
+.gallery__main { background: var(--c-surface); }
+.gallery__main img { object-fit: contain; }
+.gallery__thumb img { object-fit: contain; background: var(--c-surface); }
+.product-card__price .price-from {
+  order: -1;
+  font-size: var(--fs-2xs);
+  color: var(--c-ink-mute);
+  text-transform: lowercase;
+}
+
+/* ---------- WhatsApp ------------------------------------------------------- */
+.btn--whatsapp {
+  background: #1E7A4C;            /* deep WhatsApp-style green, 5.4:1 with white */
+  color: #fff;
+  gap: var(--sp-2);
+}
+.btn--whatsapp:hover { background: #17603C; color: #fff; box-shadow: var(--shadow-md); }
+.btn--whatsapp svg { width: 18px; height: 18px; flex-shrink: 0; }
+.summary .btn--whatsapp { margin-top: var(--sp-3); }
+.pdp__wa { margin-top: var(--sp-3); width: 100%; }
+
+.wa-float {
+  position: fixed;
+  right: 20px; bottom: 20px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 12px 18px 12px 14px;
+  border-radius: var(--radius-pill);
+  background: #1E7A4C;
+  color: #fff;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(27, 26, 24, 0.18));
+  transition: transform var(--dur) var(--ease), background var(--dur);
+}
+.wa-float:hover { background: #17603C; color: #fff; transform: translateY(-2px); }
+.wa-float svg { width: 24px; height: 24px; }
+
+/* ---------- Wishlist ------------------------------------------------------- */
+.wish-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--c-line);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--c-ink-soft);
+  cursor: pointer;
+  transition: color var(--dur), border-color var(--dur), transform var(--dur) var(--ease);
+}
+.wish-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.wish-btn:hover { color: var(--c-blush); border-color: var(--c-blush); transform: scale(1.06); }
+.wish-btn.is-active { color: var(--c-blush); border-color: var(--c-blush-tint); background: var(--c-blush-tint); }
+.wish-btn.is-active svg { fill: currentColor; }
+.wish-btn:focus-visible { outline: 2px solid var(--c-sage); outline-offset: 2px; }
+.product-card__wish { position: absolute; top: var(--sp-3); right: var(--sp-3); z-index: 3; }
+.pdp__top { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); }
+.wish-link { position: relative; }
+.wish-link svg { fill: none; stroke: currentColor; stroke-width: 1.7; }
+.wish-link .cart-count[data-count="0"] { display: none; }
+
+/* ---------- Homepage additions --------------------------------------------- */
+.value-item--link { color: inherit; border-radius: var(--radius-sm); }
+.value-item--link:hover strong { color: var(--c-sage-deep); }
+
+.section-head--center { justify-content: center; text-align: center; }
+.section-head--center p { margin-inline: auto; max-width: 62ch; }
+
+.why-card { text-align: left; }
+.why-card svg { width: 30px; height: 30px; color: var(--c-sage); margin-bottom: var(--sp-3); }
+.why-card h3 { font-size: var(--fs-md); margin-bottom: var(--sp-2); }
+.why-card p { color: var(--c-ink-soft); font-size: var(--fs-sm); margin: 0; }
+
+.support-band {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--sp-6);
+  align-items: center;
+  padding: var(--sp-7);
+  border-radius: var(--radius-lg);
+  background: var(--c-sage-tint);
+  border: 1px solid var(--c-line);
+}
+.support-band h2 { margin-bottom: var(--sp-3); }
+.support-band p { margin: 0; max-width: 64ch; }
+
+.partner-band__title { font-size: var(--fs-xl); margin-bottom: var(--sp-3); }
+.partner-band p { font-size: var(--fs-sm); }
+.partner-band__actions { flex-direction: column; align-items: stretch; }
+
+.seo-copy {
+  border-top: 1px solid var(--c-line);
+  padding-top: var(--sp-7);
+}
+.seo-copy h2 { max-width: 30ch; }
+.seo-copy__cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-7);
+  margin-top: var(--sp-5);
+}
+.seo-copy p { color: var(--c-ink-soft); font-size: var(--fs-sm); }
+.seo-copy h3 { font-size: var(--fs-md); margin-top: var(--sp-5); }
+.seo-copy__links { margin-top: var(--sp-5); font-size: var(--fs-xs); color: var(--c-ink-mute); }
+.seo-copy__links a { color: var(--c-sage-deep); }
+
+/* ---------- Category landing intro (shop.html?category=…) ------------------- */
+.category-intro {
+  background: var(--c-surface-warm);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-md);
+  padding: var(--sp-5) var(--sp-6);
+  margin-bottom: var(--sp-5);
+}
+.category-intro p { color: var(--c-ink-soft); font-size: var(--fs-sm); margin: 0; }
+.category-intro p + p { margin-top: var(--sp-3); }
+
+.collection-card { display: flex; flex-direction: column; gap: var(--sp-2); align-items: flex-start; }
+.collection-card h3 { font-size: var(--fs-md); margin: 0; }
+.collection-card p { color: var(--c-ink-soft); font-size: var(--fs-sm); margin: 0; }
+.collection-card .btn { margin-top: auto; }
+
+/* ---------- Misc ------------------------------------------------------------ */
+.page-intro { margin: var(--sp-2) 0 var(--sp-5); }
+.page-intro h1 { margin-bottom: var(--sp-2); }
+.page-intro p { margin: 0; }
+
+.footer-tagline { font-family: var(--font-display); font-style: italic; color: #E4DED5 !important; }
+.site-footer__collections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-4);
+  padding-block: var(--sp-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: var(--fs-xs);
+  color: #A8A29A;
 }

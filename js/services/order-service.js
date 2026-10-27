@@ -17,7 +17,7 @@
 
 import { CONFIG } from "../config.js";
 import { store, uid, generateReference } from "../utils.js";
-import settings from "./settings-service.js";
+import settings, { computeDiscount } from "./settings-service.js";
 import products from "./product-service.js";
 
 const LS_ORDERS = "orders";
@@ -57,6 +57,12 @@ function writeDemoOrders(list) {
   store.set(LS_ORDERS, list);
 }
 
+/** Last 10 digits of a phone number — the comparable part of a PK mobile
+ *  number regardless of 0 / 92 / +92 prefixes. */
+export function phoneKey(value) {
+  return String(value || "").replace(/\D/g, "").slice(-10);
+}
+
 /* ---------- Service ---------------------------------------------------------- */
 
 class OrderService {
@@ -71,7 +77,7 @@ class OrderService {
    * @returns {Promise<Object>} the created order (with reference)
    */
   async placeOrder(input) {
-    const { customer, items, paymentMethod = "cod", discountCode = "" } = input || {};
+    const { customer, items, paymentMethod = "cod", discountCode = "", note = "" } = input || {};
 
     if (!Array.isArray(items) || items.length === 0) {
       throw new Error("Your cart is empty.");
@@ -88,14 +94,15 @@ class OrderService {
         items,
         paymentMethod,
         discountCode: discountCode || null,
+        note: String(note || "").trim().slice(0, 500) || null,
       });
     }
 
     /* ---- Demo: simulate server validation in the browser ---- */
-    return this._demoPlaceOrder({ customer, items, paymentMethod, discountCode });
+    return this._demoPlaceOrder({ customer, items, paymentMethod, discountCode, note });
   }
 
-  async _demoPlaceOrder({ customer, items, paymentMethod, discountCode }) {
+  async _demoPlaceOrder({ customer, items, paymentMethod, discountCode, note = "" }) {
     // 1. Re-load every product from the catalogue (never trust page state)
     const lines = [];
     let subtotal = 0;
@@ -105,7 +112,10 @@ class OrderService {
       if (!product || !product.active) {
         throw new Error(`"${line.name || line.productId}" is no longer available.`);
       }
-      const qty = Math.max(1, parseInt(line.quantity, 10) || 1);
+      const qty = Number(line.quantity);
+      if (!Number.isInteger(qty) || qty < 1) {
+        throw new Error(`Invalid quantity for "${product.name}".`);
+      }
       const stock = products.stockFor(product, line.variant || {});
       if (stock < qty) {
         throw stock <= 0
@@ -133,11 +143,9 @@ class OrderService {
     let discount = 0;
     const appliedCode = String(discountCode || "").trim().toUpperCase();
     if (appliedCode) {
-      const codes = settings.get("discountCodes", {}) || {};
-      const rule = codes[appliedCode];
+      const rule = settings.discountRule(appliedCode);
       if (!rule) throw new Error("That discount code is not valid.");
-      if (rule.type === "percent") discount = Math.round((subtotal * Number(rule.value)) / 100);
-      else discount = Math.min(Number(rule.value) || 0, subtotal);
+      discount = computeDiscount(subtotal, rule);
     }
 
     const total = Math.max(0, subtotal - discount) + deliveryCharge;
@@ -163,6 +171,7 @@ class OrderService {
       deliveryCharge,
       total,
       paymentMethod,
+      note: String(note || "").trim().slice(0, 500),
       history: [{ status: "pending", at: new Date().toISOString(), note: "Order placed" }],
     };
 
@@ -172,12 +181,9 @@ class OrderService {
     writeDemoOrders(all);
 
     try {
-      for (const line of lines) {
-        const p = await products.getProduct(line.productId);
-        if (p) {
-          await products.saveProduct({ ...p, stock: Math.max(0, p.stock - line.quantity) });
-        }
-      }
+      // Stock deltas only (product total + the chosen variant option) —
+      // the catalogue itself is never copied into localStorage.
+      products.recordSale(lines);
     } catch (e) {
       console.warn("Could not adjust demo stock", e);
     }
@@ -196,14 +202,16 @@ class OrderService {
     const ref = String(reference || "").trim().toUpperCase();
     const ph = String(phone || "").replace(/[^\d+]/g, "");
     if (!ref || !ph) throw new Error("Enter both your order reference and phone number.");
+    if (phoneKey(ph).length < 10) throw new Error("Please enter a valid phone number.");
 
     if (!CONFIG.demoMode) {
       return callFunction(CONFIG.backend.trackOrderFunction, { reference: ref, phone: ph });
     }
 
     // Demo: match locally against demo orders
+    // Compare the last 10 digits so 0300…, 300… and +92300… all match.
     const order = readDemoOrders().find(
-      (o) => o.reference.toUpperCase() === ref && o.customer.phone.replace(/\D/g, "") === ph.replace(/\D/g, "")
+      (o) => o.reference.toUpperCase() === ref && phoneKey(o.customer.phone) === phoneKey(ph)
     );
     if (!order) {
       throw new Error("No order matches that reference and phone number.");
@@ -323,21 +331,12 @@ class OrderService {
   /**
    * Notify the store owner about a new order.
    * In production this runs on the server (email/SMS provider).
-   * Here we log it and store the owner's WhatsApp link when configured —
-   * no invented notification claims.
    */
   _notifyAdmin(order) {
+    // Demo mode has no server to notify the owner. The confirmation page
+    // offers the customer a "Send order on WhatsApp" button instead (only
+    // when a WhatsApp number is configured) — nothing is faked here.
     console.info("[Maveliq] New demo order:", order.reference, order.total);
-    const wa = settings.contact.whatsapp;
-    if (!wa) return; // no configured channel — do nothing rather than pretend
-    try {
-      const text = encodeURIComponent(
-        `New Maveliq order ${order.reference}\nTotal: Rs ${order.total}\nCustomer: ${order.customer.fullName} (${order.customer.phone})`
-      );
-      // Store the intent; the confirmation page offers an explicit "notify owner" action
-      // rather than force-opening a tab.
-      store.set("pendingAdminNotify", { reference: order.reference, url: `https://wa.me/${String(wa).replace(/\D/g, "")}?text=${text}` });
-    } catch { /* non-critical */ }
   }
 }
 

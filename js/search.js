@@ -81,7 +81,7 @@ function renderSuggestions(box, items, term) {
       <img src="${escapeAttr(p.image)}" alt="" width="38" height="46" style="width:38px;height:46px;object-fit:cover;border-radius:6px;background:var(--c-bg-alt)" />
       <span style="flex:1;min-width:0">
         <span style="display:block;font-size:0.82rem;line-height:1.3">${escapeHtml(p.name)}</span>
-        <span style="display:block;font-size:0.72rem;color:var(--c-ink-mute)">${formatPrice(p.price)}</span>
+        <span style="display:block;font-size:0.75rem;color:var(--c-ink-mute)">${formatPrice(p.price)}</span>
       </span>
     </a>`
     )

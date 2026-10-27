@@ -8,6 +8,7 @@ import { CONFIG } from "./config.js";
 import { $, formatPrice, escapeHtml, escapeAttr, getParam, formatDateTime } from "./utils.js";
 import settings from "./services/settings-service.js";
 import orders from "./services/order-service.js";
+import { orderButtonMarkup, buildOrderMessage, openWhatsApp, whatsappEnabled } from "./whatsapp.js";
 
 /* ---------- Status label -------------------------------------------------- */
 
@@ -34,9 +35,15 @@ export async function initConfirmation() {
   let order = null;
 
   try {
-    // checkout.js always writes the full placed order here (demo AND
-    // production), so this is the single source for the confirmation screen.
-    const stored = localStorage.getItem("maveliq:last_order");
+    // checkout.js writes the placed order to sessionStorage (demo AND
+    // production) — it disappears when the tab closes, so customer details
+    // are not left in the browser. Older builds used localStorage: migrate.
+    const legacy = localStorage.getItem("maveliq:last_order");
+    if (legacy) {
+      if (!sessionStorage.getItem("maveliq:last_order")) sessionStorage.setItem("maveliq:last_order", legacy);
+      localStorage.removeItem("maveliq:last_order");
+    }
+    const stored = sessionStorage.getItem("maveliq:last_order");
     order = stored ? JSON.parse(stored) : null;
 
     if (ref && (!order || order.reference !== ref)) {
@@ -62,10 +69,7 @@ export async function initConfirmation() {
   }
 
   const d = settings.delivery;
-  const notify = (() => {
-    try { return JSON.parse(localStorage.getItem("maveliq:pendingAdminNotify") || "null"); }
-    catch { return null; }
-  })();
+  localStorage.removeItem("maveliq:pendingAdminNotify");   // obsolete key from older builds
 
   host.innerHTML = `
     <div class="order-detail-grid">
@@ -79,6 +83,7 @@ export async function initConfirmation() {
           ${order.customer.email ? `<br />${escapeHtml(order.customer.email)}` : ""}
         </p>
         ${order.customer.instructions ? `<p style="margin-top:10px"><strong>Instructions:</strong> ${escapeHtml(order.customer.instructions)}</p>` : ""}
+        ${order.note ? `<p style="margin-top:10px"><strong>Order note:</strong> ${escapeHtml(order.note)}</p>` : ""}
       </div>
 
       <div class="info-block">
@@ -123,8 +128,9 @@ export async function initConfirmation() {
     <div class="alert alert--info" style="margin-top:24px">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="10"/><path d="M12 16v-5M12 8h.01"/></svg>
       <div>
-        <strong>What happens next?</strong>
-        <p>We will contact you on ${escapeHtml(order.customer.phone)} to confirm the order, then dispatch it via your chosen courier. Estimated delivery: ${escapeHtml(d.estimatedDays)}. Keep your reference number to track the order any time.</p>
+        <strong>What Happens Next?</strong>
+        <p>Your order will be processed according to our order and delivery procedures. Any further status updates will depend on the actual progress of your order.</p>
+        <p>If you need assistance, contact Maveliq and provide your order reference.</p>
       </div>
     </div>
 
@@ -132,23 +138,29 @@ export async function initConfirmation() {
       CONFIG.demoMode
         ? `<div class="alert alert--warning" style="margin-top:16px">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-            <div><strong>Demo order</strong><p>This order was saved only in this browser to demonstrate the flow. Connect a real backend (see README → "Backend (later)") before accepting customer orders.</p></div>
+            <div><strong>Demo order</strong><p>This order was saved only in this browser — it has not reached the store yet.${whatsappEnabled() ? " Tap “Send order details on WhatsApp” below so our team receives it." : " Connect a real backend (see README → “Backend (later)”) before accepting customer orders."}</p></div>
           </div>`
         : ""
     }
 
     <div class="btn-row" style="margin-top:28px">
-      <a class="btn btn--primary" href="track-order.html?ref=${encodeURIComponent(order.reference)}">Track this order</a>
-      ${
-        notify && notify.url
-          ? `<a class="btn btn--outline" href="${escapeAttr(notify.url)}" target="_blank" rel="noopener noreferrer">Contact us about this order</a>`
-          : ""
-      }
+      <a class="btn btn--primary" href="track-order.html?ref=${encodeURIComponent(order.reference)}">Track Your Order</a>
+      ${orderButtonMarkup("waSendOrder", "Send order details on WhatsApp")}
       <button class="btn btn--outline" type="button" id="printOrder">Print / Save PDF</button>
-      <a class="btn btn--ghost" href="shop.html">Continue shopping →</a>
+      <a class="btn btn--ghost" href="shop.html">Continue Shopping →</a>
     </div>`;
 
   $("#printOrder")?.addEventListener("click", () => window.print());
+
+  $("#waSendOrder")?.addEventListener("click", () => {
+    openWhatsApp(buildOrderMessage(order.items, {
+      subtotal: order.subtotal,
+      discount: order.discount,
+      discountCode: order.discountCode,
+      delivery: order.deliveryCharge,
+      total: order.total,
+    }, { reference: order.reference, customer: order.customer, note: order.note }));
+  });
 
   // Fill the hero reference block
   const refEl = $("#orderRef");

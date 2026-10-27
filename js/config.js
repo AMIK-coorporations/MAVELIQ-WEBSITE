@@ -9,7 +9,7 @@ export const CONFIG = {
   /* ---- Brand --------------------------------------------------------- */
   businessName: "MAVELIQ",          // Official brand name (all caps usage)
   displayName: "Maveliq",           // Title-case display name
-  tagline: "Beauty & Personal Care",
+  tagline: "Beauty, Care & Everyday Essentials.",   // owner-approved (CONTENT-SPEC)
   currency: "PKR",
   locale: "en-PK",
   market: "Pakistan",
@@ -59,38 +59,54 @@ export const CONFIG = {
 
   /* ---- Contact (owner supplies the real values) ----------------------- */
   // Leave any field empty ("") and its button/link is automatically hidden.
+  // The WhatsApp number also powers "Order on WhatsApp" (product page + cart)
+  // and the floating chat button — all of them stay hidden while it is empty.
   contact: {
-    phone: "",            // e.g. "+92 300 1234567"
-    whatsapp: "",         // e.g. "923001234567" (digits only, with country code)
-    email: "",            // e.g. "support@maveliq.com"
-    address: "",
-    city: "",
-    supportHours: "",
+    phone: "",            // TODO owner: verified phone, e.g. "+92 300 1234567"
+    whatsapp: "",         // TODO owner: WhatsApp number, digits only with country code, e.g. "923001234567"
+    email: "",            // TODO owner: working support email, e.g. "support@maveliq.com"
+    address: "",          // TODO owner: business address (optional — leave empty to hide)
+    city: "",             // TODO owner: city (optional)
+    supportHours: "",     // TODO owner: e.g. "Mon–Sat, 10am–8pm" or "24/7" — shown only when set
   },
 
   /* ---- Social profiles (owner supplies the real URLs) ----------------- */
   // Any empty URL is hidden automatically — never rendered as a dead link.
   social: {
-    whatsapp:   "",
-    instagram:  "",
-    facebook:   "",
-    tiktok:     "",
-    youtube:    "",
-    other:      "",   // any other owner-approved platform
+    whatsapp:   "",   // TODO owner: WhatsApp channel/number (optional)
+    instagram:  "",   // TODO owner: Instagram profile URL
+    facebook:   "",   // TODO owner: Facebook page URL
+    tiktok:     "",   // TODO owner: TikTok profile URL
+    youtube:    "",   // TODO owner: YouTube channel URL
+    other:      "",   // TODO owner: any other owner-approved platform URL
     otherLabel: "",
   },
 
+  /* ---- Returns -------------------------------------------------------- */
+  // The returns window is NOT invented: while windowDays is empty the site
+  // says "see our returns policy" instead of quoting a number.
+  returns: {
+    windowDays: "",       // TODO owner: number of days after delivery, e.g. "7"
+  },
+
+  /* ---- Analytics (optional) ------------------------------------------- */
+  // Google Analytics 4 measurement ID, e.g. "G-XXXXXXXXXX". Empty = no
+  // analytics script is loaded at all. Update the privacy policy before enabling.
+  gaMeasurementId: "",    // TODO owner: your own GA4 ID (optional)
+
   /* ---- Partnerships ---------------------------------------------------- */
-  // DIEDEI 3D section ships UNPUBLISHED. Publish only after the relationship is
-  // confirmed in writing and approved copy/logo are supplied via admin Settings.
+  // DIEFEI 3D partnership. The copy below is the owner-approved text from
+  // CONTENT-SPEC.md (homepage section + diefei-3d.html). Logo and external
+  // link are added only once the owner supplies them.
   partnerships: {
-    diedei3d: {
-      published: false,          // keep false until verified
-      name: "DIEDEI 3D",
-      logo: "",
-      description: "",
-      url: "",
+    diefei3d: {
+      published: true,
+      name: "DIEFEI 3D",
+      logo: "",                  // TODO owner: approved DIEFEI 3D logo path/URL
+      description: "Maveliq partners with DIEFEI 3D to bring selected DIEFEI 3D products to our customers. Through this partnership, we aim to make these products easier to discover and explore alongside our beauty and personal-care collection.",
+      url: "",                   // TODO owner: approved external link (optional)
       scope: "",
+      page: "diefei-3d.html",
     },
   },
 
@@ -112,13 +128,14 @@ export const CONFIG = {
 
   /* ---- Homepage content (editable in admin → Settings) ----------------- */
   home: {
-    heroEyebrow: "Pakistan's beauty destination",
-    heroTitle: "Beauty that feels",
-    heroTitleAccent: "like you",
-    heroText: "Discover skincare, fragrance and colour cosmetics chosen for everyday routines — with clear prices in PKR and delivery across Pakistan.",
-    heroCta: "Shop Now",
-    heroSecondaryCta: "Browse Categories",
-    announcement: "Delivery across Pakistan · Cash on Delivery available",
+    // Owner-approved copy (CONTENT-SPEC.md → Page 1)
+    heroEyebrow: "YOUR BEAUTY, YOUR WAY",
+    heroTitle: "Discover Beauty That Fits",
+    heroTitleAccent: "Your Everyday Life",
+    heroText: "Explore a thoughtfully organized collection of makeup, skincare, cosmetics, and personal-care essentials at Maveliq. From everyday beauty basics to products for your personal-care routine, discover options for different preferences and occasions.",
+    heroCta: "Shop All Products",
+    heroSecondaryCta: "Explore Categories",
+    announcement: "Discover beauty and personal-care essentials at Maveliq.",
   },
 
   /* ---- Admin ----------------------------------------------------------- */

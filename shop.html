@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shop | Maveliq — Beauty &amp; Personal Care</title>
-  <meta name="description" content="Browse the full Maveliq catalogue — skincare, fragrance, lip makeup, hair care and personal care. Search, filter by category and price, and sort your way." />
+  <meta name="description" content="Browse the full Maveliq catalogue — lipsticks, face washes, skincare, perfumes, makeup, hair colour and personal care, including DIEFEI 3D products. Prices in PKR." />
   <link rel="canonical" href="https://www.maveliq.com/shop.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Maveliq" />
   <meta property="og:title" content="Shop | Maveliq" />
   <meta property="og:description" content="Browse the full Maveliq beauty and personal-care catalogue." />
-  <meta property="og:image" content="https://www.maveliq.com/assets/images/hero.svg" />
+  <meta property="og:image" content="https://www.maveliq.com/assets/images/og-image.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
 
@@ -43,8 +43,8 @@
 
     <section class="page-hero">
       <div class="container">
-        <h1>Shop Beauty, Skincare and Personal-Care Essentials</h1>
-        <p>Explore the Maveliq range — skincare, fragrance, lip makeup, hair care and everyday personal care. Search and filter by category, brand, price and availability. All prices in PKR.</p>
+        <h1 id="shopTitle">Shop Beauty, Skincare and Personal-Care Essentials</h1>
+        <p id="shopLead">Explore the Maveliq catalogue to discover available beauty and personal-care products. Browse by category, search for a particular item, and compare product details and prices before ordering.</p>
       </div>
     </section>
 
@@ -58,14 +58,15 @@
 
         <!-- ============ Results ============ -->
         <div class="shop-results">
+          <div class="category-intro" id="categoryIntro" hidden></div>
           <form class="search-field" id="shopSearchForm" role="search" style="margin-bottom:16px">
             <label class="sr-only" for="shopSearchInput">Search products</label>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-            <input class="input" id="shopSearchInput" type="search" placeholder="Search by product name, brand or category…" autocomplete="off" />
+            <input class="input" id="shopSearchInput" type="search" placeholder="Search products, categories, or brands..." autocomplete="off" />
           </form>
 
           <div class="shop-toolbar">
-            <span class="shop-toolbar__count" id="resultsCount">Loading products…</span>
+            <span class="shop-toolbar__count" id="resultsCount">Loading products. Please wait.</span>
             <div class="shop-toolbar__right">
               <button class="btn btn--outline btn--sm filters-toggle" type="button" id="filtersToggle">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
@@ -73,11 +74,11 @@
               </button>
               <label class="sr-only" for="sortSelect">Sort products</label>
               <select class="select" id="sortSelect">
-                <option value="featured">Featured</option>
-                <option value="newest">Newest</option>
-                <option value="price-asc">Lowest price</option>
-                <option value="price-desc">Highest price</option>
-                <option value="rating">Top rated</option>
+                <option value="featured">Featured Products</option>
+                <option value="newest">Newest Arrivals</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Customer Rating</option>
                 <option value="name">Name A–Z</option>
               </select>
             </div>

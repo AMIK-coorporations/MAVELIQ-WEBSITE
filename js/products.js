@@ -10,6 +10,8 @@ import settings from "./services/settings-service.js";
 import products from "./services/product-service.js";
 import { Cart } from "./cart.js";
 import { cardRatingMarkup } from "./reviews.js";
+import { wishButtonMarkup, syncWishlistUI } from "./wishlist.js";
+import { whatsappEnabled } from "./whatsapp.js";
 
 /* ==========================================================================
    Product card
@@ -29,17 +31,21 @@ export function productCard(p, opts = {}) {
   const badges = [
     off > 0 ? `<span class="badge badge--sale">−${off}%</span>` : "",
     p.isNew ? `<span class="badge badge--new">New</span>` : "",
-    status === "out" ? `<span class="badge badge--out">Sold out</span>` : status === "low" ? `<span class="badge badge--low">Low stock</span>` : "",
+    status === "out" ? `<span class="badge badge--out">Out of Stock</span>` : status === "low" ? `<span class="badge badge--low">Limited Stock</span>` : "",
   ].filter(Boolean).join("");
 
+  const hasOptions = (p.variants || []).length > 0;
   const quickAdd = status === "out"
-    ? `<button class="btn btn--outline" type="button" disabled>Sold out</button>`
-    : `<button class="btn btn--primary" type="button" data-quick-add="${escapeAttr(p.id)}">Add to cart</button>`;
+    ? `<button class="btn btn--outline" type="button" disabled>Out of Stock</button>`
+    : hasOptions
+      ? `<a class="btn btn--primary" href="product.html?id=${encodeURIComponent(p.id)}">Choose Options</a>`
+      : `<button class="btn btn--primary" type="button" data-quick-add="${escapeAttr(p.id)}">Add to Cart</button>`;
 
   return `
   <article class="product-card" data-product-id="${escapeAttr(p.id)}">
     <div class="product-card__media">
       ${badges ? `<div class="product-card__badges">${badges}</div>` : ""}
+      ${wishButtonMarkup(p, "product-card__wish")}
       <a href="product.html?id=${encodeURIComponent(p.id)}" tabindex="-1" aria-hidden="true">
         <img src="${escapeAttr(img)}" alt="${escapeAttr(p.altText || p.name)}"
              ${lazy ? 'loading="lazy"' : ""} decoding="async" width="600" height="750" />
@@ -52,6 +58,7 @@ export function productCard(p, opts = {}) {
       ${cardRatingMarkup(p)}
       <div class="product-card__price">
         <span class="price">${formatPrice(p.price)}</span>
+        ${(p.variants || []).some((g) => g.options.some((o) => Number(o.priceDelta) > 0)) ? `<span class="price-from">from</span>` : ""}
         ${p.compareAtPrice && p.compareAtPrice > p.price ? `<span class="price price--old">${formatPrice(p.compareAtPrice)}</span>` : ""}
       </div>
     </div>
@@ -83,8 +90,8 @@ export async function renderProductGrid(container, items, opts = {}) {
       <div class="empty-state" style="grid-column:1/-1">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
         <h3>No products found</h3>
-        <p>Try a different search term, or clear your filters to see the full catalogue.</p>
-        <a class="btn btn--primary" href="shop.html">View all products</a>
+        <p>No products matched your search. Try another search term or adjust your filters.</p>
+        <a class="btn btn--primary" href="shop.html">Browse All Products</a>
       </div>`;
     container.dispatchEvent(new CustomEvent("maveliq:grid-rendered"));
     return;
@@ -111,9 +118,10 @@ export async function renderProductGrid(container, items, opts = {}) {
           window.location.href = `product.html?id=${encodeURIComponent(id)}`;
           return;
         }
-        Cart.add(product, {}, 1);
-        btn.textContent = "Added ✓";
-        setTimeout(() => (btn.textContent = "Add to cart"), 1400);
+        if (Cart.add(product, {}, 1)) {
+          btn.textContent = "Added ✓";
+          setTimeout(() => (btn.textContent = "Add to Cart"), 1400);
+        }
       } catch (err) {
         console.error(err);
         toast("Could not add to cart. Please try again.", "error");
@@ -121,6 +129,7 @@ export async function renderProductGrid(container, items, opts = {}) {
     });
   });
 
+  syncWishlistUI();
   container.dispatchEvent(new CustomEvent("maveliq:grid-rendered"));
 }
 
@@ -139,10 +148,25 @@ export async function renderHomeSections() {
 
   const jobs = [];
 
+  const bundlesEl = $("#bundlesGrid");
+
+  /* Sections that could only be filled with invented data stay hidden:
+     best sellers need real order data or owner flags, offers need a genuine
+     compare-at price. */
+  const fillOrHide = (el, list) => {
+    const section = el.closest("[data-optional-section]");
+    if (!list.length && section) { section.hidden = true; return; }
+    if (section) section.hidden = false;
+    return renderProductGrid(el, list);
+  };
+
   if (featuredEl) jobs.push(products.getFeatured(8).then((l) => renderProductGrid(featuredEl, l)));
-  if (newArrivalsEl) jobs.push(products.getNewArrivals(4).then((l) => renderProductGrid(newArrivalsEl, l)));
-  if (bestEl) jobs.push(products.getBestSellers(4).then((l) => renderProductGrid(bestEl, l)));
-  if (offersEl) jobs.push(products.getOffers(4).then((l) => renderProductGrid(offersEl, l)));
+  if (newArrivalsEl) jobs.push(products.getNewArrivals(4).then((l) => fillOrHide(newArrivalsEl, l)));
+  if (bundlesEl) jobs.push(products.getProductsByCategory("bundles-kits").then((l) => fillOrHide(bundlesEl, l.slice(0, 8))));
+  if (bestEl) {
+    jobs.push(products.getProducts().then((all) => fillOrHide(bestEl, all.filter((p) => p.isBestSeller).slice(0, 4))));
+  }
+  if (offersEl) jobs.push(products.getOffers(4).then((l) => fillOrHide(offersEl, l)));
 
   if (catsEl) {
     jobs.push(
@@ -178,10 +202,68 @@ export async function renderHomeSections() {
   const cta2 = $("#heroCta2");
   if (cta2 && h.heroSecondaryCta) cta2.textContent = h.heroSecondaryCta;
 
+  renderTrustStrip();
   renderPartnershipBand();
 }
 
-/** Partnership block — rendered ONLY when published with approved copy. */
+/** Homepage trust strip — every claim comes from settings, nothing invented. */
+export function renderTrustStrip() {
+  const host = $("#trustStrip");
+  if (!host) return;
+  const d = settings.delivery;
+  const cod = settings.payments?.cod?.enabled;
+  const days = String(settings.returns?.windowDays || "").trim();
+  const c = settings.contact;
+  const rs = (n) => `Rs ${Number(n).toLocaleString(CONFIG.locale)}`;
+
+  const items = [];
+  items.push({
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="6" width="15" height="11" rx="2"/><path d="M16 10h4l3 3v4h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>',
+    title: Number(d.freeOver) > 0 ? `Free delivery over ${rs(d.freeOver)}` : "Delivery across Pakistan",
+    text: Number(d.freeOver) > 0
+      ? `Orders below that ship for ${rs(d.charge)} · ${d.estimatedDays}`
+      : `${Number(d.charge) > 0 ? `Flat ${rs(d.charge)}` : "Charges shown at checkout"} · ${d.estimatedDays}`,
+  });
+  if (cod) {
+    items.push({
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 12h.01M18 12h.01"/></svg>',
+      title: "Cash on Delivery",
+      text: "Pay when your order arrives",
+    });
+  }
+  if (whatsappEnabled()) {
+    items.push({
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+      title: c.supportHours ? `WhatsApp support · ${c.supportHours}` : "WhatsApp support",
+      text: "Order or ask a question on WhatsApp",
+      href: "contact.html",
+    });
+  } else {
+    items.push({
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+      title: "Customer support",
+      text: "Questions about a product or order? We're here to help",
+      href: "contact.html",
+    });
+  }
+  items.push({
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/></svg>',
+    title: "Easy returns",
+    text: days ? `Request a return within ${days} days of delivery` : "Clear process — see our returns policy",
+    href: "returns-policy.html",
+  });
+
+  host.innerHTML = items
+    .map((it) => {
+      const inner = `${it.icon}<div><strong>${escapeHtml(it.title)}</strong><span>${escapeHtml(it.text)}</span></div>`;
+      return it.href
+        ? `<a class="value-item value-item--link" href="${escapeAttr(it.href)}">${inner}</a>`
+        : `<div class="value-item">${inner}</div>`;
+    })
+    .join("");
+}
+
+/** DIEFEI 3D partnership band (owner-approved copy from CONTENT-SPEC). */
 export function renderPartnershipBand() {
   const host = $("#partnershipBand");
   if (!host) return;
@@ -195,17 +277,23 @@ export function renderPartnershipBand() {
   host.innerHTML = list
     .map(
       (p) => `
-    <div class="partner-band">
-      <div class="partner-band__logo">
-        ${p.logo ? `<img src="${escapeAttr(p.logo)}" alt="${escapeHtml(p.name)} logo" />` : `<strong>${escapeHtml(p.name.slice(0, 2))}</strong>`}
+    <div class="container">
+      <div class="partner-band">
+        <div class="partner-band__logo">
+          ${p.logo ? `<img src="${escapeAttr(p.logo)}" alt="${escapeAttr(p.name)} logo" />` : `<strong>${escapeHtml(p.name.replace(/\s+/g, "").slice(0, 2))}</strong>`}
+        </div>
+        <div>
+          <span class="section-head__eyebrow">Our Partnership</span>
+          <h2 class="partner-band__title">Discover ${escapeHtml(p.name)} Products at ${escapeHtml(settings.displayName)}</h2>
+          <p class="text-soft">${escapeHtml(p.description)}</p>
+          <p class="text-soft">Browse the available ${escapeHtml(p.name)} products to learn about their features, intended uses, and current availability. Each product listing provides relevant information to help you understand what you are purchasing.</p>
+        </div>
+        <div class="btn-row partner-band__actions">
+          <a class="btn btn--primary" href="shop.html?brand=${encodeURIComponent(p.name)}">Explore ${escapeHtml(p.name)} Products</a>
+          ${p.page ? `<a class="btn btn--outline" href="${escapeAttr(p.page)}">Learn About Our Partnership</a>` : ""}
+          ${p.url ? `<a class="btn btn--ghost" href="${escapeAttr(p.url)}" target="_blank" rel="noopener noreferrer">Visit partner</a>` : ""}
+        </div>
       </div>
-      <div>
-        <span class="section-head__eyebrow">Our Partnerships</span>
-        <h3 style="margin-bottom:6px">${escapeHtml(p.name)}</h3>
-        <p class="text-soft" style="font-size:0.875rem;margin:0">${escapeHtml(p.description)}</p>
-        ${p.scope ? `<p class="price-note" style="margin-top:6px">Scope: ${escapeHtml(p.scope)}</p>` : ""}
-      </div>
-      ${p.url ? `<a class="btn btn--outline" href="${escapeAttr(p.url)}" target="_blank" rel="noopener noreferrer">Visit partner</a>` : ""}
     </div>`
     )
     .join("");
@@ -273,6 +361,7 @@ export async function initShop() {
 
   readUrl();
   if (searchInput) searchInput.value = state.q;
+  const introEl = $("#categoryIntro");
   if (sortEl) sortEl.value = state.sort;
 
   // Build the filter sidebar from faceted data
@@ -294,20 +383,23 @@ export async function initShop() {
     try {
       const result = await products.query(state);
       if (countEl) {
-        countEl.innerHTML = `<strong>${result.total}</strong> product${result.total === 1 ? "" : "s"}${state.q ? ` for “${escapeHtml(state.q)}”` : ""}`;
+        countEl.innerHTML = `<strong>${result.total}</strong> product${result.total === 1 ? "" : "s"}${state.q ? ` — search results for: “${escapeHtml(state.q)}”` : ""}`;
       }
       await renderProductGrid(resultsEl, result.items, { showSkeletons: false });
       renderPagination(paginationEl, result, (p) => { state.page = p; run(); });
       renderActiveFilters(activeFiltersEl, () => run({ resetPage: true }));
+      const landing = renderCategoryIntro(introEl, facetData.categories);
       document.title = state.q
-        ? `${state.q} — Search | ${settings.displayName}`
-        : `Shop | ${settings.displayName} — Beauty & Personal Care`;
+        ? `Search results for: ${state.q} | ${settings.displayName}`
+        : landing
+          ? `${landing.name} | ${settings.displayName} — Shop Online in Pakistan`
+          : `Shop | ${settings.displayName} — Beauty & Personal Care`;
     } catch (e) {
       console.error(e);
       resultsEl.innerHTML = `
         <div class="empty-state" style="grid-column:1/-1">
           <h3>Catalogue unavailable</h3>
-          <p>We could not load the product list. Please refresh the page and try again.</p>
+          <p>We could not load the products right now. Please try again later.</p>
           <button class="btn btn--primary" type="button" onclick="location.reload()">Reload</button>
         </div>`;
     }
@@ -380,6 +472,50 @@ export async function initShop() {
   });
 
   await run();
+}
+
+/* ---------- Category landing intro ------------------------------------------------
+   When exactly one category is selected (shop.html?category=lipsticks) the shop
+   page doubles as that category's landing page: its own heading, intro copy,
+   meta description and canonical URL. One HTML file, many landing pages. */
+
+let defaultHero = null;
+
+function renderCategoryIntro(el, categories) {
+  const heroTitle = $("#shopTitle");
+  const heroText = $("#shopLead");
+  if (heroTitle && !defaultHero) defaultHero = { title: heroTitle.textContent, text: heroText?.textContent || "" };
+
+  const single = state.categories.length === 1 && !state.brands.length && !state.q
+    ? (categories || []).find((c) => c.id === state.categories[0])
+    : null;
+  const brandOnly = !single && state.brands.length === 1 && !state.categories.length && !state.q ? state.brands[0] : "";
+
+  const canonical = document.querySelector('link[rel="canonical"]');
+  const metaDesc = document.querySelector('meta[name="description"]');
+
+  if (single) {
+    if (heroTitle) heroTitle.textContent = single.name;
+    if (heroText) heroText.textContent = single.description;
+    if (el) {
+      el.hidden = !single.intro?.length;
+      el.innerHTML = (single.intro || []).map((t) => `<p>${escapeHtml(t)}</p>`).join("");
+    }
+    if (canonical) canonical.href = `${CONFIG.siteUrl}/shop.html?category=${encodeURIComponent(single.id)}`;
+    if (metaDesc) metaDesc.setAttribute("content", `${single.name} at ${settings.displayName}: ${single.description} Prices in PKR with delivery across Pakistan.`);
+    return single;
+  }
+
+  if (brandOnly) {
+    if (heroTitle) heroTitle.textContent = `${brandOnly} Products`;
+    if (heroText) heroText.textContent = `Discover the selected ${brandOnly} products available at ${settings.displayName}. Open any listing for its description, options, price and availability.`;
+  } else if (defaultHero) {
+    if (heroTitle) heroTitle.textContent = defaultHero.title;
+    if (heroText) heroText.textContent = defaultHero.text;
+  }
+  if (el) { el.hidden = true; el.innerHTML = ""; }
+  if (canonical) canonical.href = `${CONFIG.siteUrl}/shop.html`;
+  return null;
 }
 
 /* ---------- Filter UI builders --------------------------------------------------- */

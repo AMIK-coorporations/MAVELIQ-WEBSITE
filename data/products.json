@@ -1,468 +1,2211 @@
 {
-  "_note": "DEMONSTRATION DATA ONLY. Replace with the owner's real catalogue, photography, prices and stock before launch. Descriptions below are neutral placeholders — do not publish ingredient, authenticity or certification claims that have not been verified.",
+  "_note": "MAVELIQ catalogue: DIEFEI 3D products offered through the Maveliq x DIEFEI 3D partnership. Names, sizes, shade lists and prices (PKR) come from the supplier's published catalogue; descriptions are Maveliq's own wording. Stock figures are placeholders (50 per available variant, 0 when the supplier lists it as sold out) until the owner sets real inventory.",
   "products": [
     {
-      "id": "mv-1001",
-      "name": "Velvet Matte Lipstick — Rosewood",
-      "slug": "velvet-matte-lipstick-rosewood",
-      "categoryId": "lip-makeup",
-      "brand": "Maveliq",
-      "sku": "MV-LIP-1001",
-      "price": 1250,
-      "compareAtPrice": 1600,
-      "stock": 24,
+      "id": "mv-2029",
+      "name": "DIEFEI 3D 4-Piece Matte Lipstick Set",
+      "slug": "matte-lipstick-set-4-piece",
+      "categoryId": "lipsticks",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2029",
+      "price": 800,
+      "compareAtPrice": null,
+      "stock": 400,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-lip-1.svg", "assets/images/ph-lip-2.svg"],
-      "altText": "Velvet matte lipstick in Rosewood shade, bullet shown beside its cap",
-      "shortDescription": "A smooth matte lipstick with even, buildable colour.",
-      "description": "A velvet matte lipstick designed for comfortable everyday wear. The formula glides on smoothly and delivers even, buildable colour in a single stroke. This demonstration entry shows how shade variants, pricing and stock behave in the catalogue — replace with the owner's approved product copy and photography.",
+      "images": [
+        "assets/images/products/matte-lipstick-set-4-piece-1.webp",
+        "assets/images/products/matte-lipstick-set-4-piece-2.webp",
+        "assets/images/products/matte-lipstick-set-4-piece-3.webp",
+        "assets/images/products/matte-lipstick-set-4-piece-4.webp"
+      ],
+      "altText": "DIEFEI 3D 4-Piece Matte Lipstick Set product photo",
+      "shortDescription": "Four matte lipsticks in one set, with eight shade combinations.",
+      "description": "A set of four creamy matte lipsticks. Choose a combination by its shade numbers to get a mix of everyday, evening and statement colours in one purchase. A practical set for yourself or as a gift.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
+      "variants": [
+        {
+          "name": "Shade set",
+          "required": true,
+          "options": [
+            {
+              "label": "1-2-3-16",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "5-6-27-15",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "7-11-12-20",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "21-31-33-38",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "23-34-40-48",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "32-35-27-41",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "44-36-54-42",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "28-47-49-45",
+              "priceDelta": 0,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-26",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "4-piece-matte-lipstick-set-long-lasting-bold-color-for-all-skin-tones"
+      }
+    },
+    {
+      "id": "mv-2063",
+      "name": "DIEFEI 3D Lip Pencil",
+      "slug": "lip-pencil",
+      "categoryId": "lipsticks",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2063",
+      "price": 120,
+      "compareAtPrice": null,
+      "stock": 550,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/lip-pencil-1.webp",
+        "assets/images/products/lip-pencil-2.webp",
+        "assets/images/products/lip-pencil-3.webp",
+        "assets/images/products/lip-pencil-4.webp"
+      ],
+      "altText": "DIEFEI 3D Lip Pencil product photo",
+      "shortDescription": "A creamy lip liner pencil in 14 shades.",
+      "description": "A smooth-gliding lip pencil for defining, shaping and filling in the lips. Use it under lipstick to help colour stay in place, or alone for a soft matte look. Sharpen regularly for a precise line.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
       "variants": [
         {
           "name": "Shade",
           "required": true,
           "options": [
-            { "label": "Rosewood", "priceDelta": 0, "stock": 10, "swatch": "#A86B62" },
-            { "label": "Ruby", "priceDelta": 0, "stock": 8, "swatch": "#9E2B33" },
-            { "label": "Coral Pink", "priceDelta": 0, "stock": 6, "swatch": "#E0917F" }
+            {
+              "label": "1001",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1004",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1031",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1032",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1036",
+              "priceDelta": 0,
+              "stock": 0
+            },
+            {
+              "label": "1037",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1038",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1040",
+              "priceDelta": 0,
+              "stock": 0
+            },
+            {
+              "label": "1041",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1043",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1047",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1049",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1052",
+              "priceDelta": 0,
+              "stock": 0
+            },
+            {
+              "label": "1053",
+              "priceDelta": 0,
+              "stock": 50
+            }
           ]
         }
       ],
-      "rating": null,
-      "featured": true,
-      "isNew": true,
-      "isBestSeller": false,
-      "active": true,
-      "createdAt": "2025-01-18"
-    },
-    {
-      "id": "mv-1002",
-      "name": "Satin Lip Gloss — Champagne",
-      "slug": "satin-lip-gloss-champagne",
-      "categoryId": "lip-makeup",
-      "brand": "Maveliq",
-      "sku": "MV-LIP-1002",
-      "price": 990,
-      "compareAtPrice": null,
-      "stock": 31,
-      "lowStockThreshold": 5,
-      "images": ["assets/images/ph-lip-2.svg", "assets/images/ph-lip-1.svg"],
-      "altText": "Satin lip gloss tube in Champagne with doe-foot applicator",
-      "shortDescription": "A glossy, non-sticky finish in a soft champagne tone.",
-      "description": "A lightweight lip gloss with a satin finish and comfortable, non-sticky feel. Wears beautifully alone or layered over lipstick. Demonstration data — replace with verified product details.",
-      "variants": [],
-      "rating": null,
-      "featured": false,
-      "isNew": true,
-      "isBestSeller": false,
-      "active": true,
-      "createdAt": "2025-02-04"
-    },
-    {
-      "id": "mv-1003",
-      "name": "Gentle Foaming Face Wash",
-      "slug": "gentle-foaming-face-wash",
-      "categoryId": "face-wash",
-      "brand": "Maveliq",
-      "sku": "MV-CLN-1003",
-      "price": 1450,
-      "compareAtPrice": 1750,
-      "stock": 40,
-      "lowStockThreshold": 6,
-      "images": ["assets/images/ph-cleanser-1.svg", "assets/images/ph-cleanser-2.svg"],
-      "altText": "Foaming face wash pump bottle on a neutral background",
-      "shortDescription": "A daily foaming cleanser that rinses clean without tightness.",
-      "description": "A gentle foaming cleanser for daily use. Cleanses away dirt, excess oil and surface impurities while leaving skin feeling soft rather than stripped. Demonstration data — replace with the owner's approved description and label details.",
-      "variants": [
-        {
-          "name": "Size",
-          "required": true,
-          "options": [
-            { "label": "150 ml", "priceDelta": 0, "stock": 25 },
-            { "label": "300 ml", "priceDelta": 700, "stock": 15 }
-          ]
-        }
-      ],
-      "rating": null,
-      "featured": true,
-      "isNew": false,
-      "isBestSeller": true,
-      "active": true,
-      "createdAt": "2024-11-22"
-    },
-    {
-      "id": "mv-1004",
-      "name": "Micellar Cleansing Water",
-      "slug": "micellar-cleansing-water",
-      "categoryId": "face-wash",
-      "brand": "Maveliq",
-      "sku": "MV-CLN-1004",
-      "price": 1650,
-      "compareAtPrice": null,
-      "stock": 18,
-      "lowStockThreshold": 5,
-      "images": ["assets/images/ph-cleanser-2.svg", "assets/images/ph-cleanser-1.svg"],
-      "altText": "Micellar cleansing water bottle with cap",
-      "shortDescription": "No-rinse micellar water for makeup removal and quick cleansing.",
-      "description": "A no-rinse micellar water that lifts away makeup and daily impurities with a cotton pad. Suitable for a quick morning or evening cleanse. Demonstration data — replace with verified details.",
-      "variants": [],
       "rating": null,
       "featured": false,
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-12-10"
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-lip-pencil-long-lasting-smooth-glide-lip-linear"
+      }
     },
     {
-      "id": "mv-1005",
-      "name": "Hydrating Facial Moisturiser",
-      "slug": "hydrating-facial-moisturiser",
-      "categoryId": "facial-skincare",
-      "brand": "Maveliq",
-      "sku": "MV-SKN-1005",
-      "price": 2100,
-      "compareAtPrice": 2500,
-      "stock": 22,
+      "id": "mv-2062",
+      "name": "DIEFEI 3D Matte Lipstick",
+      "slug": "3d-matte-lipstick",
+      "categoryId": "lipsticks",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2062",
+      "price": 220,
+      "compareAtPrice": null,
+      "stock": 2750,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-skincare-1.svg", "assets/images/ph-skincare-2.svg"],
-      "altText": "Facial moisturiser jar with lid removed, placed on neutral surface",
-      "shortDescription": "A light daily moisturiser that leaves skin feeling soft and supple.",
-      "description": "A lightweight facial moisturiser for morning and evening use. Absorbs quickly and leaves skin feeling soft and comfortable under makeup. Demonstration data — replace with the owner's approved copy, ingredients and usage instructions.",
+      "images": [
+        "assets/images/products/3d-matte-lipstick-1.webp",
+        "assets/images/products/3d-matte-lipstick-2.webp",
+        "assets/images/products/3d-matte-lipstick-3.webp",
+        "assets/images/products/3d-matte-lipstick-4.webp"
+      ],
+      "altText": "DIEFEI 3D Matte Lipstick product photo",
+      "shortDescription": "A velvet-matte lipstick available in 55 numbered shades.",
+      "description": "A matte lipstick with rich colour and a velvety finish. The brand describes it as long-wearing and water-resistant. With 55 shades, from soft nudes to deep berries, there is plenty of choice. For a crisp edge, line the lips first with the matching lip pencil.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
       "variants": [
         {
-          "name": "Size",
+          "name": "Shade",
           "required": true,
           "options": [
-            { "label": "50 g", "priceDelta": 0, "stock": 14 },
-            { "label": "100 g", "priceDelta": 900, "stock": 8 }
+            {
+              "label": "1",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "2",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "3",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "4",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "5",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "6",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "7",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "8",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "9",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "10",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "11",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "12",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "13",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "14",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "15",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "16",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "17",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "18",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "19",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "20",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "21",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "22",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "23",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "24",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "25",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "26",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "27",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "28",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "29",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "30",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "31",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "32",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "33",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "34",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "35",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "36",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "37",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "38",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "39",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "40",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "41",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "42",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "43",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "44",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "45",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "46",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "47",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "48",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "49",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "50",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "51",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "52",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "53",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "54",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "55",
+              "priceDelta": 0,
+              "stock": 50
+            }
           ]
         }
       ],
       "rating": null,
       "featured": true,
       "isNew": false,
-      "isBestSeller": true,
+      "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-10-15"
+      "createdAt": "2025-05-16",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-matte-lipstick-long-lasting-waterproof"
+      }
     },
     {
-      "id": "mv-1006",
-      "name": "Overnight Recovery Cream",
-      "slug": "overnight-recovery-cream",
-      "categoryId": "facial-skincare",
-      "brand": "Maveliq",
-      "sku": "MV-SKN-1006",
-      "price": 2850,
+      "id": "mv-2027",
+      "name": "DIEFEI 3D Charcoal Face Wash – 100 ml",
+      "slug": "charcoal-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2027",
+      "price": 275,
       "compareAtPrice": null,
-      "stock": 4,
+      "stock": 50,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-skincare-2.svg", "assets/images/ph-skincare-1.svg"],
-      "altText": "Overnight cream in a frosted glass jar with black lid",
-      "shortDescription": "A richer night cream for a hydrated morning feel.",
-      "description": "A richer night-time cream designed to be applied as the last step of an evening routine. Wake up to skin that feels rested and hydrated. Demonstration data — replace with verified details.",
+      "images": [
+        "assets/images/products/charcoal-face-wash-1.webp"
+      ],
+      "altText": "DIEFEI 3D Charcoal Face Wash – 100 ml product photo",
+      "shortDescription": "A 100 ml activated-charcoal face wash for oily and blemish-prone skin.",
+      "description": "Made with activated charcoal, this cleanser is aimed at oily skin and skin that breaks out easily. It is designed to draw dirt and excess oil out of the pores and leave the face feeling fresh. Follow with a light, oil-free moisturiser.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
       "variants": [],
       "rating": null,
       "featured": false,
-      "isNew": true,
+      "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2025-02-12"
+      "createdAt": "2025-06-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "charcoal-face-wash"
+      }
     },
     {
-      "id": "mv-1007",
-      "name": "Honey Wax Strips — Face & Body",
-      "slug": "honey-wax-strips",
-      "categoryId": "wax-hair-removal",
-      "brand": "Maveliq",
-      "sku": "MV-WAX-1007",
-      "price": 890,
-      "compareAtPrice": 1100,
-      "stock": 55,
-      "lowStockThreshold": 8,
-      "images": ["assets/images/ph-wax-1.svg", "assets/images/ph-wax-2.svg"],
-      "altText": "Pack of honey wax strips with a few strips fanned out beside it",
-      "shortDescription": "Ready-to-use wax strips with soothing post-wax wipes.",
-      "description": "Ready-to-use wax strips for at-home hair removal, supplied with post-wax wipes. Warm between the hands before use and always follow the instructions on the pack. Demonstration data — replace with verified details and safety information.",
-      "variants": [
-        {
-          "name": "Pack Size",
-          "required": true,
-          "options": [
-            { "label": "20 strips", "priceDelta": 0, "stock": 35 },
-            { "label": "40 strips", "priceDelta": 600, "stock": 20 }
-          ]
-        }
-      ],
-      "rating": null,
-      "featured": true,
-      "isNew": false,
-      "isBestSeller": true,
-      "active": true,
-      "createdAt": "2024-09-28"
-    },
-    {
-      "id": "mv-1008",
-      "name": "Post-Wax Soothing Lotion",
-      "slug": "post-wax-soothing-lotion",
-      "categoryId": "wax-hair-removal",
-      "brand": "Maveliq",
-      "sku": "MV-WAX-1008",
-      "price": 1150,
+      "id": "mv-2039",
+      "name": "DIEFEI 3D Cleanser Deep Cleaner – Tube",
+      "slug": "cleanser-deep-cleaner-tube",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2039",
+      "price": 350,
       "compareAtPrice": null,
       "stock": 0,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-wax-2.svg", "assets/images/ph-wax-1.svg"],
-      "altText": "Post-wax soothing lotion tube standing upright",
-      "shortDescription": "A calming lotion for use after waxing.",
-      "description": "A light, calming lotion for use after waxing or hair removal routines. Apply to clean, dry skin. Demonstration data — replace with verified details.",
+      "images": [
+        "assets/images/products/cleanser-deep-cleaner-tube-1.webp"
+      ],
+      "altText": "DIEFEI 3D Cleanser Deep Cleaner – Tube product photo",
+      "shortDescription": "A deep-cleansing face cleanser in a convenient tube.",
+      "description": "A cleanser from the brand's tube range, intended for a thorough cleanse of the face. It is a handy, easy-to-carry format for regular use. Follow the directions on the tube.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
       "variants": [],
       "rating": null,
       "featured": false,
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-12-02"
+      "createdAt": "2025-05-22",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "cleanser-deep-cleaner-tube"
+      }
     },
     {
-      "id": "mv-1009",
-      "name": "Eau de Parfum — Velvet Oud",
-      "slug": "eau-de-parfum-velvet-oud",
-      "categoryId": "perfumes",
-      "brand": "Maveliq",
-      "sku": "MV-PRF-1009",
-      "price": 4500,
-      "compareAtPrice": 5200,
-      "stock": 12,
-      "lowStockThreshold": 3,
-      "images": ["assets/images/ph-perfume-1.svg", "assets/images/ph-perfume-2.svg"],
-      "altText": "Glass perfume bottle with golden cap on a warm neutral background",
-      "shortDescription": "A warm, deep eau de parfum in a classic glass flacon.",
-      "description": "A warm eau de parfum presented in a heavy glass flacon. Demonstration data — replace with the owner's approved fragrance notes, size and imagery.",
+      "id": "mv-2052",
+      "name": "DIEFEI 3D Cleansing Milk – Feel Fresh",
+      "slug": "cleansing-milk-feel-fresh",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2052",
+      "price": 320,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/cleansing-milk-feel-fresh-1.webp",
+        "assets/images/products/cleansing-milk-feel-fresh-2.webp"
+      ],
+      "altText": "DIEFEI 3D Cleansing Milk – Feel Fresh product photo",
+      "shortDescription": "A gentle cleansing milk that removes makeup, dirt and oil.",
+      "description": "A lotion-style cleanser for taking off makeup and the day's grime without water-heavy washing. It is designed to leave the skin clean and soft rather than tight. Apply with cotton pads or fingertips, then wipe or rinse away.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-cleansing-milk-feel-fresh-gentle-makeup-remover-daily-cleanser"
+      }
+    },
+    {
+      "id": "mv-2005",
+      "name": "DIEFEI 3D Cucumber Gentle Cleansing Face Wash",
+      "slug": "cucumber-gentle-cleansing-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2005",
+      "price": 200,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/cucumber-gentle-cleansing-face-wash-1.webp",
+        "assets/images/products/cucumber-gentle-cleansing-face-wash-2.webp",
+        "assets/images/products/cucumber-gentle-cleansing-face-wash-3.webp"
+      ],
+      "altText": "DIEFEI 3D Cucumber Gentle Cleansing Face Wash product photo",
+      "shortDescription": "A mild 65 ml cucumber face wash for an everyday, non-stripping cleanse.",
+      "description": "A gentle face wash made with cucumber extract. It is formulated to clean the skin without that tight, over-washed feeling, which makes it a calm choice for daily use. Lather with water, massage for a few seconds and rinse.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
       "variants": [
         {
           "name": "Size",
           "required": true,
           "options": [
-            { "label": "50 ml", "priceDelta": 0, "stock": 8 },
-            { "label": "100 ml", "priceDelta": 2200, "stock": 4 }
+            {
+              "label": "65 ml",
+              "priceDelta": 0,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": true,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-07-15",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "cucumber-face-wash"
+      }
+    },
+    {
+      "id": "mv-2026",
+      "name": "DIEFEI 3D Goat Milk Hydrating Face Wash – 100 ml",
+      "slug": "goat-milk-hydrating-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2026",
+      "price": 250,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/goat-milk-hydrating-face-wash-1.webp"
+      ],
+      "altText": "DIEFEI 3D Goat Milk Hydrating Face Wash – 100 ml product photo",
+      "shortDescription": "A creamy 100 ml goat milk cleanser with vitamins A, B and E.",
+      "description": "A softer, creamier cleanser made with goat milk and vitamins A, B and E. The brand recommends it for dry and sensitive skin that needs a gentle wash. Massage onto damp skin and rinse thoroughly.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-06-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-goat-milk-face-wash-hydrating-cleanser-100ml"
+      }
+    },
+    {
+      "id": "mv-2023",
+      "name": "DIEFEI 3D Hyaluronic Brightening Face Wash – 100 ml",
+      "slug": "hyaluronic-brightening-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2023",
+      "price": 450,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/hyaluronic-brightening-face-wash-1.webp"
+      ],
+      "altText": "DIEFEI 3D Hyaluronic Brightening Face Wash – 100 ml product photo",
+      "shortDescription": "A 100 ml cleanser with hyaluronic acid that cleans without stripping moisture.",
+      "description": "This face wash includes hyaluronic acid, an ingredient known for holding moisture in the skin. It is made to remove dirt, oil and impurities while keeping the face feeling hydrated afterwards. A good match for the hyaluronic scrub and serum in the same line.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-06-16",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-hyaluronic-brightening-face-wash-100ml"
+      }
+    },
+    {
+      "id": "mv-2081",
+      "name": "DIEFEI 3D Lemon Facial Foam Face Wash 120 ml",
+      "slug": "lemon-facial-foam-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2081",
+      "price": 275,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/lemon-facial-foam-face-wash-1.webp"
+      ],
+      "altText": "DIEFEI 3D Lemon Facial Foam Face Wash 120 ml product photo",
+      "shortDescription": "A 120 ml lemon foaming face wash for morning and evening cleansing.",
+      "description": "A zesty lemon foaming cleanser designed to clear away build-up, extra oil and the dull look of a long day. The brand describes the cleanse as thorough but not harsh. Rinse well and avoid the eye area.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "lemon-facial-foam"
+      }
+    },
+    {
+      "id": "mv-2077",
+      "name": "DIEFEI 3D Oil Control Face Wash",
+      "slug": "oil-control-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2077",
+      "price": 275,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/oil-control-face-wash-1.webp"
+      ],
+      "altText": "DIEFEI 3D Oil Control Face Wash product photo",
+      "shortDescription": "A daily cleanser for oily and blemish-prone skin.",
+      "description": "This face wash is formulated for skin that turns shiny during the day. It clears away surface oil and dirt while aiming to keep enough moisture in the skin to stay comfortable. Use morning and night as part of a simple routine.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "oil-control-face-wash"
+      }
+    },
+    {
+      "id": "mv-2002",
+      "name": "DIEFEI 3D Peach Facial Foam Face Wash",
+      "slug": "peach-facial-foam-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2002",
+      "price": 200,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/peach-facial-foam-face-wash-1.webp",
+        "assets/images/products/peach-facial-foam-face-wash-2.webp",
+        "assets/images/products/peach-facial-foam-face-wash-3.webp"
+      ],
+      "altText": "DIEFEI 3D Peach Facial Foam Face Wash product photo",
+      "shortDescription": "A 65 ml foaming face wash with peach extract for a fresh daily cleanse.",
+      "description": "This compact foaming cleanser uses peach extract and a light lather to lift away dirt, oil and the day's makeup. The brand describes it as suitable for everyday use. Massage a small amount over damp skin, then rinse with water.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "65 ml",
+              "priceDelta": 0,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": true,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-07-15",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "peach-face-wash"
+      }
+    },
+    {
+      "id": "mv-2009",
+      "name": "DIEFEI 3D Pink Guava Face Wash 120 ml",
+      "slug": "pink-guava-face-wash-120ml",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2009",
+      "price": 450,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/pink-guava-face-wash-120ml-1.webp",
+        "assets/images/products/pink-guava-face-wash-120ml-2.webp"
+      ],
+      "altText": "DIEFEI 3D Pink Guava Face Wash 120 ml product photo",
+      "shortDescription": "A 120 ml face wash with pink guava extract for daily use.",
+      "description": "A refreshing face wash made with pink guava extract. It is meant to clear away dirt and extra oil without drying the skin out. The larger 120 ml tube lasts well for twice-daily cleansing.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-04-22",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "guava-face-wash"
+      }
+    },
+    {
+      "id": "mv-2003",
+      "name": "DIEFEI 3D Pomegranate Facial Foam Face Wash",
+      "slug": "pomegranate-facial-foam-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2003",
+      "price": 200,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/pomegranate-facial-foam-face-wash-1.webp",
+        "assets/images/products/pomegranate-facial-foam-face-wash-2.webp",
+        "assets/images/products/pomegranate-facial-foam-face-wash-3.webp"
+      ],
+      "altText": "DIEFEI 3D Pomegranate Facial Foam Face Wash product photo",
+      "shortDescription": "A 65 ml foaming cleanser made with pomegranate extract.",
+      "description": "A light foaming face wash built around pomegranate extract. It is designed to remove everyday grime and makeup while leaving the skin feeling soft. Its small 65 ml tube is handy for travel or for trying a new cleanser.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "65 ml",
+              "priceDelta": 0,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": true,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-07-15",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "pomegranate-face-wash"
+      }
+    },
+    {
+      "id": "mv-2079",
+      "name": "DIEFEI 3D Purifying Neem Face Wash",
+      "slug": "purifying-neem-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2079",
+      "price": 275,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/purifying-neem-face-wash-1.webp"
+      ],
+      "altText": "DIEFEI 3D Purifying Neem Face Wash product photo",
+      "shortDescription": "A neem and aloe vera face wash for a fresh, clean feel.",
+      "description": "This cleanser combines neem with soothing aloe vera. It is designed to clean the pores and help manage oiliness while keeping the skin comfortable. A practical everyday choice for combination and oily skin.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-purifying-neem-face-wash-clear-skin-natural-glow"
+      }
+    },
+    {
+      "id": "mv-2021",
+      "name": "DIEFEI 3D Rice & Shea Butter Brightening Face Wash – 120 ml",
+      "slug": "rice-shea-butter-brightening-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2021",
+      "price": 450,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/rice-shea-butter-brightening-face-wash-1.webp"
+      ],
+      "altText": "DIEFEI 3D Rice & Shea Butter Brightening Face Wash – 120 ml product photo",
+      "shortDescription": "A 120 ml daily face wash with rice extract, shea butter and rose water.",
+      "description": "Part of the brand's rice and shea butter range, this face wash combines rice extract with shea butter and rose water. It is designed for an everyday cleanse that leaves the skin soft rather than dry. Use it alone or with the matching scrub and mask.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-06-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-rice-shea-butter-brightening-face-wash-120ml"
+      }
+    },
+    {
+      "id": "mv-2004",
+      "name": "DIEFEI 3D Tea Tree Facial Foam Face Wash",
+      "slug": "tea-tree-facial-foam-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2004",
+      "price": 200,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/tea-tree-facial-foam-face-wash-1.webp",
+        "assets/images/products/tea-tree-facial-foam-face-wash-2.webp",
+        "assets/images/products/tea-tree-facial-foam-face-wash-3.webp"
+      ],
+      "altText": "DIEFEI 3D Tea Tree Facial Foam Face Wash product photo",
+      "shortDescription": "A 65 ml tea tree foaming wash aimed at oily and blemish-prone skin.",
+      "description": "Made with tea tree oil, this foaming cleanser is aimed at skin that gets oily or prone to breakouts. It works into a soft lather to clear away excess oil, dirt and makeup. Use morning and evening, and pair it with a light moisturiser.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "65 ml",
+              "priceDelta": 0,
+              "stock": 50
+            }
           ]
         }
       ],
       "rating": null,
       "featured": true,
-      "isNew": false,
+      "isNew": true,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-11-05"
+      "createdAt": "2026-07-15",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "tea-tree-face-wash"
+      }
     },
     {
-      "id": "mv-1010",
-      "name": "Eau de Toilette — White Gardenia",
-      "slug": "eau-de-toilette-white-gardenia",
-      "categoryId": "perfumes",
-      "brand": "Maveliq",
-      "sku": "MV-PRF-1010",
-      "price": 3200,
+      "id": "mv-2008",
+      "name": "DIEFEI 3D Vitamin C Face Wash 120 ml",
+      "slug": "vitamin-c-face-wash-120ml",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2008",
+      "price": 450,
       "compareAtPrice": null,
-      "stock": 9,
-      "lowStockThreshold": 3,
-      "images": ["assets/images/ph-perfume-2.svg", "assets/images/ph-perfume-1.svg"],
-      "altText": "Slim perfume bottle with white floral label design",
-      "shortDescription": "A light floral eau de toilette for daytime wear.",
-      "description": "A light, floral eau de toilette suited to daytime wear. Demonstration data — replace with verified fragrance information.",
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/vitamin-c-face-wash-120ml-1.webp",
+        "assets/images/products/vitamin-c-face-wash-120ml-2.webp"
+      ],
+      "altText": "DIEFEI 3D Vitamin C Face Wash 120 ml product photo",
+      "shortDescription": "A 120 ml daily cleanser with vitamin C for a brighter-feeling finish.",
+      "description": "This 120 ml face wash pairs a gentle cleanse with vitamin C. It is designed to remove impurities and makeup while keeping the skin's moisture in place, leaving the face feeling refreshed. Suitable for use once or twice a day.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
       "variants": [],
       "rating": null,
       "featured": false,
       "isNew": true,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2025-01-30"
+      "createdAt": "2026-04-22",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "vitamin-c-face-wash"
+      }
     },
     {
-      "id": "mv-1011",
-      "name": "Fresh Body Mist — Citrus Bloom",
-      "slug": "fresh-body-mist-citrus-bloom",
-      "categoryId": "body-mists",
-      "brand": "Maveliq",
-      "sku": "MV-MST-1011",
-      "price": 1350,
-      "compareAtPrice": 1600,
-      "stock": 27,
-      "lowStockThreshold": 5,
-      "images": ["assets/images/ph-mist-1.svg", "assets/images/ph-mist-2.svg"],
-      "altText": "Body mist spray bottle with clear cap",
-      "shortDescription": "A light body mist for a quick, refreshing top-up.",
-      "description": "A refreshing body mist in a handy spray bottle — a light alternative to eau de parfum for daytime refresh. Demonstration data — replace with verified details.",
-      "variants": [
-        {
-          "name": "Size",
-          "required": true,
-          "options": [
-            { "label": "120 ml", "priceDelta": 0, "stock": 18 },
-            { "label": "250 ml", "priceDelta": 500, "stock": 9 }
-          ]
-        }
-      ],
-      "rating": null,
-      "featured": true,
-      "isNew": false,
-      "isBestSeller": true,
-      "active": true,
-      "createdAt": "2024-10-28"
-    },
-    {
-      "id": "mv-1012",
-      "name": "Silk Body Mist — Rose & Musk",
-      "slug": "silk-body-mist-rose-musk",
-      "categoryId": "body-mists",
-      "brand": "Maveliq",
-      "sku": "MV-MST-1012",
-      "price": 1400,
+      "id": "mv-2080",
+      "name": "DIEFEI 3D Vitamin C Face Wash – Brighten & Refresh",
+      "slug": "vitamin-c-face-wash-brighten-refresh",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2080",
+      "price": 275,
       "compareAtPrice": null,
-      "stock": 15,
+      "stock": 50,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-mist-2.svg", "assets/images/ph-mist-1.svg"],
-      "altText": "Blush-toned body mist bottle on soft background",
-      "shortDescription": "A soft rose-toned body mist in a blush bottle.",
-      "description": "A soft body mist in a blush-toned bottle. Demonstration data — replace with verified details.",
+      "images": [
+        "assets/images/products/vitamin-c-face-wash-brighten-refresh-1.webp",
+        "assets/images/products/vitamin-c-face-wash-brighten-refresh-2.webp"
+      ],
+      "altText": "DIEFEI 3D Vitamin C Face Wash – Brighten & Refresh product photo",
+      "shortDescription": "A refreshing vitamin C face wash in a value size.",
+      "description": "An everyday cleanser made with vitamin C. It removes dirt, oil and impurities without stripping the skin, leaving the face clean and refreshed. This is the lower-priced format of the brand's vitamin C wash.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
       "variants": [],
       "rating": null,
       "featured": false,
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2025-01-08"
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-vitamin-c-face-wash-brighten-refresh-skin"
+      }
     },
     {
-      "id": "mv-1013",
-      "name": "Pore-Blurring Makeup Primer",
-      "slug": "pore-blurring-makeup-primer",
-      "categoryId": "primers",
-      "brand": "Maveliq",
-      "sku": "MV-PRM-1013",
-      "price": 1950,
-      "compareAtPrice": 2300,
-      "stock": 19,
+      "id": "mv-2078",
+      "name": "DIEFEI 3D Whitening Beauty Face Wash",
+      "slug": "whitening-beauty-face-wash",
+      "categoryId": "face-washes",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2078",
+      "price": 275,
+      "compareAtPrice": null,
+      "stock": 50,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-primer-1.svg", "assets/images/ph-primer-2.svg"],
-      "altText": "Makeup primer pump bottle beside its box",
-      "shortDescription": "A smoothing primer applied before foundation.",
-      "description": "A smoothing primer applied as the final step of skincare and the first step of makeup. Helps create an even base for foundation. Demonstration data — replace with verified details.",
+      "images": [
+        "assets/images/products/whitening-beauty-face-wash-1.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Beauty Face Wash product photo",
+      "shortDescription": "A foaming face wash from the brand's whitening beauty range.",
+      "description": "A gentle foaming cleanser that removes dirt and oil from the skin's surface. The brand positions it as part of its brightening range for a fresh, even-looking complexion. Lather, massage lightly and rinse well.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water. Patch-test on a small area first and stop using the product if irritation appears.",
       "variants": [],
       "rating": null,
-      "featured": true,
+      "featured": false,
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-11-14"
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-beauty-face-wash"
+      }
     },
     {
-      "id": "mv-1014",
-      "name": "Hydrating Makeup Primer",
-      "slug": "hydrating-makeup-primer",
-      "categoryId": "primers",
-      "brand": "Maveliq",
-      "sku": "MV-PRM-1014",
-      "price": 2050,
+      "id": "mv-2044",
+      "name": "DIEFEI 3D Aloe Vera Gel",
+      "slug": "aloe-vera-gel",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2044",
+      "price": 210,
       "compareAtPrice": null,
-      "stock": 6,
+      "stock": 0,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-primer-2.svg", "assets/images/ph-primer-1.svg"],
-      "altText": "Hydrating primer tube with silver cap",
-      "shortDescription": "A dewy primer for dry or dehydrated skin types.",
-      "description": "A hydrating primer with a dewy finish, designed for dry or dehydrated skin. Demonstration data — replace with verified details.",
+      "images": [
+        "assets/images/products/aloe-vera-gel-1.webp",
+        "assets/images/products/aloe-vera-gel-2.webp"
+      ],
+      "altText": "DIEFEI 3D Aloe Vera Gel product photo",
+      "shortDescription": "A light, non-sticky aloe vera gel for face and body.",
+      "description": "A multi-purpose aloe vera gel that absorbs quickly without leaving a sticky film. Use it as a light moisturiser or to cool the skin after sun exposure or shaving.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
       "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-21",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "aloe-vera-gel-100-pure-natural-skin-soothing-moisturizer"
+      }
+    },
+    {
+      "id": "mv-2054",
+      "name": "DIEFEI 3D Aloe Vera Skin Deep Toner",
+      "slug": "aloe-vera-skin-deep-toner",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2054",
+      "price": 230,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/aloe-vera-skin-deep-toner-1.webp",
+        "assets/images/products/aloe-vera-skin-deep-toner-2.webp"
+      ],
+      "altText": "DIEFEI 3D Aloe Vera Skin Deep Toner product photo",
+      "shortDescription": "An aloe vera toner to refresh the skin after cleansing.",
+      "description": "A hydrating facial toner made with aloe vera extract. Sweep it over the skin after cleansing to remove any last traces of residue and prepare the face for serum and moisturiser. The brand also describes it as helping the pores look tighter.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-aloe-vera-skin-deep-toner-hydrating-pore-tightening-face-toner"
+      }
+    },
+    {
+      "id": "mv-2022",
+      "name": "DIEFEI 3D Brightening Powder Mask – Hyaluronic & Rose Water",
+      "slug": "brightening-powder-mask-hyaluronic-rose-water",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2022",
+      "price": 600,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/brightening-powder-mask-hyaluronic-rose-water-1.webp",
+        "assets/images/products/brightening-powder-mask-hyaluronic-rose-water-2.webp"
+      ],
+      "altText": "DIEFEI 3D Brightening Powder Mask – Hyaluronic & Rose Water product photo",
+      "shortDescription": "A powder mask with hyaluronic acid and rose water for a hydrated glow.",
+      "description": "A brightening powder mask made with hyaluronic acid and rose water. It is designed to hydrate the skin and restore a fresh, bright look — a simple at-home facial step. Use once or twice a week following the pack directions.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-06-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "brightening-powder-mask-hyaluronic-rose-water"
+      }
+    },
+    {
+      "id": "mv-2024",
+      "name": "DIEFEI 3D Hyaluronic Brightening Scrub – 100 ml",
+      "slug": "hyaluronic-brightening-scrub",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2024",
+      "price": 600,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/hyaluronic-brightening-scrub-1.webp"
+      ],
+      "altText": "DIEFEI 3D Hyaluronic Brightening Scrub – 100 ml product photo",
+      "shortDescription": "A 100 ml exfoliating scrub with hyaluronic acid.",
+      "description": "A gentle scrub that clears dead skin and pollution build-up while hyaluronic acid helps the skin hold on to moisture. Expect skin that feels softer and looks more even. Use a few times a week rather than daily.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-06-16",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-hyaluronic-brightening-scrub-100ml"
+      }
+    },
+    {
+      "id": "mv-2025",
+      "name": "DIEFEI 3D Hydrating Hyaluronic Serum – 15 ml",
+      "slug": "hydrating-hyaluronic-serum",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2025",
+      "price": 650,
+      "compareAtPrice": null,
+      "stock": 0,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/hydrating-hyaluronic-serum-1.webp"
+      ],
+      "altText": "DIEFEI 3D Hydrating Hyaluronic Serum – 15 ml product photo",
+      "shortDescription": "A 15 ml hydrating serum built around hyaluronic acid.",
+      "description": "This serum is designed to deliver moisture and a plumper, dewy look, especially for dry and sensitive skin. Smooth a few drops over clean skin morning or night, then seal in with moisturiser.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-06-16",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-hydrating-hyaluronic-serum-15ml"
+      }
+    },
+    {
+      "id": "mv-2067",
+      "name": "DIEFEI 3D Radiant Glow Vitamin C Face Serum",
+      "slug": "radiant-glow-vitamin-c-serum",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2067",
+      "price": 395,
+      "compareAtPrice": null,
+      "stock": 0,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/radiant-glow-vitamin-c-serum-1.webp",
+        "assets/images/products/radiant-glow-vitamin-c-serum-2.webp"
+      ],
+      "altText": "DIEFEI 3D Radiant Glow Vitamin C Face Serum product photo",
+      "shortDescription": "A vitamin C serum with hyaluronic acid, in 15 ml and 50 ml.",
+      "description": "A face serum that combines vitamin C with hyaluronic acid and peptides. It is designed to help dull skin look brighter and more supple with regular use. Apply a few drops after cleansing, morning or evening.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "15 ml",
+              "priceDelta": 0,
+              "stock": 0
+            },
+            {
+              "label": "50 ml",
+              "priceDelta": 265,
+              "stock": 0
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "radiant-glow-vitamin-c-face-serum-anti-aging-brightening-formula"
+      }
+    },
+    {
+      "id": "mv-2018",
+      "name": "DIEFEI 3D Rice & Shea Butter Brightening Mask – 120 g",
+      "slug": "rice-shea-butter-brightening-mask",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2018",
+      "price": 600,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/rice-shea-butter-brightening-mask-1.webp",
+        "assets/images/products/rice-shea-butter-brightening-mask-2.webp"
+      ],
+      "altText": "DIEFEI 3D Rice & Shea Butter Brightening Mask – 120 g product photo",
+      "shortDescription": "A 120 g brightening powder mask with rice extract and shea butter.",
+      "description": "A powder mask made with rice extract and shea butter, intended to cleanse the skin and leave it looking brighter and smoother. The brand lists it with a bottle of rose water for mixing; please confirm the pack contents with us when you order.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-06-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "rice-shea-butter-brightening-mask-free-rose-water-120g"
+      }
+    },
+    {
+      "id": "mv-2020",
+      "name": "DIEFEI 3D Rice & Shea Butter Brightening Scrub – 150 ml",
+      "slug": "rice-shea-butter-brightening-scrub",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2020",
+      "price": 600,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/rice-shea-butter-brightening-scrub-1.webp"
+      ],
+      "altText": "DIEFEI 3D Rice & Shea Butter Brightening Scrub – 150 ml product photo",
+      "shortDescription": "A 150 ml exfoliating scrub with rice extract, shea butter and rose water.",
+      "description": "This scrub gently buffs away dead skin cells and surface impurities, using rice extract and shea butter to leave the skin feeling smooth. Use two or three times a week on damp skin, avoiding the eye area.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-06-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-rice-shea-butter-brightening-scrub-150ml"
+      }
+    },
+    {
+      "id": "mv-2019",
+      "name": "DIEFEI 3D Rice & Shea Butter Brightening Serum – 15 ml",
+      "slug": "rice-shea-butter-brightening-serum",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2019",
+      "price": 480,
+      "compareAtPrice": null,
+      "stock": 0,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/rice-shea-butter-brightening-serum-1.webp"
+      ],
+      "altText": "DIEFEI 3D Rice & Shea Butter Brightening Serum – 15 ml product photo",
+      "shortDescription": "A light 15 ml serum with rice extract and shea butter.",
+      "description": "A fast-absorbing serum that pairs rice extract with nourishing shea butter. It is designed to hydrate and help the skin look more even and radiant with regular use. Apply a few drops after cleansing and before moisturiser.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-06-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-rice-shea-butter-brightening-serum-15ml"
+      }
+    },
+    {
+      "id": "mv-2033",
+      "name": "DIEFEI 3D Skin Polish with Herbal Extract",
+      "slug": "skin-polish-herbal-extract",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2033",
+      "price": 240,
+      "compareAtPrice": null,
+      "stock": 200,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/skin-polish-herbal-extract-1.webp",
+        "assets/images/products/skin-polish-herbal-extract-2.webp",
+        "assets/images/products/skin-polish-herbal-extract-3.webp",
+        "assets/images/products/skin-polish-herbal-extract-4.webp"
+      ],
+      "altText": "DIEFEI 3D Skin Polish with Herbal Extract product photo",
+      "shortDescription": "An exfoliating skin polish with herbal extracts, in four sizes.",
+      "description": "A skin polish that combines herbal extracts with exfoliating action to refine the skin's surface and give a brighter, smoother look. Offered in 100 g, 225 g and 400 g jars and a 150 ml tube, so it suits both home and salon use.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "100 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "150 ml tube",
+              "priceDelta": 110,
+              "stock": 50
+            },
+            {
+              "label": "225 g",
+              "priceDelta": 210,
+              "stock": 50
+            },
+            {
+              "label": "400 g",
+              "priceDelta": 420,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-24",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "skin-polish-with-herbal-extract"
+      }
+    },
+    {
+      "id": "mv-2053",
+      "name": "DIEFEI 3D Soothing Lotion – Face & Body",
+      "slug": "soothing-lotion-face-body",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2053",
+      "price": 320,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/soothing-lotion-face-body-1.webp",
+        "assets/images/products/soothing-lotion-face-body-2.webp"
+      ],
+      "altText": "DIEFEI 3D Soothing Lotion – Face & Body product photo",
+      "shortDescription": "A calming, hydrating lotion for dry or sensitive skin.",
+      "description": "A gentle moisturiser designed to calm and hydrate skin that feels dry or easily irritated. It is light enough for daily use on both the face and body.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-soothing-lotion-calming-hydrating-body-face-moisturizer"
+      }
+    },
+    {
+      "id": "mv-2006",
+      "name": "DIEFEI 3D Sunscreen & Sunblock",
+      "slug": "sunscreen-sunblock",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2006",
+      "price": 350,
+      "compareAtPrice": null,
+      "stock": 150,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/sunscreen-sunblock-1.webp",
+        "assets/images/products/sunscreen-sunblock-2.webp",
+        "assets/images/products/sunscreen-sunblock-3.webp"
+      ],
+      "altText": "DIEFEI 3D Sunscreen & Sunblock product photo",
+      "shortDescription": "Daily sun protection in three versions: Sun Screen, Sun Block and Anti Aging.",
+      "description": "A lightweight sun-care cream offered in three variants. The brand describes it as broad-spectrum protection against UVA and UVB with a non-greasy feel. Apply generously 15 minutes before going out and reapply after sweating, swimming or towelling.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Type",
+          "required": true,
+          "options": [
+            {
+              "label": "Sun Screen",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "Sun Block",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "Anti Aging",
+              "priceDelta": 0,
+              "stock": 50
+            }
+          ]
+        }
+      ],
       "rating": null,
       "featured": false,
       "isNew": true,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2025-02-20"
+      "createdAt": "2026-06-27",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "sunblock"
+      }
     },
     {
-      "id": "mv-1015",
-      "name": "Vitamin C Brightening Serum 30 ml",
-      "slug": "vitamin-c-brightening-serum",
-      "categoryId": "vitamin-c",
-      "brand": "Maveliq",
-      "sku": "MV-VTC-1015",
-      "price": 2650,
-      "compareAtPrice": 3200,
-      "stock": 16,
-      "lowStockThreshold": 4,
-      "images": ["assets/images/ph-vitc-1.svg", "assets/images/ph-vitc-2.svg"],
-      "altText": "Amber dropper bottle of vitamin C serum with dropper resting beside it",
-      "shortDescription": "A vitamin C serum in an amber dropper bottle.",
-      "description": "A vitamin C serum supplied in an amber dropper bottle. Apply to clean skin before moisturiser as directed on the label. Demonstration data — replace with the owner's approved concentration, ingredients and usage guidance.",
+      "id": "mv-2065",
+      "name": "DIEFEI 3D Vitamin C Day Cream",
+      "slug": "vitamin-c-day-cream",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2065",
+      "price": 770,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/vitamin-c-day-cream-1.webp",
+        "assets/images/products/vitamin-c-day-cream-2.webp"
+      ],
+      "altText": "DIEFEI 3D Vitamin C Day Cream product photo",
+      "shortDescription": "A lightweight daytime moisturiser with vitamin C and antioxidants.",
+      "description": "A day cream that combines vitamin C, antioxidants and moisturising ingredients. It is designed to hydrate the skin and help it look brighter and more even through the day. Apply after cleansing and finish with sunscreen.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": true,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-vitamin-c-day-cream-brightening-anti-ageing-moisturizer"
+      }
+    },
+    {
+      "id": "mv-2066",
+      "name": "DIEFEI 3D Vitamin C Night Cream",
+      "slug": "vitamin-c-night-cream",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2066",
+      "price": 825,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/vitamin-c-night-cream-1.webp",
+        "assets/images/products/vitamin-c-night-cream-2.webp",
+        "assets/images/products/vitamin-c-night-cream-3.webp"
+      ],
+      "altText": "DIEFEI 3D Vitamin C Night Cream product photo",
+      "shortDescription": "A night-time moisturiser with vitamin C and hydrating botanicals.",
+      "description": "A richer cream for the evening, made with vitamin C, antioxidants and hydrating plant ingredients. It is designed to moisturise the skin overnight so it looks smoother and brighter in the morning.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-vitamin-c-night-cream-glow-boosting-anti-aging-moisturizer"
+      }
+    },
+    {
+      "id": "mv-2055",
+      "name": "DIEFEI 3D Volume 20 Facial Kit",
+      "slug": "volume-20-facial-kit",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2055",
+      "price": 230,
+      "compareAtPrice": null,
+      "stock": 100,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/volume-20-facial-kit-1.webp",
+        "assets/images/products/volume-20-facial-kit-2.webp"
+      ],
+      "altText": "DIEFEI 3D Volume 20 Facial Kit product photo",
+      "shortDescription": "A facial kit in 100 ml (home) and 1000 ml (salon) sizes.",
+      "description": "A facial kit intended to cleanse, exfoliate, hydrate and brighten the skin in one routine. The 100 ml size suits personal use, while the 1000 ml size is made for salons or long-term use. Follow the step order printed on the pack.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
       "variants": [
         {
           "name": "Size",
           "required": true,
           "options": [
-            { "label": "30 ml", "priceDelta": 0, "stock": 11 },
-            { "label": "50 ml", "priceDelta": 1100, "stock": 5 }
+            {
+              "label": "100 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "1000 ml",
+              "priceDelta": 1035,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-volume-20-facial-kit-professional-skincare"
+      }
+    },
+    {
+      "id": "mv-2032",
+      "name": "DIEFEI 3D Whitening Apricot Scrub",
+      "slug": "whitening-apricot-scrub",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2032",
+      "price": 240,
+      "compareAtPrice": null,
+      "stock": 200,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/whitening-apricot-scrub-1.webp",
+        "assets/images/products/whitening-apricot-scrub-2.webp",
+        "assets/images/products/whitening-apricot-scrub-3.webp",
+        "assets/images/products/whitening-apricot-scrub-4.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Apricot Scrub product photo",
+      "shortDescription": "An apricot face scrub in jar and tube sizes, from 100 g to 400 g.",
+      "description": "A classic apricot scrub with fine exfoliating particles that polish away dead skin cells for a smoother, fresher-looking face. Available in several sizes, from a 100 g jar to a 400 g salon tub and a 150 ml tube. Use gently, two or three times a week.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "100 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "150 ml tube",
+              "priceDelta": 110,
+              "stock": 50
+            },
+            {
+              "label": "225 g",
+              "priceDelta": 210,
+              "stock": 50
+            },
+            {
+              "label": "400 g",
+              "priceDelta": 420,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-24",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-apricot-scrub"
+      }
+    },
+    {
+      "id": "mv-2038",
+      "name": "DIEFEI 3D Whitening Apricot Scrub – Tube",
+      "slug": "whitening-apricot-scrub-tube",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2038",
+      "price": 350,
+      "compareAtPrice": null,
+      "stock": 0,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/whitening-apricot-scrub-tube-1.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Apricot Scrub – Tube product photo",
+      "shortDescription": "The apricot exfoliating scrub in a travel-friendly tube.",
+      "description": "The same idea as the jar version — fine apricot particles that buff away dead skin — in a tidy tube that is easy to keep in a bathroom or travel bag. Use gently a few times a week.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-22",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-apricot-scrub-tube"
+      }
+    },
+    {
+      "id": "mv-2037",
+      "name": "DIEFEI 3D Whitening Cleanser Scrub",
+      "slug": "whitening-cleanser-scrub",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2037",
+      "price": 240,
+      "compareAtPrice": null,
+      "stock": 200,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/whitening-cleanser-scrub-1.webp",
+        "assets/images/products/whitening-cleanser-scrub-2.webp",
+        "assets/images/products/whitening-cleanser-scrub-3.webp",
+        "assets/images/products/whitening-cleanser-scrub-4.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Cleanser Scrub product photo",
+      "shortDescription": "A two-in-one cleansing scrub in four sizes.",
+      "description": "A cleanser and scrub in one, designed to wash away impurities while lightly exfoliating for smoother, brighter-looking skin. Choose from jar sizes for salon use or the 150 ml tube for home.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "100 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "150 ml tube",
+              "priceDelta": 110,
+              "stock": 50
+            },
+            {
+              "label": "225 g",
+              "priceDelta": 210,
+              "stock": 50
+            },
+            {
+              "label": "400 g",
+              "priceDelta": 420,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-22",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-cleanser-scrub"
+      }
+    },
+    {
+      "id": "mv-2036",
+      "name": "DIEFEI 3D Whitening Massage Cream",
+      "slug": "whitening-massage-cream",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2036",
+      "price": 240,
+      "compareAtPrice": null,
+      "stock": 200,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/whitening-massage-cream-1.webp",
+        "assets/images/products/whitening-massage-cream-2.webp",
+        "assets/images/products/whitening-massage-cream-3.webp",
+        "assets/images/products/whitening-massage-cream-4.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Massage Cream product photo",
+      "shortDescription": "A facial massage cream with vitamins A, C and E, in four sizes.",
+      "description": "A rich massage cream made with vitamins A, C and E and nourishing oils. It gives a smooth slip for facial massage, a step often used in at-home and salon facials. Massage gently in upward strokes, then wipe or rinse off.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "100 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "150 ml tube",
+              "priceDelta": 110,
+              "stock": 50
+            },
+            {
+              "label": "225 g",
+              "priceDelta": 210,
+              "stock": 50
+            },
+            {
+              "label": "400 g",
+              "priceDelta": 420,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-22",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-massage"
+      }
+    },
+    {
+      "id": "mv-2040",
+      "name": "DIEFEI 3D Whitening Massage Cream – Tube",
+      "slug": "whitening-massage-cream-tube",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2040",
+      "price": 350,
+      "compareAtPrice": null,
+      "stock": 0,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/whitening-massage-cream-tube-1.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Massage Cream – Tube product photo",
+      "shortDescription": "The facial massage cream in a convenient tube.",
+      "description": "A nourishing massage cream in tube format, for facial massage at home or in the salon. It gives a comfortable glide and leaves the skin feeling soft. Follow the directions on the tube.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-22",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-massage-cream-tube"
+      }
+    },
+    {
+      "id": "mv-2034",
+      "name": "DIEFEI 3D Whitening Mud Mask",
+      "slug": "whitening-mud-mask",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2034",
+      "price": 240,
+      "compareAtPrice": null,
+      "stock": 200,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/whitening-mud-mask-1.webp",
+        "assets/images/products/whitening-mud-mask-2.webp",
+        "assets/images/products/whitening-mud-mask-3.webp",
+        "assets/images/products/whitening-mud-mask-4.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Mud Mask product photo",
+      "shortDescription": "A mud mask with tea tree oil and glycolic acid, in four sizes.",
+      "description": "A wash-off mud mask made with tea tree oil and glycolic acid. It is designed to deep-clean the skin and leave it looking fresher and more even. Apply a thin layer, leave as directed on the pack and rinse off. Not for daily use.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "100 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "150 ml tube",
+              "priceDelta": 110,
+              "stock": 50
+            },
+            {
+              "label": "225 g",
+              "priceDelta": 210,
+              "stock": 50
+            },
+            {
+              "label": "400 g",
+              "priceDelta": 420,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-24",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-mud-mask"
+      }
+    },
+    {
+      "id": "mv-2041",
+      "name": "DIEFEI 3D Whitening Mud Mask – Tube",
+      "slug": "whitening-mud-mask-tube",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2041",
+      "price": 350,
+      "compareAtPrice": null,
+      "stock": 0,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/whitening-mud-mask-tube-1.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Mud Mask – Tube product photo",
+      "shortDescription": "The mineral mud mask in a tube.",
+      "description": "A mud mask in an easy-to-use tube, designed to clean the pores, absorb extra oil and refresh tired-looking skin. Apply a thin layer, allow it to dry as directed, then rinse.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-22",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-mud-mask-tube"
+      }
+    },
+    {
+      "id": "mv-2035",
+      "name": "DIEFEI 3D Whitening Peel-Off Mask",
+      "slug": "whitening-peel-off-mask",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2035",
+      "price": 240,
+      "compareAtPrice": null,
+      "stock": 200,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/whitening-peel-off-mask-1.webp",
+        "assets/images/products/whitening-peel-off-mask-2.webp",
+        "assets/images/products/whitening-peel-off-mask-3.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Peel-Off Mask product photo",
+      "shortDescription": "A peel-off face mask in jar and tube sizes.",
+      "description": "A peel-off mask that the brand designed to hydrate and brighten the skin. Spread an even layer, let it dry completely and peel it away from the edges upwards. Avoid the eyebrows, hairline and lips.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "100 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "150 ml tube",
+              "priceDelta": 110,
+              "stock": 50
+            },
+            {
+              "label": "225 g",
+              "priceDelta": 210,
+              "stock": 50
+            },
+            {
+              "label": "400 g",
+              "priceDelta": 420,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-24",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-peel-off-mask"
+      }
+    },
+    {
+      "id": "mv-2042",
+      "name": "DIEFEI 3D Whitening Skin Polish – Tube",
+      "slug": "whitening-skin-polish-tube",
+      "categoryId": "skincare",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2042",
+      "price": 350,
+      "compareAtPrice": null,
+      "stock": 0,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/whitening-skin-polish-tube-1.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Skin Polish – Tube product photo",
+      "shortDescription": "An exfoliating skin polish with glycolic acid and kaolin, in a tube.",
+      "description": "This skin polish combines glycolic acid with kaolin clay to exfoliate and refine the look of the pores. The tube format is easy to use at home. Use a few times a week and always follow with sunscreen in the daytime.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-22",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-skin-polish-tube"
+      }
+    },
+    {
+      "id": "mv-2087",
+      "name": "DIEFEI 3D Acqua Di Perfume & Body Mist",
+      "slug": "acqua-di-perfume-body-mist",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2087",
+      "price": 250,
+      "compareAtPrice": null,
+      "stock": 100,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/acqua-di-perfume-body-mist-1.webp",
+        "assets/images/products/acqua-di-perfume-body-mist-2.webp"
+      ],
+      "altText": "DIEFEI 3D Acqua Di Perfume & Body Mist product photo",
+      "shortDescription": "A light, sea-breeze body mist in two sizes.",
+      "description": "A crisp aquatic mist inspired by cool water and coastal air. It feels clean and easy, making it a good everyday scent.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "60 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "120 ml",
+              "priceDelta": 300,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-cosmetics-acqua-di-perfume-body-mist-125ml"
+      }
+    },
+    {
+      "id": "mv-2015",
+      "name": "DIEFEI 3D Bright Crystal Perfume",
+      "slug": "bright-crystal-perfume",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2015",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/bright-crystal-perfume-1.webp",
+        "assets/images/products/bright-crystal-perfume-2.webp",
+        "assets/images/products/bright-crystal-perfume-3.webp"
+      ],
+      "altText": "DIEFEI 3D Bright Crystal Perfume product photo",
+      "shortDescription": "A sparkling perfume with a warm base.",
+      "description": "Bright Crystal opens light and luminous, then settles onto a warmer base. It is understated enough for daytime and polished enough for evening.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-02-02",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "bright-crystal-perfume"
+      }
+    },
+    {
+      "id": "mv-2082",
+      "name": "DIEFEI 3D Bright Crystal Perfume & Body Mist",
+      "slug": "bright-crystal-perfume-body-mist",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2082",
+      "price": 250,
+      "compareAtPrice": null,
+      "stock": 100,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/bright-crystal-perfume-body-mist-1.webp",
+        "assets/images/products/bright-crystal-perfume-body-mist-2.webp",
+        "assets/images/products/bright-crystal-perfume-body-mist-3.webp"
+      ],
+      "altText": "DIEFEI 3D Bright Crystal Perfume & Body Mist product photo",
+      "shortDescription": "A fresh, floral body mist in 60 ml and 125 ml.",
+      "description": "A light perfume-and-body-mist spray with a fresh floral character. It is easy to wear every day and simple to top up whenever you want a lift. Choose the 60 ml bottle for your bag or the 125 ml size for home.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "60 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "125 ml",
+              "priceDelta": 300,
+              "stock": 50
+            }
           ]
         }
       ],
       "rating": null,
       "featured": true,
       "isNew": false,
-      "isBestSeller": true,
-      "active": true,
-      "createdAt": "2024-09-12"
-    },
-    {
-      "id": "mv-1016",
-      "name": "Vitamin C Glow Cream",
-      "slug": "vitamin-c-glow-cream",
-      "categoryId": "vitamin-c",
-      "brand": "Maveliq",
-      "sku": "MV-VTC-1016",
-      "price": 2350,
-      "compareAtPrice": null,
-      "stock": 13,
-      "lowStockThreshold": 4,
-      "images": ["assets/images/ph-vitc-2.svg", "assets/images/ph-vitc-1.svg"],
-      "altText": "Vitamin C cream jar with orange-tinted lid",
-      "shortDescription": "A daily cream from the vitamin C range.",
-      "description": "A daily moisturising cream from the vitamin C range. Demonstration data — replace with verified details.",
-      "variants": [],
-      "rating": null,
-      "featured": false,
-      "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-12-18"
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-cosmetics-bright-crystal-perfume-body-mist-125ml"
+      }
     },
     {
-      "id": "mv-1017",
-      "name": "Cream Developer 20 Volume",
-      "slug": "cream-developer-20-volume",
-      "categoryId": "hair-developers",
-      "brand": "Maveliq",
-      "sku": "MV-DEV-1017",
-      "price": 950,
+      "id": "mv-2084",
+      "name": "DIEFEI 3D Cool Water Perfume & Body Mist",
+      "slug": "cool-water-perfume-body-mist",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2084",
+      "price": 250,
       "compareAtPrice": null,
-      "stock": 34,
-      "lowStockThreshold": 6,
-      "images": ["assets/images/ph-developer-1.svg", "assets/images/ph-developer-2.svg"],
-      "altText": "Bottle of cream hair developer with measuring cap",
-      "shortDescription": "20 volume cream developer for colouring routines.",
-      "description": "A 20 volume cream developer for use with hair colour products according to their mixing instructions. Always perform a strand test and follow the colour product's directions. Demonstration data — replace with verified details.",
+      "stock": 100,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/cool-water-perfume-body-mist-1.webp",
+        "assets/images/products/cool-water-perfume-body-mist-2.webp"
+      ],
+      "altText": "DIEFEI 3D Cool Water Perfume & Body Mist product photo",
+      "shortDescription": "A clean, aquatic body mist in two sizes.",
+      "description": "An ocean-inspired mist with a crisp, watery freshness. It is a comfortable choice for warm weather, the gym bag or a quick refresh during the day.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
       "variants": [
-        {
-          "name": "Volume",
-          "required": true,
-          "options": [
-            { "label": "20 Vol", "priceDelta": 0, "stock": 20 },
-            { "label": "30 Vol", "priceDelta": 100, "stock": 14 }
-          ]
-        },
         {
           "name": "Size",
           "required": true,
           "options": [
-            { "label": "150 ml", "priceDelta": 0, "stock": 22 },
-            { "label": "500 ml", "priceDelta": 650, "stock": 12 }
+            {
+              "label": "60 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "120 ml",
+              "priceDelta": 300,
+              "stock": 50
+            }
           ]
         }
       ],
@@ -471,54 +2214,711 @@
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-10-05"
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-cosmetics-cool-water-perfume-body-mist-125ml"
+      }
     },
     {
-      "id": "mv-1018",
-      "name": "Oxidising Developer 10 Volume",
-      "slug": "oxidising-developer-10-volume",
-      "categoryId": "hair-developers",
-      "brand": "Maveliq",
-      "sku": "MV-DEV-1018",
-      "price": 880,
+      "id": "mv-2086",
+      "name": "DIEFEI 3D Creed Aventus Perfume & Body Mist",
+      "slug": "creed-aventus-perfume-body-mist",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2086",
+      "price": 250,
       "compareAtPrice": null,
-      "stock": 3,
-      "lowStockThreshold": 6,
-      "images": ["assets/images/ph-developer-2.svg", "assets/images/ph-developer-1.svg"],
-      "altText": "White bottle of 10 volume oxidising developer",
-      "shortDescription": "10 volume developer for gentler colour processing.",
-      "description": "A 10 volume oxidising developer for use as directed by the accompanying colour product. Demonstration data — replace with verified details.",
+      "stock": 100,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/creed-aventus-perfume-body-mist-1.webp",
+        "assets/images/products/creed-aventus-perfume-body-mist-2.webp"
+      ],
+      "altText": "DIEFEI 3D Creed Aventus Perfume & Body Mist product photo",
+      "shortDescription": "A fresh yet deep body mist in two sizes.",
+      "description": "A body mist that balances freshness with depth, suited to both everyday wear and special plans. Spray onto clothes or skin and enjoy a refined, lasting trail.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "60 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "120 ml",
+              "priceDelta": 300,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-cosmetics-creed-aventus-perfume-body-mist-125ml"
+      }
+    },
+    {
+      "id": "mv-2013",
+      "name": "DIEFEI 3D David Beckam Perfume",
+      "slug": "david-beckam-perfume",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2013",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/david-beckam-perfume-1.webp",
+        "assets/images/products/david-beckam-perfume-2.webp",
+        "assets/images/products/david-beckam-perfume-3.webp"
+      ],
+      "altText": "DIEFEI 3D David Beckam Perfume product photo",
+      "shortDescription": "A crisp citrus-and-wood perfume.",
+      "description": "This fragrance blends fresh citrus with warmer woody notes for a clean, modern feel. It works well for office days as well as occasions.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
       "variants": [],
       "rating": null,
       "featured": false,
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-10-05"
+      "createdAt": "2026-02-02",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "david-beckam-perfume"
+      }
     },
     {
-      "id": "mv-1019",
-      "name": "Liquid BB Cream — Natural Beige",
-      "slug": "liquid-bb-cream-natural-beige",
-      "categoryId": "bb-cream-foundation",
-      "brand": "Maveliq",
-      "sku": "MV-BBC-1019",
-      "price": 1850,
-      "compareAtPrice": 2200,
-      "stock": 21,
+      "id": "mv-2083",
+      "name": "DIEFEI 3D Desire Perfume & Body Mist",
+      "slug": "desire-perfume-body-mist",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2083",
+      "price": 250,
+      "compareAtPrice": null,
+      "stock": 100,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-foundation-1.svg", "assets/images/ph-foundation-2.svg"],
-      "altText": "Squeeze tube of BB cream in Natural Beige shade",
-      "shortDescription": "A light-coverage BB cream in a squeeze tube.",
-      "description": "A light-coverage BB cream for a natural, everyday base. Demonstration data — replace with verified shade information and details.",
+      "images": [
+        "assets/images/products/desire-perfume-body-mist-1.webp",
+        "assets/images/products/desire-perfume-body-mist-2.webp"
+      ],
+      "altText": "DIEFEI 3D Desire Perfume & Body Mist product photo",
+      "shortDescription": "A balanced, refreshing body mist in two sizes.",
+      "description": "Desire in a lighter mist form — a fresh, versatile scent for daily wear. Spray over the body after bathing or onto clothes before heading out.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "60 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "120 ml",
+              "priceDelta": 300,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-cosmetics-desire-perfume-body-mist-125ml"
+      }
+    },
+    {
+      "id": "mv-2012",
+      "name": "DIEFEI 3D Desire Red Perfume",
+      "slug": "desire-red-perfume",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2012",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/desire-red-perfume-1.webp",
+        "assets/images/products/desire-red-perfume-2.webp",
+        "assets/images/products/desire-red-perfume-3.webp"
+      ],
+      "altText": "DIEFEI 3D Desire Red Perfume product photo",
+      "shortDescription": "A bold, sensual perfume for evenings and special occasions.",
+      "description": "Desire Red is a confident fragrance that moves from vivid top notes into a richer heart. It is a natural pick for evenings, dinners and celebrations.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-02-02",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "desire-red-perfume"
+      }
+    },
+    {
+      "id": "mv-2014",
+      "name": "DIEFEI 3D Flora Perfume",
+      "slug": "flora-perfume",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2014",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/flora-perfume-1.webp",
+        "assets/images/products/flora-perfume-2.webp",
+        "assets/images/products/flora-perfume-3.webp"
+      ],
+      "altText": "DIEFEI 3D Flora Perfume product photo",
+      "shortDescription": "A soft floral perfume.",
+      "description": "Flora is built around delicate flower notes for a graceful, feminine scent. Wear it on its own or layer it lightly over an unscented lotion.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-02-02",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "flora-perfume"
+      }
+    },
+    {
+      "id": "mv-2010",
+      "name": "DIEFEI 3D Janan Perfume",
+      "slug": "janan-perfume",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2010",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/janan-perfume-1.webp"
+      ],
+      "altText": "DIEFEI 3D Janan Perfume product photo",
+      "shortDescription": "A warm, elegant perfume for everyday or occasion wear.",
+      "description": "Janan is a refined fragrance from the DIEFEI 3D perfume line, made to feel polished from day to evening. Spray on pulse points and let it settle into the skin.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-02-02",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "janan-perfume"
+      }
+    },
+    {
+      "id": "mv-2088",
+      "name": "DIEFEI 3D Janan Perfume & Body Mist",
+      "slug": "janan-perfume-body-mist",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2088",
+      "price": 250,
+      "compareAtPrice": null,
+      "stock": 100,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/janan-perfume-body-mist-1.webp",
+        "assets/images/products/janan-perfume-body-mist-2.webp"
+      ],
+      "altText": "DIEFEI 3D Janan Perfume & Body Mist product photo",
+      "shortDescription": "A warm oriental body mist in two sizes.",
+      "description": "Janan in a lighter mist: a blend of floral, spicy and musky notes inspired by classic oriental scents. Comfortable for daily wear and lovely for gatherings.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "60 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "120 ml",
+              "priceDelta": 300,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-cosmetics-janan-perfume-body-mist-125ml"
+      }
+    },
+    {
+      "id": "mv-2011",
+      "name": "DIEFEI 3D Rush Perfume",
+      "slug": "rush-perfume",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2011",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/rush-perfume-1.webp"
+      ],
+      "altText": "DIEFEI 3D Rush Perfume product photo",
+      "shortDescription": "An energetic perfume with a lively opening.",
+      "description": "Rush opens bright and fresh before softening into a smoother heart. It suits busy days and evenings out alike. Apply to pulse points or lightly mist onto clothing.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-02-02",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "rush-perfume"
+      }
+    },
+    {
+      "id": "mv-2016",
+      "name": "DIEFEI 3D Sauvage Perfume",
+      "slug": "sauvage-perfume",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2016",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/sauvage-perfume-1.webp"
+      ],
+      "altText": "DIEFEI 3D Sauvage Perfume product photo",
+      "shortDescription": "A spicy, woody perfume with a bold character.",
+      "description": "Sauvage mixes spicy and woody notes for a strong, layered scent that develops as it wears. A good choice if you like fragrances with presence.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-02-02",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "sauvage-perfume"
+      }
+    },
+    {
+      "id": "mv-2089",
+      "name": "DIEFEI 3D Sauvage Perfume & Body Mist",
+      "slug": "sauvage-perfume-body-mist",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2089",
+      "price": 250,
+      "compareAtPrice": null,
+      "stock": 100,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/sauvage-perfume-body-mist-1.webp",
+        "assets/images/products/sauvage-perfume-body-mist-2.webp"
+      ],
+      "altText": "DIEFEI 3D Sauvage Perfume & Body Mist product photo",
+      "shortDescription": "A fresh citrus-and-woods body mist in two sizes.",
+      "description": "A lively mix of spicy citrus and woody notes in an easy-to-use body mist. Spray on after a shower or on clothes for a fresh, energetic scent.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "60 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "120 ml",
+              "priceDelta": 300,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-cosmetics-sauvage-perfume-body-mist-125ml"
+      }
+    },
+    {
+      "id": "mv-2017",
+      "name": "DIEFEI 3D Wanted Perfume",
+      "slug": "wanted-perfume",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2017",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/wanted-perfume-1.webp",
+        "assets/images/products/wanted-perfume-2.webp",
+        "assets/images/products/wanted-perfume-3.webp"
+      ],
+      "altText": "DIEFEI 3D Wanted Perfume product photo",
+      "shortDescription": "A rich, attention-catching perfume.",
+      "description": "Wanted starts vibrant and dries down to a deeper, memorable base. Apply to pulse points for an impression that carries from morning into evening.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2026-02-02",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "wanted-perfume"
+      }
+    },
+    {
+      "id": "mv-2085",
+      "name": "DIEFEI 3D Wanted Perfume & Body Mist",
+      "slug": "wanted-perfume-body-mist",
+      "categoryId": "perfumes-body-mists",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2085",
+      "price": 250,
+      "compareAtPrice": null,
+      "stock": 100,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/wanted-perfume-body-mist-1.webp",
+        "assets/images/products/wanted-perfume-body-mist-2.webp"
+      ],
+      "altText": "DIEFEI 3D Wanted Perfume & Body Mist product photo",
+      "shortDescription": "A bold, warm body mist in two sizes.",
+      "description": "The Wanted scent in mist form, mixing warm and fresh notes for a confident finish. Ideal for evenings out or whenever you want something stronger than a typical body spray.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "60 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "120 ml",
+              "priceDelta": 300,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-13",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-cosmetics-wanted-perfume-body-mist-125ml"
+      }
+    },
+    {
+      "id": "mv-2030",
+      "name": "DIEFEI 3D 6-Piece Gel Nail Polish Set",
+      "slug": "gel-nail-polish-set-6-piece",
+      "categoryId": "makeup",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2030",
+      "price": 1200,
+      "compareAtPrice": null,
+      "stock": 700,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/gel-nail-polish-set-6-piece-1.webp",
+        "assets/images/products/gel-nail-polish-set-6-piece-2.webp",
+        "assets/images/products/gel-nail-polish-set-6-piece-3.webp",
+        "assets/images/products/gel-nail-polish-set-6-piece-4.webp"
+      ],
+      "altText": "DIEFEI 3D 6-Piece Gel Nail Polish Set product photo",
+      "shortDescription": "Six high-shine nail colours in one set, with 14 combinations to choose from.",
+      "description": "A set of six gel-effect nail polishes in coordinated colours. Pick your preferred combination by its shade numbers. Apply over a clean, dry nail and let each coat dry before adding the next.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
+      "variants": [
+        {
+          "name": "Shade set",
+          "required": true,
+          "options": [
+            {
+              "label": "1-3-14-5-6-2",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "4-8-7-17-9-11",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "18-25-15-10-26-37",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "8-23-19-41-12-28",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "20-27-43-35-16-42",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "30-49-21-50-62-32",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "36-48-46-61-39-63",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "84-74-68-78-65-33",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "22-53-81-67-80-40",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "45-29-52-31-63-56",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "24-57-66-69-76-73",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "13-51-59-44-64-54",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "75-55-82-83-70-38",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "52-60-79-58-77-71",
+              "priceDelta": 0,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-26",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "6-piece-diefei-3d-gel-nail-polish-set-long-lasting-high-shine-colors"
+      }
+    },
+    {
+      "id": "mv-2049",
+      "name": "DIEFEI 3D 6D Eyelashes",
+      "slug": "6d-eyelashes",
+      "categoryId": "makeup",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2049",
+      "price": 275,
+      "compareAtPrice": null,
+      "stock": 350,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/6d-eyelashes-1.webp",
+        "assets/images/products/6d-eyelashes-2.webp",
+        "assets/images/products/6d-eyelashes-3.webp",
+        "assets/images/products/6d-eyelashes-4.webp"
+      ],
+      "altText": "DIEFEI 3D 6D Eyelashes product photo",
+      "shortDescription": "Fluffy, voluminous false lashes in seven styles.",
+      "description": "Reusable false lashes with a full, fluffy 6D look, offered in seven numbered styles. Trim the band to fit your eye, apply lash glue and wait a few seconds before placing.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "6D/01",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "6D/02",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "6D/05",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "6D/09",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "6D/16",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "6D/27",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "6D/32",
+              "priceDelta": 0,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-19",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-6d-mink-eyelashes-dramatic-volume-fluffy-finish"
+      }
+    },
+    {
+      "id": "mv-2048",
+      "name": "DIEFEI 3D BB Foundation Cream",
+      "slug": "bb-foundation-cream",
+      "categoryId": "makeup",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2048",
+      "price": 675,
+      "compareAtPrice": null,
+      "stock": 300,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/bb-foundation-cream-1.webp",
+        "assets/images/products/bb-foundation-cream-2.webp",
+        "assets/images/products/bb-foundation-cream-3.webp",
+        "assets/images/products/bb-foundation-cream-4.webp"
+      ],
+      "altText": "DIEFEI 3D BB Foundation Cream product photo",
+      "shortDescription": "A lightweight BB foundation in six shades, D30 to D80.",
+      "description": "A three-in-one BB cream that the brand designed to work as foundation, primer and concealer in a single step. It gives light, natural-looking coverage and a comfortable feel. Choose from six shades and blend with fingers, a sponge or a brush.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
       "variants": [
         {
           "name": "Shade",
           "required": true,
           "options": [
-            { "label": "Natural Beige", "priceDelta": 0, "stock": 12, "swatch": "#D8B08C" },
-            { "label": "Warm Sand", "priceDelta": 0, "stock": 6, "swatch": "#C99B70" },
-            { "label": "Deep Honey", "priceDelta": 0, "stock": 3, "swatch": "#A97B52" }
+            {
+              "label": "D30",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "D40",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "D50",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "D60",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "D70",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "D80",
+              "priceDelta": 0,
+              "stock": 50
+            }
           ]
         }
       ],
@@ -527,172 +2927,666 @@
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-11-30"
+      "createdAt": "2025-05-19",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "bb-foundation-cream-hydrating-lightweight-natural-coverage"
+      }
     },
     {
-      "id": "mv-1020",
-      "name": "Liquid Foundation — Medium Warm",
-      "slug": "liquid-foundation-medium-warm",
-      "categoryId": "bb-cream-foundation",
-      "brand": "Maveliq",
-      "sku": "MV-BBC-1020",
-      "price": 2450,
-      "compareAtPrice": null,
-      "stock": 17,
-      "lowStockThreshold": 5,
-      "images": ["assets/images/ph-foundation-2.svg", "assets/images/ph-foundation-1.svg"],
-      "altText": "Glass foundation bottle with pump dispenser",
-      "shortDescription": "A buildable liquid foundation with pump dispenser.",
-      "description": "A buildable liquid foundation supplied with a pump dispenser for easy, hygienic use. Demonstration data — replace with verified shade range and details.",
-      "variants": [
-        {
-          "name": "Shade",
-          "required": true,
-          "options": [
-            { "label": "Medium Warm", "priceDelta": 0, "stock": 10, "swatch": "#C79A6E" },
-            { "label": "Medium Cool", "priceDelta": 0, "stock": 7, "swatch": "#C1928A" }
-          ]
-        }
-      ],
-      "rating": null,
-      "featured": false,
-      "isNew": true,
-      "isBestSeller": false,
-      "active": true,
-      "createdAt": "2025-02-08"
-    },
-    {
-      "id": "mv-1021",
-      "name": "Nourishing Body Lotion — Shea",
-      "slug": "nourishing-body-lotion-shea",
-      "categoryId": "body-lotions",
-      "brand": "Maveliq",
-      "sku": "MV-LTN-1021",
-      "price": 1550,
-      "compareAtPrice": 1900,
-      "stock": 38,
-      "lowStockThreshold": 7,
-      "images": ["assets/images/ph-lotion-1.svg", "assets/images/ph-lotion-2.svg"],
-      "altText": "Pump bottle of shea body lotion",
-      "shortDescription": "A rich shea body lotion for daily hydration.",
-      "description": "A nourishing body lotion with shea for daily use. Apply to clean skin after bathing for best results. Demonstration data — replace with verified details.",
-      "variants": [
-        {
-          "name": "Size",
-          "required": true,
-          "options": [
-            { "label": "200 ml", "priceDelta": 0, "stock": 22 },
-            { "label": "400 ml", "priceDelta": 750, "stock": 16 }
-          ]
-        }
-      ],
-      "rating": null,
-      "featured": false,
-      "isNew": false,
-      "isBestSeller": true,
-      "active": true,
-      "createdAt": "2024-08-20"
-    },
-    {
-      "id": "mv-1022",
-      "name": "Whipped Body Butter — Cocoa",
-      "slug": "whipped-body-butter-cocoa",
-      "categoryId": "body-lotions",
-      "brand": "Maveliq",
-      "sku": "MV-LTN-1022",
-      "price": 1980,
-      "compareAtPrice": null,
-      "stock": 11,
-      "lowStockThreshold": 4,
-      "images": ["assets/images/ph-lotion-2.svg", "assets/images/ph-lotion-1.svg"],
-      "altText": "Open jar of whipped cocoa body butter",
-      "shortDescription": "A thick whipped body butter for dry areas.",
-      "description": "A thick, whipped body butter suited to dry areas such as elbows, knees and hands. Demonstration data — replace with verified details.",
-      "variants": [],
-      "rating": null,
-      "featured": false,
-      "isNew": true,
-      "isBestSeller": false,
-      "active": true,
-      "createdAt": "2025-01-25"
-    },
-    {
-      "id": "mv-1023",
-      "name": "Permanent Hair Colour — Natural Black",
-      "slug": "permanent-hair-colour-natural-black",
-      "categoryId": "hair-colour",
-      "brand": "Maveliq",
-      "sku": "MV-HCR-1023",
-      "price": 1290,
-      "compareAtPrice": 1550,
-      "stock": 26,
-      "lowStockThreshold": 5,
-      "images": ["assets/images/ph-haircolour-1.svg", "assets/images/ph-haircolour-2.svg"],
-      "altText": "Hair colour carton with tube and developer bottle beside it",
-      "shortDescription": "At-home permanent hair colour kit in Natural Black.",
-      "description": "A permanent hair colour kit for at-home use, supplied with colour cream and developer. Always follow the enclosed instructions, perform a patch test 48 hours before use, and wear the provided gloves. Demonstration data — replace with verified details, ingredients and safety information.",
-      "variants": [
-        {
-          "name": "Shade",
-          "required": true,
-          "options": [
-            { "label": "Natural Black", "priceDelta": 0, "stock": 15, "swatch": "#241F1D" },
-            { "label": "Dark Brown", "priceDelta": 0, "stock": 11, "swatch": "#4A3227" }
-          ]
-        }
-      ],
-      "rating": null,
-      "featured": true,
-      "isNew": false,
-      "isBestSeller": true,
-      "active": true,
-      "createdAt": "2024-09-05"
-    },
-    {
-      "id": "mv-1024",
-      "name": "Temporary Hair Colour Spray — Burgundy",
-      "slug": "temporary-hair-colour-spray-burgundy",
-      "categoryId": "hair-colour",
-      "brand": "Maveliq",
-      "sku": "MV-HCR-1024",
+      "id": "mv-2064",
+      "name": "DIEFEI 3D Eyeshadow Palette",
+      "slug": "eyeshadow-palette",
+      "categoryId": "makeup",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2064",
       "price": 1100,
       "compareAtPrice": null,
-      "stock": 14,
-      "lowStockThreshold": 4,
-      "images": ["assets/images/ph-haircolour-2.svg", "assets/images/ph-haircolour-1.svg"],
-      "altText": "Burgundy temporary colour spray can",
-      "shortDescription": "A wash-out colour spray for temporary looks.",
-      "description": "A temporary colour spray that washes out with shampoo — ideal for events and costume looks. Demonstration data — replace with verified details.",
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/eyeshadow-palette-1.webp",
+        "assets/images/products/eyeshadow-palette-2.webp",
+        "assets/images/products/eyeshadow-palette-3.webp",
+        "assets/images/products/eyeshadow-palette-4.webp"
+      ],
+      "altText": "DIEFEI 3D Eyeshadow Palette product photo",
+      "shortDescription": "A multi-shade palette mixing matte and shimmer eyeshadows.",
+      "description": "A palette of matte and shimmer shades in a compact case with a built-in mirror, for everything from soft daytime looks to dramatic evening eyes. The colours are designed to be pigmented and easy to blend.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
       "variants": [],
       "rating": null,
       "featured": false,
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-12-28"
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-eyeshadow-palette-matte-shimmer-long-lasting-finish"
+      }
     },
     {
-      "id": "mv-1025",
-      "name": "Pressed Compact Powder — Ivory",
-      "slug": "pressed-compact-powder-ivory",
-      "categoryId": "compact-powders",
-      "brand": "Maveliq",
-      "sku": "MV-PWD-1025",
-      "price": 1650,
-      "compareAtPrice": 1950,
-      "stock": 23,
+      "id": "mv-2060",
+      "name": "DIEFEI 3D HD Primer Base",
+      "slug": "hd-primer-base",
+      "categoryId": "makeup",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2060",
+      "price": 499,
+      "compareAtPrice": null,
+      "stock": 0,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-powder-1.svg", "assets/images/ph-powder-2.svg"],
-      "altText": "Open compact powder case with mirror and puff",
-      "shortDescription": "A pressed powder compact with mirror and puff.",
-      "description": "A pressed compact powder supplied with a mirror and puff for quick touch-ups throughout the day. Demonstration data — replace with verified shade details.",
+      "images": [
+        "assets/images/products/hd-primer-base-1.webp",
+        "assets/images/products/hd-primer-base-2.webp",
+        "assets/images/products/hd-primer-base-3.webp"
+      ],
+      "altText": "DIEFEI 3D HD Primer Base product photo",
+      "shortDescription": "A smoothing makeup primer that helps foundation go on evenly.",
+      "description": "Apply this primer before foundation to create a smooth base. It is designed to blur the look of pores and help makeup stay fresh for longer. Use a small amount on clean, moisturised skin.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-16",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-hd-primer-base-pore-minimizing-makeup-base"
+      }
+    },
+    {
+      "id": "mv-2050",
+      "name": "DIEFEI 3D Liquid Eyeliner",
+      "slug": "liquid-eyeliner",
+      "categoryId": "makeup",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2050",
+      "price": 315,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/liquid-eyeliner-1.webp",
+        "assets/images/products/liquid-eyeliner-2.webp"
+      ],
+      "altText": "DIEFEI 3D Liquid Eyeliner product photo",
+      "shortDescription": "A fine-tip black liquid eyeliner for sharp lines and wings.",
+      "description": "A precise liquid liner with a fine tip that makes it easier to draw thin lines, cat-eyes and bold wings. The brand describes it as quick-drying and smudge-resistant. Remove with an eye makeup remover.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-19",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "liquid-eyeliner-smudge-proof-long-lasting-formula"
+      }
+    },
+    {
+      "id": "mv-2061",
+      "name": "DIEFEI 3D Mascara",
+      "slug": "3d-mascara",
+      "categoryId": "makeup",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2061",
+      "price": 325,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/3d-mascara-1.webp",
+        "assets/images/products/3d-mascara-2.webp",
+        "assets/images/products/3d-mascara-3.webp"
+      ],
+      "altText": "DIEFEI 3D Mascara product photo",
+      "shortDescription": "A volumising, lengthening mascara.",
+      "description": "A mascara with a shaped brush designed to separate, lift and lengthen lashes for a fuller look. Build up in layers from root to tip, and remove fully at night.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-16",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-mascara-volumizing-lengthening-lash-lift-effect"
+      }
+    },
+    {
+      "id": "mv-2051",
+      "name": "DIEFEI 3D Matte Compact Powder",
+      "slug": "matte-compact-powder",
+      "categoryId": "makeup",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2051",
+      "price": 435,
+      "compareAtPrice": null,
+      "stock": 400,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/matte-compact-powder-1.webp",
+        "assets/images/products/matte-compact-powder-2.webp",
+        "assets/images/products/matte-compact-powder-3.webp",
+        "assets/images/products/matte-compact-powder-4.webp"
+      ],
+      "altText": "DIEFEI 3D Matte Compact Powder product photo",
+      "shortDescription": "A matte pressed powder in eight shades for touch-ups on the go.",
+      "description": "A pressed compact powder that sets makeup and reduces shine with a soft matte finish. Coverage is light and buildable, and the compact fits easily in a handbag. Available in eight shades.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
       "variants": [
         {
           "name": "Shade",
           "required": true,
           "options": [
-            { "label": "Ivory", "priceDelta": 0, "stock": 13, "swatch": "#EBD3B8" },
-            { "label": "Beige", "priceDelta": 0, "stock": 10, "swatch": "#D9B48C" }
+            {
+              "label": "01",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "02",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "03",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "04",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "05",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "06",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "07",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "08",
+              "priceDelta": 0,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": true,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-19",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "matte-finish-compact-powder-long-lasting-oil-free"
+      }
+    },
+    {
+      "id": "mv-2047",
+      "name": "DIEFEI 3D Nail Paint",
+      "slug": "3d-nail-paint",
+      "categoryId": "makeup",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2047",
+      "price": 220,
+      "compareAtPrice": null,
+      "stock": 4200,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/3d-nail-paint-1.webp",
+        "assets/images/products/3d-nail-paint-2.webp",
+        "assets/images/products/3d-nail-paint-3.webp",
+        "assets/images/products/3d-nail-paint-4.webp"
+      ],
+      "altText": "DIEFEI 3D Nail Paint product photo",
+      "shortDescription": "High-gloss nail paint with a textured 3D effect, in 84 shades.",
+      "description": "A pigmented nail paint with a glossy, dimensional finish, available in 84 numbered shades. The brand describes the formula as toluene-free. Apply two thin coats for even colour.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
+      "variants": [
+        {
+          "name": "Shade",
+          "required": true,
+          "options": [
+            {
+              "label": "1",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "2",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "3",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "4",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "5",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "6",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "7",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "8",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "9",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "10",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "11",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "12",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "13",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "14",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "15",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "16",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "17",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "18",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "19",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "20",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "21",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "22",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "23",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "24",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "25",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "26",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "27",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "28",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "29",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "30",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "31",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "32",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "33",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "34",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "35",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "36",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "37",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "38",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "39",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "40",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "41",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "42",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "43",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "44",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "45",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "46",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "47",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "48",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "49",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "50",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "51",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "52",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "53",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "54",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "55",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "56",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "57",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "58",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "59",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "60",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "61",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "62",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "63",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "64",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "65",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "66",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "67",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "68",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "69",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "70",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "71",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "72",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "73",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "74",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "75",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "76",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "77",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "78",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "79",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "80",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "81",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "82",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "83",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "84",
+              "priceDelta": 0,
+              "stock": 50
+            }
           ]
         }
       ],
@@ -701,122 +3595,809 @@
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-10-20"
+      "createdAt": "2025-05-21",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-nail-paint-high-gloss-textured-nail-art-effect"
+      }
     },
     {
-      "id": "mv-1026",
-      "name": "Loose Setting Powder — Translucent",
-      "slug": "loose-setting-powder-translucent",
-      "categoryId": "compact-powders",
-      "brand": "Maveliq",
-      "sku": "MV-PWD-1026",
-      "price": 1890,
+      "id": "mv-2045",
+      "name": "DIEFEI 3D Blonder Lightening Powder",
+      "slug": "blonder-lightening-powder",
+      "categoryId": "hair-colour",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2045",
+      "price": 215,
       "compareAtPrice": null,
-      "stock": 2,
+      "stock": 150,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-powder-2.svg", "assets/images/ph-powder-1.svg"],
-      "altText": "Jar of translucent loose setting powder with sifter",
-      "shortDescription": "A finely milled loose powder for setting makeup.",
-      "description": "A finely milled loose powder with a sifter lid, used to set makeup in place. Demonstration data — replace with verified details.",
+      "images": [
+        "assets/images/products/blonder-lightening-powder-1.webp",
+        "assets/images/products/blonder-lightening-powder-2.webp",
+        "assets/images/products/blonder-lightening-powder-3.webp"
+      ],
+      "altText": "DIEFEI 3D Blonder Lightening Powder product photo",
+      "shortDescription": "A hair-lightening powder in 50 g, 100 g and 500 g packs.",
+      "description": "A bleaching powder for lifting hair to lighter blonde tones, suitable for salon or experienced home use. It is mixed with a developer as directed on the pack. The 500 g size is aimed at salons.",
+      "warnings": "Carry out a skin allergy test and a strand test 48 hours before every use, and follow the instructions in the pack carefully. Keep away from the eyes and eyebrows.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "50 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "100 g",
+              "priceDelta": 170,
+              "stock": 50
+            },
+            {
+              "label": "500 g",
+              "priceDelta": 1655,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-21",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "blonder-lightening-powder-professional-hair-bleach-for-salon-home-use"
+      }
+    },
+    {
+      "id": "mv-2028",
+      "name": "DIEFEI 3D Hair Colour",
+      "slug": "hair-colour",
+      "categoryId": "hair-colour",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2028",
+      "price": 60,
+      "compareAtPrice": null,
+      "stock": 100,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/hair-colour-1.webp",
+        "assets/images/products/hair-colour-2.webp",
+        "assets/images/products/hair-colour-3.webp",
+        "assets/images/products/hair-colour-4.webp"
+      ],
+      "altText": "DIEFEI 3D Hair Colour product photo",
+      "shortDescription": "Ammonia-free hair colour in Black and Brown.",
+      "description": "A home hair colour that the brand describes as ammonia-free and long-lasting. Choose between Black and Brown. Read the leaflet in full before use and always carry out the allergy and strand tests.",
+      "warnings": "Carry out a skin allergy test and a strand test 48 hours before every use, and follow the instructions in the pack carefully. Keep away from the eyes and eyebrows.",
+      "variants": [
+        {
+          "name": "Colour",
+          "required": true,
+          "options": [
+            {
+              "label": "Black",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "Brown",
+              "priceDelta": 0,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": true,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-26",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-hair-colour-long-lasting-ammonia-free-hair-dye-for-vibrant-shades"
+      }
+    },
+    {
+      "id": "mv-2007",
+      "name": "DIEFEI 3D MaxCare Shampoo 200 ml",
+      "slug": "maxcare-shampoo-200ml",
+      "categoryId": "hair-colour",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2007",
+      "price": 500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/maxcare-shampoo-200ml-1.webp",
+        "assets/images/products/maxcare-shampoo-200ml-2.webp",
+        "assets/images/products/maxcare-shampoo-200ml-3.webp",
+        "assets/images/products/maxcare-shampoo-200ml-4.webp"
+      ],
+      "altText": "DIEFEI 3D MaxCare Shampoo 200 ml product photo",
+      "shortDescription": "A 200 ml herbal shampoo for smoother, more manageable hair.",
+      "description": "MaxCare is a herbal shampoo designed to cleanse the scalp and leave hair soft, smooth and easier to manage. Massage into wet hair, lather and rinse thoroughly. Suitable for regular use.",
+      "warnings": "For external use only. Avoid contact with the eyes; if this happens, rinse well with water.",
       "variants": [],
       "rating": null,
       "featured": false,
       "isNew": true,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2025-02-16"
+      "createdAt": "2026-06-19",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "maxcare-shampoo"
+      }
     },
     {
-      "id": "mv-1027",
-      "name": "Rosewater Facial Toner",
-      "slug": "rosewater-facial-toner",
-      "categoryId": "facial-skincare",
-      "brand": "Maveliq",
-      "sku": "MV-SKN-1027",
-      "price": 1400,
+      "id": "mv-2071",
+      "name": "DIEFEI 3D Aloe Vera Finger Wax",
+      "slug": "aloe-vera-finger-wax",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2071",
+      "price": 320,
       "compareAtPrice": null,
-      "stock": 29,
+      "stock": 150,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-skincare-1.svg", "assets/images/ph-vitc-1.svg"],
-      "altText": "Rosewater toner spray bottle with pink label",
-      "shortDescription": "A refreshing facial toner in a fine-mist spray bottle.",
-      "description": "A refreshing facial toner in a fine-mist spray bottle, used after cleansing. Demonstration data — replace with verified details.",
+      "images": [
+        "assets/images/products/aloe-vera-finger-wax-1.webp",
+        "assets/images/products/aloe-vera-finger-wax-2.webp"
+      ],
+      "altText": "DIEFEI 3D Aloe Vera Finger Wax product photo",
+      "shortDescription": "A sugar-based finger wax with aloe vera, in 250 g, 400 g and 800 g.",
+      "description": "A soft, sugar-based wax for hair removal using your fingers or strips. Aloe vera is added for a soothing feel. Good for smaller areas such as the face and upper lip.",
+      "warnings": "Test on a small patch of skin first. Do not use on broken, sunburnt or irritated skin. Check the temperature before applying if you warm the wax.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "250 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "400 g",
+              "priceDelta": 220,
+              "stock": 50
+            },
+            {
+              "label": "800 g",
+              "priceDelta": 660,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-aloe-vera-finger-wax-smooth-sugar-based-hair-removal-wax"
+      }
+    },
+    {
+      "id": "mv-2076",
+      "name": "DIEFEI 3D Banana Finger Wax",
+      "slug": "banana-finger-wax",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2076",
+      "price": 320,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/banana-finger-wax-1.webp",
+        "assets/images/products/banana-finger-wax-2.webp"
+      ],
+      "altText": "DIEFEI 3D Banana Finger Wax product photo",
+      "shortDescription": "A banana sugar wax for small and sensitive areas.",
+      "description": "A banana-extract variant of the brand's sugar-based finger wax, made for small areas like the face, upper lip and underarms. Use on clean, dry skin.",
+      "warnings": "Test on a small patch of skin first. Do not use on broken, sunburnt or irritated skin. Check the temperature before applying if you warm the wax.",
       "variants": [],
       "rating": null,
       "featured": false,
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-11-11"
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "banana-finger-wax"
+      }
     },
     {
-      "id": "mv-1028",
-      "name": "Charcoal Peel-Off Mask",
-      "slug": "charcoal-peel-off-mask",
-      "categoryId": "facial-skincare",
-      "brand": "Maveliq",
-      "sku": "MV-SKN-1028",
-      "price": 1750,
-      "compareAtPrice": 2100,
+      "id": "mv-2073",
+      "name": "DIEFEI 3D Green Apple Finger Wax",
+      "slug": "green-apple-finger-wax",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2073",
+      "price": 320,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/green-apple-finger-wax-1.webp",
+        "assets/images/products/green-apple-finger-wax-2.webp"
+      ],
+      "altText": "DIEFEI 3D Green Apple Finger Wax product photo",
+      "shortDescription": "A green apple sugar wax for finger or strip application.",
+      "description": "A refreshing green apple variant of the brand's sugar-based finger wax. It is designed to be gentle on the skin while removing unwanted hair.",
+      "warnings": "Test on a small patch of skin first. Do not use on broken, sunburnt or irritated skin. Check the temperature before applying if you warm the wax.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-green-apple-finger-wax-refreshing-hair-removal-with-fruit-power"
+      }
+    },
+    {
+      "id": "mv-2068",
+      "name": "DIEFEI 3D Healthy White Lotion with Vitamin B3",
+      "slug": "healthy-white-lotion-vitamin-b3",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2068",
+      "price": 150,
+      "compareAtPrice": null,
+      "stock": 150,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/healthy-white-lotion-vitamin-b3-1.webp",
+        "assets/images/products/healthy-white-lotion-vitamin-b3-2.webp",
+        "assets/images/products/healthy-white-lotion-vitamin-b3-3.webp"
+      ],
+      "altText": "DIEFEI 3D Healthy White Lotion with Vitamin B3 product photo",
+      "shortDescription": "A body lotion with niacinamide (vitamin B3) and sunscreens, in three sizes.",
+      "description": "A moisturising body lotion that contains vitamin B3 (niacinamide) and UV filters. It is designed to keep skin soft and help it look more even. Available in 50 ml, 100 ml and 200 ml.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "50 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "100 ml",
+              "priceDelta": 100,
+              "stock": 50
+            },
+            {
+              "label": "200 ml",
+              "priceDelta": 240,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-healthy-white-lotion-uv-lightening-with-vitamin-b3"
+      }
+    },
+    {
+      "id": "mv-2070",
+      "name": "DIEFEI 3D Intensive Care Cocoa Radiant Lotion",
+      "slug": "cocoa-radiant-lotion",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2070",
+      "price": 150,
+      "compareAtPrice": null,
+      "stock": 150,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/cocoa-radiant-lotion-1.webp",
+        "assets/images/products/cocoa-radiant-lotion-2.webp",
+        "assets/images/products/cocoa-radiant-lotion-3.webp"
+      ],
+      "altText": "DIEFEI 3D Intensive Care Cocoa Radiant Lotion product photo",
+      "shortDescription": "A cocoa butter and vitamin E body lotion for dry skin, in three sizes.",
+      "description": "This lotion pairs cocoa butter with vitamin E to moisturise dry, dull-looking skin. It is made to absorb quickly without a greasy feel.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "50 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "100 ml",
+              "priceDelta": 100,
+              "stock": 50
+            },
+            {
+              "label": "200 ml",
+              "priceDelta": 240,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-intensive-care-cocoa-radiant-lotion-moisturizer-for-dry-skin"
+      }
+    },
+    {
+      "id": "mv-2074",
+      "name": "DIEFEI 3D Lemon Finger Wax",
+      "slug": "lemon-finger-wax",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2074",
+      "price": 320,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/lemon-finger-wax-1.webp",
+        "assets/images/products/lemon-finger-wax-2.webp"
+      ],
+      "altText": "DIEFEI 3D Lemon Finger Wax product photo",
+      "shortDescription": "A lemon sugar wax for finger or strip application.",
+      "description": "A sugar-based wax with lemon for a fresh feel during at-home hair removal. Works with the fingers or with strips on small areas.",
+      "warnings": "Test on a small patch of skin first. Do not use on broken, sunburnt or irritated skin. Check the temperature before applying if you warm the wax.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-lemon-finger-wax-natural-citrus-hair-removal-for-smooth-skin"
+      }
+    },
+    {
+      "id": "mv-2072",
+      "name": "DIEFEI 3D Orange Finger Wax",
+      "slug": "orange-finger-wax",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2072",
+      "price": 320,
+      "compareAtPrice": null,
+      "stock": 150,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/orange-finger-wax-1.webp"
+      ],
+      "altText": "DIEFEI 3D Orange Finger Wax product photo",
+      "shortDescription": "A citrus-scented sugar wax in three sizes.",
+      "description": "An orange-infused, sugar-based finger wax with a soft texture that makes at-home hair removal simpler. Apply in the direction of hair growth and remove against it.",
+      "warnings": "Test on a small patch of skin first. Do not use on broken, sunburnt or irritated skin. Check the temperature before applying if you warm the wax.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "250 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "400 g",
+              "priceDelta": 220,
+              "stock": 50
+            },
+            {
+              "label": "800 g",
+              "priceDelta": 460,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-orange-finger-wax-smooth-citrus-hair-removal-for-sensitive-skin"
+      }
+    },
+    {
+      "id": "mv-2069",
+      "name": "DIEFEI 3D Rich Nourishing Body Moisturiser – Almond Oil",
+      "slug": "almond-oil-body-moisturiser",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2069",
+      "price": 150,
+      "compareAtPrice": null,
+      "stock": 150,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/almond-oil-body-moisturiser-1.webp",
+        "assets/images/products/almond-oil-body-moisturiser-2.webp",
+        "assets/images/products/almond-oil-body-moisturiser-3.webp"
+      ],
+      "altText": "DIEFEI 3D Rich Nourishing Body Moisturiser – Almond Oil product photo",
+      "shortDescription": "An almond oil body lotion for dry skin, in three sizes.",
+      "description": "A rich body moisturiser made with almond oil for dry and very dry skin. Apply all over after bathing for skin that feels smoother and more comfortable.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "50 ml",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "100 ml",
+              "priceDelta": 100,
+              "stock": 50
+            },
+            {
+              "label": "200 ml",
+              "priceDelta": 240,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-rich-nourishing-body-moisturiser-almond-oil"
+      }
+    },
+    {
+      "id": "mv-2075",
+      "name": "DIEFEI 3D Strawberry Finger Wax",
+      "slug": "strawberry-finger-wax",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2075",
+      "price": 320,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/strawberry-finger-wax-1.webp",
+        "assets/images/products/strawberry-finger-wax-2.webp"
+      ],
+      "altText": "DIEFEI 3D Strawberry Finger Wax product photo",
+      "shortDescription": "A strawberry-scented sugar wax.",
+      "description": "A pleasantly scented strawberry finger wax with a soft consistency, suited to delicate areas such as the face and upper lip as well as the fingers.",
+      "warnings": "Test on a small patch of skin first. Do not use on broken, sunburnt or irritated skin. Check the temperature before applying if you warm the wax.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-14",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-strawberry-finger-wax-gentle-hair-removal-with-berry-freshness"
+      }
+    },
+    {
+      "id": "mv-2043",
+      "name": "DIEFEI 3D Whitening Charcoal with Activator – Tube",
+      "slug": "whitening-charcoal-activator-tube",
+      "categoryId": "personal-care",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2043",
+      "price": 350,
+      "compareAtPrice": null,
       "stock": 0,
       "lowStockThreshold": 5,
-      "images": ["assets/images/ph-skincare-2.svg", "assets/images/ph-powder-2.svg"],
-      "altText": "Tube of charcoal peel-off face mask",
-      "shortDescription": "A peel-off mask for a weekly skincare routine.",
-      "description": "A charcoal peel-off mask for occasional, weekly use. Avoid the eye and lip area and discontinue if irritation occurs. Demonstration data — replace with verified details and safety information.",
+      "images": [
+        "assets/images/products/whitening-charcoal-activator-tube-1.webp"
+      ],
+      "altText": "DIEFEI 3D Whitening Charcoal with Activator – Tube product photo",
+      "shortDescription": "A charcoal-based product in a tube from the brand's tube range.",
+      "description": "A charcoal product from the DIEFEI 3D tube range. The supplier's own listing for this item is unclear about its intended use, so please contact us before ordering and always follow the instructions on the pack.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
       "variants": [],
       "rating": null,
       "featured": false,
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-09-18"
+      "createdAt": "2025-05-21",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "whitening-charcoal-with-activator-tube"
+      }
     },
     {
-      "id": "mv-1029",
-      "name": "Scented Hand Cream Trio",
-      "slug": "scented-hand-cream-trio",
-      "categoryId": "other",
-      "brand": "Maveliq",
-      "sku": "MV-OTH-1029",
-      "price": 1250,
+      "id": "mv-2031",
+      "name": "DIEFEI 3D 5-in-1 Skin Polish Kit",
+      "slug": "skin-polish-kit-5-in-1",
+      "categoryId": "bundles-kits",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2031",
+      "price": 1200,
       "compareAtPrice": null,
-      "stock": 18,
-      "lowStockThreshold": 4,
-      "images": ["assets/images/ph-other-1.svg", "assets/images/ph-other-2.svg"],
-      "altText": "Three small hand cream tubes arranged together",
-      "shortDescription": "A trio of scented hand creams in gift-ready packaging.",
-      "description": "Three scented hand creams presented together in gift-ready packaging. Demonstration data — replace with verified details.",
+      "stock": 0,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/skin-polish-kit-5-in-1-1.webp"
+      ],
+      "altText": "DIEFEI 3D 5-in-1 Skin Polish Kit product photo",
+      "shortDescription": "A five-piece skin polish kit for salon or careful at-home use.",
+      "description": "A five-piece skin polish kit containing cleansing milk, soothing lotion with tea tree oil, aloe vera toner, a 6% cream developer and a lightening booster powder. It is intended for salon or careful at-home use; follow the step order and timings on the pack exactly.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-26",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "5-in-1-skin-polish-kit-boost-your-skin-diefei-natural-glow-set"
+      }
+    },
+    {
+      "id": "mv-2046",
+      "name": "DIEFEI 3D Eye Essentials Bundle",
+      "slug": "eye-essentials-bundle",
+      "categoryId": "bundles-kits",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2046",
+      "price": 1999,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/eye-essentials-bundle-1.webp"
+      ],
+      "altText": "DIEFEI 3D Eye Essentials Bundle product photo",
+      "shortDescription": "Mascara, liquid eyeliner and false lashes in one set.",
+      "description": "An eye makeup bundle listed with mascara, liquid eyeliner and false lashes — a convenient starter set or gift. The supplier's description also mentions an eyeshadow palette, so please confirm the exact contents with us when you order.",
+      "warnings": "Stop using if irritation occurs. Close the product after use and do not share eye or lip products.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-21",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-eye-essentials-bundle-mascara-eyeliner-lashes-set"
+      }
+    },
+    {
+      "id": "mv-2056",
+      "name": "DIEFEI 3D Facial Kit",
+      "slug": "3d-facial-kit",
+      "categoryId": "bundles-kits",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2056",
+      "price": 1500,
+      "compareAtPrice": null,
+      "stock": 150,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/3d-facial-kit-1.webp",
+        "assets/images/products/3d-facial-kit-2.webp",
+        "assets/images/products/3d-facial-kit-3.webp",
+        "assets/images/products/3d-facial-kit-4.webp"
+      ],
+      "altText": "DIEFEI 3D Facial Kit product photo",
+      "shortDescription": "A multi-step facial kit in several sizes for home or salon use.",
+      "description": "A full facial routine designed to cleanse, exfoliate, nourish and brighten the skin. Choose a size based on how often you plan to use it, and follow each step in the order shown on the pack.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [
+        {
+          "name": "Size",
+          "required": true,
+          "options": [
+            {
+              "label": "100 g",
+              "priceDelta": 0,
+              "stock": 50
+            },
+            {
+              "label": "150 ml",
+              "priceDelta": 600,
+              "stock": 0
+            },
+            {
+              "label": "225 g",
+              "priceDelta": 700,
+              "stock": 50
+            },
+            {
+              "label": "400 g",
+              "priceDelta": 1500,
+              "stock": 50
+            }
+          ]
+        }
+      ],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-3d-facial-kit-complete-skincare-solution-for-glowing-skin"
+      }
+    },
+    {
+      "id": "mv-2059",
+      "name": "DIEFEI 3D Hyaluronic Acid Skincare Set",
+      "slug": "hyaluronic-acid-skincare-set",
+      "categoryId": "bundles-kits",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2059",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/hyaluronic-acid-skincare-set-1.webp"
+      ],
+      "altText": "Collage of the DIEFEI 3D hyaluronic face wash, scrub, serum and powder mask",
+      "shortDescription": "A five-step hyaluronic acid routine for hydrated, soft skin.",
+      "description": "A five-step routine centred on hyaluronic acid: face wash, serum, hydrating powder, exfoliating scrub and rose water mist. It is made to moisturise the skin and leave it soft and fresh-looking — a good starting point if your main concern is dryness.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-16",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-hyaluronic-acid-skincare-set-deep-hydration-radiance-boost"
+      }
+    },
+    {
+      "id": "mv-2001",
+      "name": "DIEFEI 3D Perfume Tester Set – 8 × 10 ml",
+      "slug": "perfume-tester-set-8x10ml",
+      "categoryId": "bundles-kits",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2001",
+      "price": 1800,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/perfume-tester-set-8x10ml-1.webp"
+      ],
+      "altText": "DIEFEI 3D Perfume Tester Set – 8 × 10 ml product photo",
+      "shortDescription": "Eight 10 ml perfume testers in one display box.",
+      "description": "A boxed set of eight 10 ml perfume sprays: Wanted, Rush, Sauvage, Flora, Janan, David Beckham, Desire and Bright Crystal. It is an easy way to find your favourite scent, keep a small bottle in your bag or give a fragrance gift.",
+      "warnings": "Flammable — keep away from heat and open flame. Spray on clothes or skin from a short distance, avoid the eyes, and do not apply to broken skin.",
       "variants": [],
       "rating": null,
       "featured": false,
       "isNew": true,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2025-02-22"
+      "createdAt": "2026-09-29",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "pen-perfume-set"
+      }
     },
     {
-      "id": "mv-1030",
-      "name": "Travel Brush Set — 5 Pieces",
-      "slug": "travel-brush-set-5-pieces",
-      "categoryId": "other",
-      "brand": "Maveliq",
-      "sku": "MV-OTH-1030",
-      "price": 2200,
-      "compareAtPrice": 2600,
-      "stock": 10,
-      "lowStockThreshold": 3,
-      "images": ["assets/images/ph-other-2.svg", "assets/images/ph-other-1.svg"],
-      "altText": "Five makeup brushes in a slim travel pouch",
-      "shortDescription": "A five-piece brush set in a slim travel pouch.",
-      "description": "A five-piece makeup brush set supplied in a slim travel pouch. Demonstration data — replace with verified details.",
+      "id": "mv-2057",
+      "name": "DIEFEI 3D Rice & Shea Butter Brightening Kit – 5-in-1",
+      "slug": "rice-shea-butter-brightening-kit",
+      "categoryId": "bundles-kits",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2057",
+      "price": 2500,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/rice-shea-butter-brightening-kit-1.webp"
+      ],
+      "altText": "Collage of the DIEFEI 3D rice and shea butter face wash, scrub, serum and mask",
+      "shortDescription": "A five-piece rice and shea butter skincare set.",
+      "description": "This set brings the brand's rice and shea butter range together in one order: a brightening scrub (150 ml), face wash (120 ml), serum (30 ml), rose water toner (100 ml) and powder mask (120 g). Use them in sequence for a full routine, or each on its own.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
       "variants": [],
       "rating": null,
       "featured": true,
       "isNew": false,
       "isBestSeller": false,
       "active": true,
-      "createdAt": "2024-12-05"
+      "createdAt": "2025-05-17",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-rice-shea-butter-brightening-kit-5-in-1-natural-skincare-set"
+      }
+    },
+    {
+      "id": "mv-2058",
+      "name": "DIEFEI 3D Vitamin C Skincare Bundle – 4-Step",
+      "slug": "vitamin-c-skincare-bundle",
+      "categoryId": "bundles-kits",
+      "brand": "DIEFEI 3D",
+      "sku": "DF3D-2058",
+      "price": 1999,
+      "compareAtPrice": null,
+      "stock": 50,
+      "lowStockThreshold": 5,
+      "images": [
+        "assets/images/products/vitamin-c-skincare-bundle-1.webp"
+      ],
+      "altText": "DIEFEI 3D Vitamin C Skincare Bundle – 4-Step product photo",
+      "shortDescription": "A four-step vitamin C routine for day and night.",
+      "description": "A four-step set built around vitamin C: face wash, serum, day cream and night cream, covering both your morning and evening routine. It is designed to help skin look brighter and more even with consistent use.",
+      "warnings": "For external use only. Patch-test on the inner arm 24 hours before first use and stop if redness or irritation appears. Keep away from the eyes and out of reach of children.",
+      "variants": [],
+      "rating": null,
+      "featured": false,
+      "isNew": false,
+      "isBestSeller": false,
+      "active": true,
+      "createdAt": "2025-05-16",
+      "source": {
+        "supplier": "DIEFEI 3D",
+        "handle": "diefei-vitamin-c-skincare-bundle-brightening-anti-aging-4-step-set"
+      }
     }
   ]
 }

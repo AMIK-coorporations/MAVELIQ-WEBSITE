@@ -21,22 +21,34 @@ Currency: **PKR (Rs)**. Primary market: **Pakistan**.
 | Policies, FAQ, Contact, About, 404 | ✅ Built |
 | SEO (meta, OG, canonical, JSON-LD, sitemap, robots) | ✅ Built |
 | Admin dashboard (products, categories, orders, inventory, settings) | ✅ Built |
+| Real catalogue: 89 DIEFEI 3D products, 8 categories, local WebP photos | ✅ Built |
+| Order on WhatsApp (product page, cart, confirmation) + floating chat button | ✅ Built — appears once a WhatsApp number is set |
+| Wishlist (heart on cards + product page, header count, `wishlist.html`) | ✅ Built |
+| Homepage trust strip, Bundles & Kits, About / Support teasers, SEO guide | ✅ Built |
+| Category landing pages (`shop.html?category=…`) with intro copy | ✅ Built |
+| DIEFEI 3D partnership page (`diefei-3d.html`) | ✅ Published (owner-approved copy) |
+| Order note at checkout · optional GA4 hook | ✅ Built |
 | Runs with **no database at all** | ✅ Demo mode |
 | Database backend (insforge.dev) | ⏳ Planned — connect later |
 
 > **Honesty notes (per PRD):**
 > - The site currently runs in **demo mode**: catalogue comes from
 >   `data/*.json`, cart/orders/settings live in the browser's `localStorage`.
->   The UI labels this clearly. It must **not** be shown to customers as a real
->   ordering system until a backend is configured and tested.
+>   The UI labels this clearly. **Checkout orders never reach the owner** until
+>   a backend is configured — the working ordering channel today is
+>   **Order on WhatsApp**, which appears as soon as `contact.whatsapp` is set.
 > - The admin sign-in in demo mode is a **UX preview gate, not security**.
 >   Real protection comes from database policies on the backend.
-> - **No reviews, ratings, prices, contact details, social URLs, ingredients or
->   certifications are invented anywhere.** Missing data is left blank or shown
->   as an honest empty state. Social buttons with no URL configured are hidden
->   — never rendered as dead links.
-> - The **DIEDEI 3D partnership section ships unpublished** and hidden until the
->   owner supplies approved, verifiable copy in admin → Settings.
+> - **No reviews, ratings, contact details, social URLs, ingredients or
+>   certifications are invented anywhere.** Product names, sizes, shades and
+>   PKR prices come from the DIEFEI 3D supplier catalogue; every description is
+>   Maveliq's own wording without medical claims. Stock figures are
+>   placeholders (50 per available variant, 0 when sold out) until you set real
+>   inventory. Social/contact/WhatsApp buttons with no value configured are
+>   hidden — never rendered as dead links.
+> - The **DIEFEI 3D partnership** homepage section and `diefei-3d.html` use the
+>   owner-approved copy from `CONTENT-SPEC.md`. Logo and external link stay
+>   empty until supplied.
 
 ---
 
@@ -59,6 +71,8 @@ maveliq/
 ├── terms.html                 Terms & conditions
 ├── shipping-policy.html       Shipping policy
 ├── returns-policy.html        Returns & refunds policy
+├── wishlist.html              Saved products (this browser)
+├── diefei-3d.html             DIEFEI 3D partnership page
 ├── 404.html                   Page not found
 ├── admin/
 │   ├── index.html             Dashboard (stats, recent orders, low stock)
@@ -68,7 +82,8 @@ maveliq/
 │   ├── inventory.html         Stock control
 │   └── settings.html          Store settings (brand, contact, payments…)
 ├── assets/
-│   ├── images/                Original SVG artwork + placeholders + favicon
+│   ├── images/                Original SVG artwork, favicon, og-image.jpg (1200×630)
+│   │   └── products/          203 product photos, WebP q80, max 1000px (≈6.2 MB)
 │   ├── icons/                 README — icons are inline SVG (see file)
 │   └── fonts/                 README — font licences + self-hosting guide
 ├── css/
@@ -92,6 +107,8 @@ maveliq/
 │   ├── orders.js              Order confirmation rendering
 │   ├── tracking.js            Order tracking rendering
 │   ├── reviews.js             Reviews (genuine-only, honest empty states)
+│   ├── whatsapp.js            Order-on-WhatsApp messages + floating chat button
+│   ├── wishlist.js            Wishlist storage, heart buttons, header count
 │   ├── admin.js               Entire admin dashboard (all 6 screens)
 │   ├── app.js                 Boot + page dispatch (data-page)
 │   └── services/
@@ -100,8 +117,8 @@ maveliq/
 │       ├── order-service.js      Orders (localStorage now, DB later)
 │       └── auth-service.js       Admin sign-in (demo gate now, real auth later)
 ├── data/
-│   ├── products.json          Demonstration catalogue (30 demo products)
-│   └── categories.json        14 categories
+│   ├── products.json          89 DIEFEI 3D products (variants, prices, images)
+│   └── categories.json        8 categories, each with landing-page intro copy
 ├── robots.txt
 ├── sitemap.xml
 └── README.md
@@ -151,16 +168,38 @@ anywhere.
 **Two places, in this order:**
 
 1. **`js/config.js`** — defaults for everything: brand name, currency, delivery
-   charges, payment toggles, contact details, social URLs, homepage copy.
+   charges, payment toggles, contact details, social URLs, homepage copy,
+   returns window, optional analytics ID. Every owner-supplied field is marked
+   `TODO owner`.
 2. **admin → Settings** — the same values as *overrides* saved on top of the
    defaults (stored in `localStorage` in demo mode). Includes discount codes and
-   the DIEDEI 3D partnership block.
+   the DIEFEI 3D partnership block.
 
 Rules the code enforces for you:
 
 - A contact/social field left as `""` → its button is **hidden**, never a dead link.
+- `contact.whatsapp` empty → no "Order on WhatsApp" buttons and no floating
+  chat button. Set it (digits with country code, e.g. `923001234567`) and they
+  all appear.
+- `returns.windowDays` empty → the site says "see our returns policy" instead
+  of quoting a number.
+- `gaMeasurementId` empty → no analytics script is loaded.
 - A payment method with `enabled: false` → shown disabled with an honest note.
-- `partnerships.diedei3d.published: false` → the section is **not rendered**.
+- Discount codes: percentages are capped at 1–100 %, totals never go below
+  zero, and deleting a code in admin really removes it.
+- `partnerships.diefei3d.published: false` → the homepage section is hidden.
+  (Old browsers that saved the misspelt `diedei3d` key are migrated automatically.)
+
+### Catalogue data
+
+`data/products.json` follows the schema in `js/services/product-service.js`.
+Variants keep per-option `priceDelta` and `stock` (e.g. body mists 60 ml / 125 ml
+at Rs 250 / Rs 550). Optional `ingredients`, `usage`, `warnings` and
+`expiryInfo` fields are shown on the product page only when filled in.
+
+In demo mode localStorage never holds a copy of the catalogue — only admin
+edits (`catalogue_edits`) and units sold per product/variant
+(`stock_deltas`), so updating `data/products.json` always shows up.
 
 ---
 
@@ -206,17 +245,20 @@ When you're ready to go live:
 ## 7. Owner checklist before launch
 
 - [ ] Real logo + favicon (replace the placeholder SVGs in `assets/images/`)
-- [ ] Real product catalogue, photography, prices, stock (replace `data/*.json`,
-      or manage in admin once a DB is connected)
-- [ ] Contact details: phone, WhatsApp, email, address, support hours
+- [ ] Real stock levels (current figures are placeholders), and confirm prices
+- [ ] **WhatsApp number** in `js/config.js → contact.whatsapp` — this switches on
+      WhatsApp ordering, which is the only way orders reach you until a backend exists
+- [ ] Contact details: phone, email, address, support hours
+- [ ] Returns window (`returns.windowDays`) and the bracketed policy placeholders
+- [ ] Confirm the domain and update `siteUrl`, canonical tags, `sitemap.xml`, `robots.txt`
 - [ ] Social URLs — any left blank stay **hidden** (never dead links)
 - [ ] Delivery charge, free-delivery threshold, estimated days
 - [ ] Payment methods actually arranged (enable COD only with a real courier
       arrangement; enable card/JazzCash/Easypaisa only once verified)
 - [ ] Review the policy pages — they ship as neutral drafts with bracketed
       `[owner to confirm]` placeholders; make them match your real practices
-- [ ] **DIEDEI 3D** — ships unpublished. Publish from admin → Settings using
-      only approved, verifiable copy. Never claim exclusivity, distributorship
+- [ ] **DIEFEI 3D** — published with the CONTENT-SPEC copy. Add the approved
+      logo/link in admin → Settings. Never claim exclusivity, distributorship
       or authorisation without written evidence.
 - [ ] Connect the backend (insforge.dev) and re-test the full order flow
 
@@ -255,7 +297,12 @@ Walk through this before every release:
 13. Keyboard navigation: skip link, focus rings, modal open/close
 14. Lighthouse: no critical accessibility or SEO failures
 15. Empty states: empty cart, no search results, no reviews, no orders
-16. DIEDEI 3D section hidden while `published: false`
+16. DIEFEI 3D section hidden while `published: false`; `diefei-3d.html` lists products
+17. With `contact.whatsapp` set: WhatsApp buttons on product page, cart and
+    confirmation open wa.me with items, variants, quantities and total
+18. Wishlist: heart toggles on cards/product page, header count, `wishlist.html`
+19. `shop.html?category=lipsticks` shows the category heading + intro copy
+20. Admin thumbnails load; `admin/?redirect=javascript:…` falls back to the dashboard
 
 ---
 
@@ -267,4 +314,5 @@ and custom properties.
 
 ---
 
-© Maveliq. Original design and code; not derived from any existing store.
+© Maveliq. Original design and code. Product photography: DIEFEI 3D supplier
+catalogue (partnership). Product descriptions and site copy: Maveliq's own wording.

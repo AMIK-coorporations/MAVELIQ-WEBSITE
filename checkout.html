@@ -37,6 +37,11 @@
         </ol>
       </nav>
 
+      <div class="page-intro">
+        <h1>Secure and Simple Checkout</h1>
+        <p class="text-soft">Enter your delivery details, review your order, and confirm your purchase.</p>
+      </div>
+
       <!-- Demo-mode notice (shown by js only in demo mode) -->
       <div class="alert alert--info" id="demoNotice" hidden>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="10"/><path d="M12 16v-5M12 8h.01"/></svg>
@@ -72,58 +77,64 @@
               <div class="form-row">
                 <div class="field">
                   <label for="fullName">Full name <span class="req">*</span></label>
-                  <input class="input" id="fullName" name="fullName" type="text" autocomplete="name" required placeholder="e.g. Ayesha Khan" />
+                  <input class="input" id="fullName" name="fullName" type="text" autocomplete="name" required placeholder="Enter your full name" />
                   <span class="field-error" aria-live="polite"></span>
                 </div>
                 <div class="field">
                   <label for="phone">Phone number <span class="req">*</span></label>
-                  <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="0300 1234567" />
+                  <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="Enter your active phone number" />
                   <span class="field-error" aria-live="polite"></span>
                 </div>
               </div>
 
               <div class="field">
                 <label for="address">Delivery address <span class="req">*</span></label>
-                <textarea class="textarea" id="address" name="address" style="min-height:88px" autocomplete="street-address" required placeholder="House / flat, street, area, landmark"></textarea>
+                <textarea class="textarea" id="address" name="address" style="min-height:88px" autocomplete="street-address" required placeholder="House number, street, area, and other necessary details"></textarea>
                 <span class="field-error" aria-live="polite"></span>
               </div>
 
               <div class="form-row">
                 <div class="field">
                   <label for="city">City <span class="req">*</span></label>
-                  <input class="input" id="city" name="city" type="text" autocomplete="address-level2" required placeholder="e.g. Lahore" />
+                  <input class="input" id="city" name="city" type="text" autocomplete="address-level2" required placeholder="Enter your city" />
                   <span class="field-error" aria-live="polite"></span>
                 </div>
                 <div class="field">
                   <label for="email">Email <span style="text-transform:none;font-weight:400">(optional)</span></label>
-                  <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="your@email.com" />
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="Enter your email address" />
                   <span class="field-error" aria-live="polite"></span>
                 </div>
               </div>
 
               <div class="field">
-                <label for="instructions">Delivery instructions <span style="text-transform:none;font-weight:400">(optional)</span></label>
-                <textarea class="textarea" id="instructions" name="instructions" style="min-height:72px" placeholder="e.g. please call before arriving"></textarea>
+                <label for="instructions">Additional delivery instructions <span style="text-transform:none;font-weight:400">(optional)</span></label>
+                <textarea class="textarea" id="instructions" name="instructions" style="min-height:72px" placeholder="Add any relevant delivery instructions"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="orderNote">Order note <span style="text-transform:none;font-weight:400">(optional)</span></label>
+                <textarea class="textarea" id="orderNote" name="orderNote" style="min-height:72px" maxlength="500" placeholder="Anything we should know about your order — e.g. a gift message or a question about a shade"></textarea>
+                <span class="field-hint">Saved with your order so our team can see it.</span>
               </div>
             </section>
 
             <section class="checkout-section">
-              <h2><span class="num">2</span> Payment method</h2>
+              <h2><span class="num">2</span> Choose a Payment Method</h2>
               <div id="paymentMethods">
                 <!-- Only genuinely enabled methods are selectable -->
               </div>
             </section>
 
             <section class="checkout-section">
-              <h2><span class="num">3</span> Review &amp; place order</h2>
+              <h2><span class="num">3</span> Review &amp; Place Order</h2>
 
               <label class="checkbox">
                 <input type="checkbox" id="consent" required />
-                <span>I have read and accept the <a href="terms.html" target="_blank">Terms &amp; Conditions</a> and <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.</span>
+                <span>I have reviewed my order and agree to the published <a href="terms.html" target="_blank">Terms and Conditions</a> and relevant store policies (<a href="privacy-policy.html" target="_blank">Privacy</a>, <a href="shipping-policy.html" target="_blank">Shipping</a>, <a href="returns-policy.html" target="_blank">Returns</a>).</span>
               </label>
 
               <button class="btn btn--primary btn--lg btn--block" type="submit" id="placeOrderBtn" style="margin-top:16px">
-                Place order
+                Place Order
               </button>
 
               <p class="price-note" style="text-align:center;margin-top:12px" id="checkoutHelp">

@@ -13,6 +13,8 @@
 import { CONFIG } from "./config.js";
 import { $, $$, escapeHtml } from "./utils.js";
 import settings from "./services/settings-service.js";
+import { initWishlist, heartIcon } from "./wishlist.js";
+import { initFloatingWhatsApp, whatsappEnabled } from "./whatsapp.js";
 
 /* ---------- SVG icon set -------------------------------------------------- */
 
@@ -47,33 +49,46 @@ const NAV = [
   { label: "Contact", href: "contact.html" },
 ];
 
+/* Footer links follow the owner-approved list in CONTENT-SPEC.md. */
 const FOOTER_COLS = [
   {
     title: "Shop",
     links: [
-      { label: "All Products", href: "shop.html" },
+      { label: "Home", href: "index.html" },
+      { label: "Shop All", href: "shop.html" },
       { label: "Categories", href: "categories.html" },
+      { label: "Wishlist", href: "wishlist.html" },
       { label: "Track Your Order", href: "track-order.html" },
-      { label: "Cart", href: "cart.html" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About Maveliq", href: "about.html" },
+      { label: "DIEFEI 3D Partnership", href: "diefei-3d.html" },
       { label: "Contact Us", href: "contact.html" },
-      { label: "FAQs", href: "faq.html" },
+      { label: "Frequently Asked Questions", href: "faq.html" },
     ],
   },
   {
     title: "Policies",
     links: [
-      { label: "Privacy Policy", href: "privacy-policy.html" },
-      { label: "Terms & Conditions", href: "terms.html" },
       { label: "Shipping Policy", href: "shipping-policy.html" },
-      { label: "Returns & Refunds", href: "returns-policy.html" },
+      { label: "Returns and Refunds", href: "returns-policy.html" },
+      { label: "Privacy Policy", href: "privacy-policy.html" },
+      { label: "Terms and Conditions", href: "terms.html" },
     ],
   },
+];
+
+/* Popular collections shown in the footer (category landing pages). */
+const FOOTER_COLLECTIONS = [
+  { label: "Lipsticks", href: "shop.html?category=lipsticks" },
+  { label: "Face Washes", href: "shop.html?category=face-washes" },
+  { label: "Perfumes & Body Mists", href: "shop.html?category=perfumes-body-mists" },
+  { label: "Makeup Essentials", href: "shop.html?category=makeup" },
+  { label: "Hair Colour", href: "shop.html?category=hair-colour" },
+  { label: "Bundles & Kits", href: "shop.html?category=bundles-kits" },
 ];
 
 /* ---------- Header ----------------------------------------------------------- */
@@ -108,12 +123,17 @@ function headerMarkup() {
         <form class="header-search" role="search" action="shop.html" method="get">
           <label class="sr-only" for="headerSearch">Search products</label>
           ${icons.search}
-          <input id="headerSearch" name="q" type="search" placeholder="Search products…" autocomplete="off" />
+          <input id="headerSearch" name="q" type="search" placeholder="Search products, categories, or brands..." autocomplete="off" />
         </form>
 
         ${socials.slice(0, 3).map((sx) => `
           <a class="icon-btn" href="${escapeHtml(sx.url)}" target="_blank" rel="noopener noreferrer"
              aria-label="${escapeHtml(sx.label)}">${icons[sx.key] || icons.external}</a>`).join("")}
+
+        <a class="icon-btn wish-link" href="wishlist.html" id="wishIcon" aria-label="Wishlist">
+          ${heartIcon()}
+          <span class="cart-count" id="wishCount" data-count="0">0</span>
+        </a>
 
         <a class="icon-btn" href="cart.html" id="cartIcon" aria-label="Shopping cart">
           ${icons.cart}
@@ -139,8 +159,10 @@ function headerMarkup() {
     </form>
     <ul class="mobile-nav__list">
       ${NAV.map((i) => `<li><a href="${i.href}" data-nav="${i.href}">${i.label}</a></li>`).join("")}
+      <li><a href="diefei-3d.html" data-nav="diefei-3d.html">DIEFEI 3D Partnership</a></li>
+      <li><a href="wishlist.html" data-nav="wishlist.html">Wishlist</a></li>
       <li><a href="faq.html" data-nav="faq.html">FAQs</a></li>
-      <li><a href="track-order.html" data-nav="track-order.html">Track Order</a></li>
+      <li><a href="track-order.html" data-nav="track-order.html">Track Your Order</a></li>
       <li><a href="cart.html" data-nav="cart.html">Cart</a></li>
     </ul>
     <div class="mobile-nav__foot">
@@ -172,14 +194,14 @@ function footerMarkup() {
     <div class="container site-footer__top">
       <div class="footer-brand">
         <a class="brand" href="index.html"><span class="brand__mark">${escapeHtml(s.businessName)}</span></a>
-        <p>${escapeHtml(s.displayName)} — ${escapeHtml(CONFIG.tagline)}. Beauty and personal-care products delivered across Pakistan with Cash on Delivery.</p>
+        <p class="footer-tagline">${escapeHtml(s.get("tagline", CONFIG.tagline))}</p>
+        <p>Maveliq is an online destination for beauty, skincare, makeup, and personal-care products. We aim to make discovering and ordering everyday beauty essentials simple and convenient.</p>
         ${socials.length ? `
           <div class="social-list">
             ${socials.map((sx) => `
               <a href="${escapeHtml(sx.url)}" target="_blank" rel="noopener noreferrer"
                  aria-label="${escapeHtml(sx.label)}">${icons[sx.key] || icons.external}</a>`).join("")}
-          </div>` : `
-          <p style="font-size:0.75rem;opacity:.7">Follow us — social links are added here once the owner's profile URLs are configured.</p>`}
+          </div>` : ""}
       </div>
 
       ${FOOTER_COLS.map((col) => `
@@ -187,6 +209,11 @@ function footerMarkup() {
           <h3>${col.title}</h3>
           <ul>${col.links.map((l) => `<li><a href="${l.href}">${l.label}</a></li>`).join("")}</ul>
         </div>`).join("")}
+    </div>
+
+    <div class="container site-footer__collections">
+      <span>Popular collections:</span>
+      ${FOOTER_COLLECTIONS.map((l) => `<a href="${l.href}">${l.label}</a>`).join("")}
     </div>
 
     <div class="container site-footer__bottom">
@@ -302,8 +329,9 @@ function maybeDemoBanner() {
   if (document.querySelector(".demo-banner")) return;
   const bar = document.createElement("div");
   bar.className = "demo-banner";
-  bar.textContent =
-    "Demo mode — catalogue data is sample content and orders are saved only in this browser. Connect a real backend before accepting customer orders.";
+  bar.textContent = whatsappEnabled()
+    ? "Online checkout is in demo mode — orders placed here are saved only in this browser. Use “Order on WhatsApp” to send your order to the store."
+    : "Demo mode — orders placed through checkout are saved only in this browser. Connect a real backend before accepting customer orders.";
   document.body.prepend(bar);
 }
 
@@ -328,6 +356,27 @@ export function initNavigation() {
   window.addEventListener("maveliq:cart-updated", () => updateCartBadge(true));
 
   maybeDemoBanner();
+  initWishlist();
+  initFloatingWhatsApp();
+  initAnalytics();
+}
+
+/* ---------- Optional analytics hook ------------------------------------------------
+   Loads Google Analytics 4 ONLY when the owner sets gaMeasurementId in
+   js/config.js (or admin → Settings). Empty by default = no tracking script. */
+
+function initAnalytics() {
+  const id = settings.gaMeasurementId;
+  if (!id || !/^G-[A-Z0-9]{4,}$/i.test(id) || window.__maveliqGa) return;
+  window.__maveliqGa = true;
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() { window.dataLayer.push(arguments); };
+  window.gtag("js", new Date());
+  window.gtag("config", id, { anonymize_ip: true });
 }
 
 export default initNavigation;

@@ -22,6 +22,62 @@ function merge(base, over) {
   return out;
 }
 
+/**
+ * Backward compatibility: earlier builds stored the partnership block under
+ * the misspelt key "diedei3d". Move it to "diefei3d" (and fix the display
+ * name) the first time the overrides are read, then persist the fix.
+ */
+function migrateOverrides(over) {
+  if (!over || typeof over !== "object") return { value: {}, changed: false };
+  let changed = false;
+  const p = over.partnerships;
+  if (p && typeof p === "object" && p.diedei3d) {
+    const old = { ...p.diedei3d };
+    if (typeof old.name === "string") old.name = old.name.replace(/DIEDEI/gi, "DIEFEI");
+    // The old block shipped unpublished with no copy. If it never received
+    // any copy, drop the stale "unpublished" flag and empty fields so the new
+    // owner-approved defaults apply.
+    if (!String(old.description || "").trim()) {
+      delete old.published;
+      for (const k of Object.keys(old)) if (old[k] === "") delete old[k];
+    }
+    p.diefei3d = { ...old, ...(p.diefei3d || {}) };
+    delete p.diedei3d;
+    changed = true;
+  }
+  return { value: over, changed };
+}
+
+/** Clean a discount-code map: uppercase codes, percent capped to 1–100,
+ *  fixed amounts ≥ 1, anything invalid dropped. */
+export function sanitiseDiscountCodes(codes) {
+  const out = {};
+  for (const [rawCode, rule] of Object.entries(codes || {})) {
+    const code = String(rawCode || "").trim().toUpperCase();
+    if (!code || !rule) continue;
+    const type = rule.type === "fixed" ? "fixed" : "percent";
+    let value = Math.round(Number(rule.value) || 0);
+    if (type === "percent") value = Math.min(100, value);
+    if (value < 1) continue;
+    out[code] = { type, value };
+  }
+  return out;
+}
+
+/**
+ * Discount amount for a subtotal. Never negative, never more than the
+ * subtotal, percent rules capped at 100%.
+ */
+export function computeDiscount(subtotal, rule) {
+  const sub = Math.max(0, Number(subtotal) || 0);
+  if (!rule || !sub) return 0;
+  const value = Math.max(0, Number(rule.value) || 0);
+  const amount = rule.type === "percent"
+    ? Math.round((sub * Math.min(100, value)) / 100)
+    : Math.round(value);
+  return Math.min(sub, Math.max(0, amount));
+}
+
 class SettingsService {
   constructor() {
     this._cache = null;
@@ -31,8 +87,12 @@ class SettingsService {
   /** Full effective settings object (defaults + overrides). */
   get all() {
     if (!this._cache) {
-      const overrides = store.get(LS_KEY, {});
+      const { value: overrides, changed } = migrateOverrides(store.get(LS_KEY, {}));
+      if (changed) store.set(LS_KEY, overrides);
       this._cache = merge(structuredCloneSafe(CONFIG), overrides);
+      if (this._cache.discountCodes) {
+        this._cache.discountCodes = sanitiseDiscountCodes(this._cache.discountCodes);
+      }
     }
     return this._cache;
   }
@@ -50,8 +110,13 @@ class SettingsService {
 
   /** Persist partial overrides and refresh the cache. */
   save(partial) {
-    const overrides = store.get(LS_KEY, {});
+    const overrides = migrateOverrides(store.get(LS_KEY, {})).value;
     const merged = merge(overrides, partial);
+    // Discount codes are replaced wholesale — a deep merge would keep codes
+    // the owner deleted in admin → Settings alive forever.
+    if (partial && Object.prototype.hasOwnProperty.call(partial, "discountCodes")) {
+      merged.discountCodes = sanitiseDiscountCodes(partial.discountCodes);
+    }
     store.set(LS_KEY, merged);
     this._cache = null;
     this._emit();
@@ -83,6 +148,18 @@ class SettingsService {
   get partnerships()      { return this.get("partnerships", CONFIG.partnerships); }
   get newsletter()        { return this.get("newsletter", CONFIG.newsletter); }
   get home()              { return this.get("home", CONFIG.home); }
+  get returns()           { return this.get("returns", CONFIG.returns || {}); }
+  get gaMeasurementId()   { return String(this.get("gaMeasurementId", "") || "").trim(); }
+
+  /** Digits-only WhatsApp number, or "" when not configured. */
+  get whatsappNumber()    { return String(this.contact?.whatsapp || "").replace(/[^\d]/g, ""); }
+
+  /** Configured discount rule for a code (sanitised), or null. */
+  discountRule(code) {
+    const key = String(code || "").trim().toUpperCase();
+    if (!key) return null;
+    return (this.get("discountCodes", {}) || {})[key] || null;
+  }
 
   /** Contact methods that have a real destination configured. */
   get contactMethods() {

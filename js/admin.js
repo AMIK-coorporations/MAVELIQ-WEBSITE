@@ -42,6 +42,24 @@ const I = {
   down: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>',
 };
 
+/* ---------- Paths ------------------------------------------------------------ */
+
+/** Admin pages live in /admin/, catalogue image paths are relative to the
+ *  site root — prefix them so thumbnails resolve. */
+function adminImg(src) {
+  const s = String(src || "").trim() || "assets/images/ph-other-1.svg";
+  if (/^(https?:|data:|blob:|\/)/i.test(s) || s.startsWith("../")) return s;
+  return `../${s}`;
+}
+
+/** Only allow post-login redirects to known admin pages (blocks
+ *  ?redirect=javascript:… and open redirects to other sites). */
+function safeRedirect(target) {
+  const name = String(target || "").split(/[?#]/)[0].replace(/^\.\//, "");
+  const allowed = new Set(NAV.map((n) => n.href));
+  return allowed.has(name) ? name : "index.html";
+}
+
 /* ---------- Shell ----------------------------------------------------------- */
 
 const NAV = [
@@ -197,7 +215,7 @@ function renderLogin(redirect) {
     try {
       await auth.signIn(email, pass);
       toast("Welcome back.", "success");
-      window.location.href = redirect || "index.html";
+      window.location.href = safeRedirect(redirect);
     } catch (err) {
       const alertBox = $("#loginAlert");
       if (alertBox) {
@@ -344,7 +362,7 @@ async function renderDashboard(body) {
                           (p) => `
                         <tr>
                           <td style="display:flex;gap:10px;align-items:center">
-                            <img src="${escapeAttr(p.images[0] || "assets/images/ph-other-1.svg")}" alt="" class="thumb-sm" loading="lazy" />
+                            <img src="${escapeAttr(adminImg(p.images[0]))}" alt="" class="thumb-sm" loading="lazy" />
                             <span>${escapeHtml(p.name)}<div class="price-note">${escapeHtml(p.sku || p.id)}</div></span>
                           </td>
                           <td>${p.stock <= 0 ? '<span class="badge badge--out">Out</span>' : `<span class="badge badge--low">${p.stock} left</span>`}</td>
@@ -442,7 +460,7 @@ async function renderProducts(body) {
               <tr data-id="${escapeAttr(p.id)}">
                 <td>
                   <div style="display:flex;gap:10px;align-items:center">
-                    <img src="${escapeAttr(p.images[0] || "assets/images/ph-other-1.svg")}" alt="" class="thumb-sm" loading="lazy" />
+                    <img src="${escapeAttr(adminImg(p.images[0]))}" alt="" class="thumb-sm" loading="lazy" />
                     <span><strong>${escapeHtml(p.name)}</strong><div class="price-note">${escapeHtml(p.sku || p.id)}</div></span>
                   </div>
                 </td>
@@ -742,7 +760,7 @@ async function renderCategories(body) {
               <tr data-id="${escapeAttr(c.id)}">
                 <td>
                   <div style="display:flex;gap:10px;align-items:center">
-                    <img src="${escapeAttr(c.image || "assets/images/ph-other-1.svg")}" alt="" class="thumb-sm" loading="lazy" />
+                    <img src="${escapeAttr(adminImg(c.image))}" alt="" class="thumb-sm" loading="lazy" />
                     <span><strong>${escapeHtml(c.name)}</strong><div class="price-note">${escapeHtml(c.slug)}</div></span>
                   </div>
                 </td>
@@ -981,7 +999,8 @@ async function renderOrders(body, params) {
               ${escapeHtml(order.customer.address)}<br/>
               ${escapeHtml(order.customer.city)}<br/>
               ${escapeHtml(order.customer.phone)}${order.customer.email ? `<br/>${escapeHtml(order.customer.email)}` : ""}</p>
-              ${order.customer.instructions ? `<p class="price-note" style="margin-top:8px">Note: ${escapeHtml(order.customer.instructions)}</p>` : ""}
+              ${order.customer.instructions ? `<p class="price-note" style="margin-top:8px">Delivery instructions: ${escapeHtml(order.customer.instructions)}</p>` : ""}
+              ${order.note ? `<p class="price-note" style="margin-top:8px"><strong>Order note:</strong> ${escapeHtml(order.note)}</p>` : ""}
             </div>
             <div class="info-block">
               <h3>Totals</h3>
@@ -1158,7 +1177,7 @@ async function renderInventory(body) {
               <tr data-id="${escapeAttr(p.id)}">
                 <td>
                   <div style="display:flex;gap:10px;align-items:center">
-                    <img src="${escapeAttr(p.images[0] || "assets/images/ph-other-1.svg")}" alt="" class="thumb-sm" loading="lazy" />
+                    <img src="${escapeAttr(adminImg(p.images[0]))}" alt="" class="thumb-sm" loading="lazy" />
                     <span>${escapeHtml(p.name)}</span>
                   </div>
                 </td>
@@ -1225,7 +1244,7 @@ async function renderSettings(body) {
   const d = s.delivery;
   const pay = s.payments;
   const home = s.home;
-  const diedei = s.partnerships.diedei3d;
+  const partner = s.partnerships.diefei3d || {};
   const discountCodes = s.get("discountCodes", {}) || {};
   const codeRows = Object.entries(discountCodes);
 
@@ -1268,8 +1287,17 @@ async function renderSettings(body) {
             <div class="field"><label for="stCity">City</label>
               <input class="input" id="stCity" name="city" value="${escapeAttr(c.city)}" /></div>
           </div>
-          <div class="field"><label for="stHours">Support hours</label>
-            <input class="input" id="stHours" name="supportHours" value="${escapeAttr(c.supportHours)}" placeholder="e.g. Mon–Sat, 10am–7pm" /></div>
+          <div class="form-row">
+            <div class="field"><label for="stHours">Support hours</label>
+              <input class="input" id="stHours" name="supportHours" value="${escapeAttr(c.supportHours)}" placeholder="e.g. Mon–Sat, 10am–7pm" /></div>
+            <div class="field"><label for="stReturns">Returns window (days after delivery)</label>
+              <input class="input" id="stReturns" name="returnsDays" type="number" min="0" max="365" value="${escapeAttr(s.returns?.windowDays || "")}" placeholder="e.g. 7" />
+              <span class="field-hint">Leave blank until confirmed — the site then points to the returns policy instead of quoting a number.</span></div>
+          </div>
+          <div class="field"><label for="stGa">Google Analytics 4 ID (optional)</label>
+            <input class="input" id="stGa" name="gaMeasurementId" value="${escapeAttr(s.gaMeasurementId)}" placeholder="G-XXXXXXXXXX" />
+            <span class="field-hint">Leave blank to load no analytics script. Update the privacy policy before enabling.</span></div>
+          <p class="price-note">The WhatsApp number also turns on “Order on WhatsApp” (product page and cart) and the floating chat button.</p>
           <p class="price-note">Leave a field blank to hide it on the storefront — blank channels are never shown as dead links.</p>
         </div>
       </section>
@@ -1363,7 +1391,7 @@ async function renderSettings(body) {
                     <option value="fixed" ${rule.type === "fixed" ? "selected" : ""}>Rs off</option>
                   </select></div>
                 <div class="field" style="margin:0"><label>Value</label>
-                  <input class="input" name="codeval_${idx}" type="number" min="0" value="${Number(rule.value) || 0}" /></div>
+                  <input class="input" name="codeval_${idx}" type="number" min="1" step="1" ${rule.type === "percent" ? 'max="100"' : ""} value="${Number(rule.value) || 0}" /></div>
                 <button class="btn btn--danger btn--sm" type="button" data-remove-code style="margin-bottom:2px">Remove</button>
               </div>`
               )
@@ -1374,27 +1402,27 @@ async function renderSettings(body) {
       </section>
 
       <section class="admin-panel settings-section">
-        <div class="admin-panel__head"><h2>Partnerships</h2></div>
+        <div class="admin-panel__head"><h2>DIEFEI 3D Partnership Content</h2></div>
         <div class="admin-panel__body">
           <div class="alert alert--warning">${I.info}
-            <div><strong>Publish only with verified, approved content</strong>
-            <p>Keep this unpublished until the partnership is confirmed in writing and you have the approved logo and description. Never claim exclusivity, distributorship or authorisation without evidence.</p></div>
+            <div><strong>Publish only approved content</strong>
+            <p>Do not publish unapproved claims or product information. Never claim exclusivity, distributorship or authorisation without written evidence. The partnership page is <a href="../diefei-3d.html" target="_blank" rel="noopener">diefei-3d.html</a>.</p></div>
           </div>
 
           <div class="field"><label for="stPartnerName">Partner name</label>
-            <input class="input" id="stPartnerName" name="partnerName" value="${escapeAttr(diedei.name)}" /></div>
+            <input class="input" id="stPartnerName" name="partnerName" value="${escapeAttr(partner.name || "DIEFEI 3D")}" /></div>
           <div class="field"><label for="stPartnerDesc">Description (approved copy only)</label>
-            <textarea class="textarea" id="stPartnerDesc" name="partnerDescription" style="min-height:80px">${escapeHtml(diedei.description)}</textarea></div>
+            <textarea class="textarea" id="stPartnerDesc" name="partnerDescription" style="min-height:80px">${escapeHtml(partner.description || "")}</textarea></div>
           <div class="form-row">
             <div class="field"><label for="stPartnerLogo">Logo path or URL</label>
-              <input class="input" id="stPartnerLogo" name="partnerLogo" value="${escapeAttr(diedei.logo)}" /></div>
+              <input class="input" id="stPartnerLogo" name="partnerLogo" value="${escapeAttr(partner.logo || "")}" /></div>
             <div class="field"><label for="stPartnerUrl">Partner link</label>
-              <input class="input" id="stPartnerUrl" name="partnerUrl" value="${escapeAttr(diedei.url)}" placeholder="https://…" /></div>
+              <input class="input" id="stPartnerUrl" name="partnerUrl" value="${escapeAttr(partner.url || "")}" placeholder="https://…" /></div>
           </div>
           <div class="field"><label for="stPartnerScope">Scope of collaboration</label>
-            <input class="input" id="stPartnerScope" name="partnerScope" value="${escapeAttr(diedei.scope)}" /></div>
-          <label class="checkbox"><input type="checkbox" name="partnerPublished" ${diedei.published ? "checked" : ""} />
-            Show the “Our Partnerships” section on the homepage</label>
+            <input class="input" id="stPartnerScope" name="partnerScope" value="${escapeAttr(partner.scope || "")}" /></div>
+          <label class="checkbox"><input type="checkbox" name="partnerPublished" ${partner.published ? "checked" : ""} />
+            Show the DIEFEI 3D partnership section on the homepage</label>
         </div>
       </section>
 
@@ -1433,7 +1461,7 @@ async function renderSettings(body) {
           <option value="fixed">Rs off</option>
         </select></div>
       <div class="field" style="margin:0"><label>Value</label>
-        <input class="input" name="codeval_${codeIdx}" type="number" min="0" value="0" /></div>
+        <input class="input" name="codeval_${codeIdx}" type="number" min="1" step="1" max="100" value="10" /></div>
       <button class="btn btn--danger btn--sm" type="button" data-remove-code style="margin-bottom:2px">Remove</button>`;
     host.appendChild(div);
     codeIdx++;
@@ -1454,9 +1482,13 @@ async function renderSettings(body) {
       // read by scanning inputs within the row
       const inputs = row.querySelectorAll("input, select");
       const code = (inputs[0]?.value || "").trim().toUpperCase();
-      const type = inputs[1]?.value || "percent";
-      const value = Number(inputs[2]?.value) || 0;
-      if (code && value > 0) codes[code] = { type, value };
+      const type = inputs[1]?.value === "fixed" ? "fixed" : "percent";
+      let value = Math.round(Number(inputs[2]?.value) || 0);
+      if (type === "percent" && value > 100) {
+        value = 100;
+        toast(`Code ${code}: a percentage discount is capped at 100%.`, "info");
+      }
+      if (code && value >= 1) codes[code] = { type, value };
     });
 
     const partial = {
@@ -1502,7 +1534,8 @@ async function renderSettings(body) {
         announcement: form.announcement.value.trim(),
       },
       partnerships: {
-        diedei3d: {
+        diefei3d: {
+          ...(settings.partnerships.diefei3d || {}),
           published: form.partnerPublished.checked,
           name: form.partnerName.value.trim(),
           logo: form.partnerLogo.value.trim(),
@@ -1511,6 +1544,8 @@ async function renderSettings(body) {
           scope: form.partnerScope.value.trim(),
         },
       },
+      returns: { windowDays: String(parseInt(form.returnsDays.value, 10) > 0 ? parseInt(form.returnsDays.value, 10) : "") },
+      gaMeasurementId: form.gaMeasurementId.value.trim(),
       discountCodes: codes,
     };
 
@@ -1561,7 +1596,7 @@ async function boot() {
   // Auth gate — other admin pages redirect to the login/dashboard screen.
   if (!auth.isAuthenticated) {
     if (page === "dashboard") {
-      const redirect = new URLSearchParams(window.location.search).get("redirect") || "index.html";
+      const redirect = safeRedirect(new URLSearchParams(window.location.search).get("redirect"));
       renderLogin(redirect);
       return;
     }

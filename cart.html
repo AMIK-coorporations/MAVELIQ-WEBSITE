@@ -45,7 +45,7 @@
       <div class="empty-state" id="cartEmpty" hidden>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <h3>Your Cart Is Empty</h3>
-        <p>Browse the catalogue and add products you love — they'll appear here.</p>
+        <p>You have not added any products yet. Explore our collections to find something you would like to order.</p>
         <a class="btn btn--primary btn--lg" href="shop.html">Continue Shopping</a>
       </div>
 
@@ -86,8 +86,7 @@
       const input = document.getElementById("cartPromo");
       const code = (input?.value || "").trim().toUpperCase();
       if (!code) return;
-      const codes = settings.get("discountCodes", {}) || {};
-      if (!codes[code]) {
+      if (!settings.discountRule(code)) {
         Cart.discountCode = "";
         toast("That discount code is not valid.", "error");
         return;

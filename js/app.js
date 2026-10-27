@@ -10,7 +10,7 @@ import { $, $$, escapeHtml, toast } from "./utils.js";
 import settings from "./services/settings-service.js";
 import initNavigation from "./navigation.js";
 import { initSearch } from "./search.js";
-import { renderHomeSections, initShop } from "./products.js";
+import { renderHomeSections, initShop, renderProductGrid, setCategoryCache } from "./products.js";
 import { initCheckout } from "./checkout.js";
 import { initConfirmation } from "./orders.js";
 import { initTracking } from "./tracking.js";
@@ -73,6 +73,20 @@ async function initCategoriesPage() {
 
   try {
     const cats = await products.getCategoryWithCounts();
+    const details = $("#categoryDetails");
+    if (details) {
+      details.innerHTML = cats
+        .map(
+          (c) => `
+        <article class="card collection-card reveal">
+          <h3>${escapeHtml(c.name)}</h3>
+          <p>${escapeHtml(c.description)}</p>
+          <p class="price-note">${c.productCount ? `${c.productCount} product${c.productCount === 1 ? "" : "s"} available` : "Products in this category will appear here when they become available."}</p>
+          <a class="btn btn--outline btn--sm" href="shop.html?category=${encodeURIComponent(c.id)}">${escapeHtml(c.button || "View Products")}</a>
+        </article>`
+        )
+        .join("");
+    }
     host.innerHTML = cats
       .map(
         (c) => `
@@ -89,6 +103,63 @@ async function initCategoriesPage() {
   } catch (e) {
     console.error(e);
     host.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><h3>Categories unavailable</h3><p>Please refresh the page.</p></div>`;
+  }
+}
+
+/* ---------- Wishlist page -------------------------------------------------------------- */
+
+async function initWishlistPage() {
+  const grid = $("#wishlistGrid");
+  if (!grid) return;
+  const products = (await import("./services/product-service.js")).default;
+  const { Wishlist } = await import("./wishlist.js");
+  const countEl = $("#wishlistCount");
+  const clearBtn = $("#wishlistClear");
+
+  const paint = async () => {
+    const ids = Wishlist.ids();
+    const all = await products.getProducts();
+    const byId = new Map(all.map((p) => [p.id, p]));
+    const items = ids.map((id) => byId.get(id)).filter(Boolean);
+    if (countEl) countEl.textContent = items.length ? `${items.length} saved product${items.length === 1 ? "" : "s"}` : "";
+    if (clearBtn) clearBtn.hidden = !items.length;
+    await renderProductGrid(grid, items, {
+      showSkeletons: false,
+      emptyMessage: `
+        <div class="empty-state" style="grid-column:1/-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20.5s-7.5-4.6-9.6-9.3C.9 7.8 3 4 6.6 4c2.1 0 3.6 1.1 4.4 2.5h2C13.8 5.1 15.3 4 17.4 4 21 4 23.1 7.8 21.6 11.2c-2.1 4.7-9.6 9.3-9.6 9.3z"/></svg>
+          <h3>Your wishlist is empty</h3>
+          <p>Tap the heart on any product to save it here for later.</p>
+          <a class="btn btn--primary" href="shop.html">Continue Shopping</a>
+        </div>`,
+    });
+  };
+
+  clearBtn?.addEventListener("click", () => Wishlist.clear());
+  window.addEventListener("maveliq:wishlist-updated", () => paint());
+  await paint();
+}
+
+/* ---------- DIEFEI 3D partnership page ---------------------------------------------------- */
+
+async function initPartnershipPage() {
+  const grid = $("#partnerGrid");
+  if (!grid) return;
+  const products = (await import("./services/product-service.js")).default;
+  try {
+    setCategoryCache(await products.getCategories());
+    const all = await products.getProducts();
+    const brandItems = all.filter((p) => /diefei\s*3d/i.test(p.brand));
+    const sorted = [...brandItems].sort((a, b) => Number(b.featured) - Number(a.featured) || Number(b.isNew) - Number(a.isNew));
+    const countEl = $("#partnerCount");
+    if (countEl) countEl.textContent = String(brandItems.length);
+    await renderProductGrid(grid, sorted.slice(0, 12), {
+      showSkeletons: false,
+      emptyMessage: `<div class="empty-state" style="grid-column:1/-1"><h3>No products are available here right now.</h3><p>Products in this collection will appear here when they become available.</p></div>`,
+    });
+  } catch (e) {
+    console.error(e);
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><h3>Products unavailable</h3><p>We could not load the products right now. Please try again later.</p></div>`;
   }
 }
 
@@ -109,7 +180,7 @@ function initContactPage() {
   host.innerHTML = cards + socialCards || `
     <div class="empty-state" style="grid-column:1/-1">
       <h3>Contact details coming soon</h3>
-      <p>The owner will add phone, WhatsApp, email and social links from the admin Settings page.</p>
+      <p>Our phone, WhatsApp and email details will be published here shortly. In the meantime, our <a href="faq.html">FAQs</a> answer the most common questions.</p>
     </div>`;
 
   function contactCard(iconKey, label, href, value, isSocial = false) {
@@ -161,7 +232,7 @@ function renderHomeReviews() {
           <div class="empty-state" style="grid-column:1/-1">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <h3>No reviews yet</h3>
-            <p>Reviews from verified Maveliq customers will appear here once they're in. We never publish invented feedback.</p>
+            <p>Customer reviews will appear here once they are submitted. We never publish invented feedback.</p>
           </div>`;
         return;
       }
@@ -173,7 +244,7 @@ function renderHomeReviews() {
           <blockquote>“${escapeHtml(r.body)}”</blockquote>
           <footer>
             <strong>${escapeHtml(r.authorName || "Customer")}</strong>
-            ${r.verified ? "Verified purchase" : ""}
+            ${r.verified ? "Verified purchase" : "Customer review"}
           </footer>
         </article>`
         )
@@ -226,6 +297,8 @@ const PAGE_INIT = {
   confirmation: () => initConfirmation(),
   tracking: () => initTracking(),
   categories: () => initCategoriesPage(),
+  wishlist: () => initWishlistPage(),
+  partnership: () => { initFaqPage(); return initPartnershipPage(); },
   contact: () => initContactPage(),
   faq: () => initFaqPage(),
 };
@@ -261,11 +334,14 @@ function fillSettingsPlaceholders() {
   $$("[data-setting]").forEach((el) => {
     const path = el.dataset.setting;
     const val = settings.get(path, "");
-    if (val === "" || val === null || val === undefined) return;
+    if (val === "" || val === null || val === undefined) {
+      if (el.dataset.empty !== undefined) el.textContent = el.dataset.empty;
+      return;
+    }
     if (el.dataset.format === "price") {
       el.textContent = `Rs ${Number(val).toLocaleString(CONFIG.locale)}`;
     } else {
-      el.textContent = String(val);
+      el.textContent = `${String(val)}${el.dataset.suffix || ""}`;
     }
   });
 }

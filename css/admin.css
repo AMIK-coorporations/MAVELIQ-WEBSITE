@@ -33,7 +33,7 @@
 .admin-side__brand small {
   display: block;
   font-family: var(--font-body);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #8F8A82;
@@ -42,7 +42,7 @@
 
 .admin-nav { padding: var(--sp-4) var(--sp-3); flex: 1; }
 .admin-nav__label {
-  font-size: 9px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: #75706A;
@@ -67,7 +67,7 @@
   margin-left: auto;
   background: rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-pill);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   padding: 1px 7px;
 }

@@ -75,7 +75,9 @@ export const reviews = {
   _hasPurchased(productId, orderReference) {
     if (!orderReference) return false;
     try {
-      const key = CONFIG.demoMode ? "maveliq:orders" : "maveliq:orders";
+      // Demo mode: orders placed in this browser. In production the backend
+      // performs this check server-side.
+      const key = "maveliq:orders";
       const orders = JSON.parse(localStorage.getItem(key) || "[]");
       const ref = String(orderReference).trim().toUpperCase();
       return orders.some(
@@ -143,7 +145,7 @@ export function renderReviewList(container, productId) {
       <div class="empty-state">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <h3>No reviews yet</h3>
-        <p>Reviews from customers who purchased this product will appear here.</p>
+        <p>Customer reviews for this product will appear here once they are submitted.</p>
       </div>`;
     return;
   }

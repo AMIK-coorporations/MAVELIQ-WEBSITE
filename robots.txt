@@ -1,5 +1,5 @@
 # robots.txt — https://www.maveliq.com
-# https://developers.google.com/robots/robots_txt
+# https://developers.google.com/search/docs/crawling-indexing/robots/intro
 
 User-agent: *
 Allow: /
@@ -7,15 +7,42 @@ Disallow: /admin/
 Disallow: /checkout.html
 Disallow: /cart.html
 Disallow: /order-confirmation.html
+Disallow: /wishlist.html
 
-# Cart, checkout and order confirmation are private flows and offer no value
-# to search engines. The admin dashboard is never indexed.
+# Cart, checkout, wishlist and order confirmation are private, per-browser
+# flows with no value to search engines. The admin dashboard is never indexed.
 
-# Product detail pages are loaded from a query string in this build and are
-# marked noindex until product URLs are migrated to clean, server-rendered
-# slugs — see the SEO section of README.md.
+# AI training crawlers (opt-out). These are the user-agent tokens the
+# operators document publicly. Remove a block if you want that service to
+# use the site's content.
+User-agent: GPTBot
+Disallow: /
 
-User-agent: AI
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: cohere-ai
 Disallow: /
 
 Sitemap: https://www.maveliq.com/sitemap.xml

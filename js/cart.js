@@ -13,8 +13,9 @@
    ========================================================================== */
 
 import { $, $$, formatPrice, escapeHtml, escapeAttr, toast } from "./utils.js";
-import settings from "./services/settings-service.js";
+import settings, { computeDiscount } from "./services/settings-service.js";
 import products from "./services/product-service.js";
+import { orderButtonMarkup, buildOrderMessage, openWhatsApp } from "./whatsapp.js";
 
 const CART_KEY = "cart";
 const DISCOUNT_KEY = "cart_discount";
@@ -66,28 +67,37 @@ export const Cart = {
    * @param {Object} variant  { groupName: optionLabel }
    * @param {number} quantity
    */
+  /** @returns {boolean} true when the cart actually changed */
   add(product, variant = {}, quantity = 1) {
-    if (!product) return;
-    if (product.stock <= 0) {
+    if (!product) return false;
+    const available = products.stockFor(product, variant);
+    if (product.stock <= 0 || available <= 0) {
       toast("This product is out of stock.", "error");
-      return;
+      return false;
+    }
+    // Every variant group must have a valid, chosen option
+    for (const group of product.variants || []) {
+      const chosen = variant?.[group.name];
+      if (!chosen || !group.options.some((o) => o.label === chosen)) {
+        toast(`Please choose a ${group.name.toLowerCase()} first.`, "info");
+        return false;
+      }
     }
     const list = read();
     const key = lineKey(product.id, variant);
     const existing = list.find((l) => l.key === key);
-    const qty = Math.max(1, Number(quantity) || 1);
+    const qty = Math.max(1, Math.floor(Number(quantity) || 1));
 
-    const available = products.stockFor(product, variant);
     if (existing) {
       const newQty = Math.min(existing.quantity + qty, available);
       if (newQty === existing.quantity) {
         toast(`Only ${available} left of "${product.name}".`, "info");
-        return;
+        return false;
       }
       existing.quantity = newQty;
     } else {
       if (qty > available) {
-        toast(available <= 0 ? "This product is out of stock." : `Only ${available} left in stock.`, "info");
+        toast(`Only ${available} left in stock.`, "info");
       }
       list.push({
         key,
@@ -103,16 +113,26 @@ export const Cart = {
       });
     }
     write(list);
-    toast(`Added "${product.name}" to your cart.`, "success");
+    toast("Product added to your cart.", "success");
+    return true;
   },
 
-  updateQuantity(key, quantity) {
+  /**
+   * Set a line's quantity: whole numbers only, at least 1, at most `max`
+   * (the live stock for that product/variant).
+   * @returns {number|null} the quantity actually stored
+   */
+  updateQuantity(key, quantity, max = Infinity) {
     const list = read();
     const line = list.find((l) => l.key === key);
-    if (!line) return;
-    const qty = Number(quantity) || 1;
-    line.quantity = Math.max(1, qty);
+    if (!line) return null;
+    let qty = Math.floor(Number(quantity));
+    if (!Number.isFinite(qty) || qty < 1) qty = 1;
+    const cap = Number.isFinite(max) ? Math.max(1, Math.floor(max)) : Infinity;
+    if (qty > cap) qty = cap;
+    line.quantity = qty;
     write(list);
+    return qty;
   },
 
   /** Change a line's variant selection (rebuilds its key, merges duplicates). */
@@ -151,6 +171,7 @@ export const Cart = {
   async refreshPrices() {
     const list = read();
     let priceChanged = false;
+    let qtyReduced = false;
     let droppedUnavailable = false;
     for (const line of list) {
       const product = await products.getProduct(line.productId);
@@ -166,18 +187,22 @@ export const Cart = {
         priceChanged = true;
       }
       const cap = products.stockFor(product, line.variant || {});
+      const whole = Math.max(1, Math.floor(Number(line.quantity) || 1));
+      if (whole !== line.quantity) { line.quantity = whole; qtyReduced = true; }
       if (line.quantity > cap) {
         if (cap <= 0) droppedUnavailable = true;
+        else qtyReduced = true;
         line.quantity = Math.max(0, cap);
-        priceChanged = true;
       }
     }
     const cleaned = list.filter((l) => l.quantity > 0);
-    if (cleaned.length !== list.length || priceChanged) write(cleaned);
+    if (cleaned.length !== list.length || priceChanged || qtyReduced) write(cleaned);
     if (droppedUnavailable) {
-      toast("This item is currently unavailable. Remove it or choose another available option.", "error");
+      toast("An item in your cart is currently unavailable and has been removed.", "error");
     } else if (priceChanged) {
       toast("The price of an item has changed. Review your updated total before continuing.", "info");
+    } else if (qtyReduced) {
+      toast("A quantity was reduced to match the stock available. Your cart has been updated.", "info");
     }
     return cleaned;
   },
@@ -205,15 +230,9 @@ export const Cart = {
 
   /** Discount value based on settings-configured codes (demo preview). */
   discount(list = read()) {
-    const code = this.discountCode;
-    if (!code) return 0;
-    const codes = settings.get("discountCodes", {}) || {};
-    const rule = codes[code];
+    const rule = settings.discountRule(this.discountCode);
     if (!rule) return 0;
-    const sub = this.subtotal(list);
-    return rule.type === "percent"
-      ? Math.round((sub * Number(rule.value)) / 100)
-      : Math.min(Number(rule.value) || 0, sub);
+    return computeDiscount(this.subtotal(list), rule);
   },
 
   deliveryCharge(list = read()) {
@@ -224,7 +243,21 @@ export const Cart = {
   },
 
   total(list = read()) {
-    return Math.max(0, this.subtotal(list) - this.discount(list)) + (this.isEmpty() ? 0 : this.deliveryCharge(list));
+    if (!list.length) return 0;
+    return Math.max(0, Math.max(0, this.subtotal(list) - this.discount(list)) + this.deliveryCharge(list));
+  },
+
+  /** Totals object for summaries and the WhatsApp order message. */
+  totals(list = read()) {
+    const subtotal = this.subtotal(list);
+    const discount = this.discount(list);
+    return {
+      subtotal,
+      discount,
+      discountCode: discount > 0 ? this.discountCode : "",
+      delivery: list.length ? this.deliveryCharge(list) : 0,
+      total: this.total(list),
+    };
   },
 
   /** Payload for checkout/order placement. */
@@ -247,7 +280,7 @@ export default Cart;
 const qtyControl = (line) => `
   <div class="qty" data-key="${escapeHtml(line.key)}">
     <button type="button" data-qty-delta="-1" aria-label="Decrease quantity">−</button>
-    <input type="number" inputmode="numeric" min="1" value="${line.quantity}"
+    <input type="number" inputmode="numeric" min="1" step="1" value="${line.quantity}"
            aria-label="Quantity for ${escapeHtml(line.name)}" data-qty-input />
     <button type="button" data-qty-delta="1" aria-label="Increase quantity">+</button>
   </div>`;
@@ -301,6 +334,12 @@ export function renderCartPage(refs) {
 
   let productCache = {};
 
+  /** Live stock cap for a cart line (Infinity until the product is cached). */
+  const capFor = (line) => {
+    const p = productCache[line.productId];
+    return p ? Math.max(1, products.stockFor(p, line.variant || {})) : Infinity;
+  };
+
   const paint = async () => {
     const list = await Cart.refreshPrices();
 
@@ -353,10 +392,7 @@ export function renderCartPage(refs) {
 
   const paintSummary = (list) => {
     if (!summaryEl) return;
-    const sub = Cart.subtotal(list);
-    const disc = Cart.discount(list);
-    const delivery = Cart.deliveryCharge(list);
-    const total = sub - disc + delivery;
+    const { subtotal: sub, discount: disc, delivery, total } = Cart.totals(list);
     const d = settings.delivery;
     const remaining = d.freeOver > 0 ? Math.max(0, d.freeOver - sub) : 0;
 
@@ -380,12 +416,19 @@ export function renderCartPage(refs) {
       <div class="summary__row summary__row--total"><span>Total payable</span><strong>${formatPrice(total)}</strong></div>
 
       <button class="btn btn--primary btn--block btn--lg" type="button" id="goCheckout">Proceed to Checkout</button>
-      <a class="btn btn--ghost btn--block" href="shop.html" style="margin-top:12px">Continue shopping</a>
+      ${orderButtonMarkup("waOrderCart", "Order on WhatsApp", "btn--block btn--lg")}
+      <a class="btn btn--ghost btn--block" href="shop.html" style="margin-top:12px">Continue Shopping</a>
       <p class="summary__note">Delivery: ${escapeHtml(d.estimatedDays)} · ${escapeHtml(d.areas)}</p>`;
 
     summaryEl.querySelector("#goCheckout")?.addEventListener("click", () => {
       if (typeof onCheckout === "function") onCheckout();
       else window.location.href = "checkout.html";
+    });
+
+    summaryEl.querySelector("#waOrderCart")?.addEventListener("click", () => {
+      const lines = Cart.get();
+      if (!lines.length) return;
+      openWhatsApp(buildOrderMessage(lines, Cart.totals(lines)));
     });
   };
 
@@ -404,14 +447,19 @@ export function renderCartPage(refs) {
         if (!line) return;
         const next = line.quantity + Number(deltaBtn.dataset.qtyDelta);
         if (next < 1) return;
-        Cart.updateQuantity(key, next);
+        const cap = capFor(line);
+        if (next > cap) {
+          toast(`Only ${cap} available for this option.`, "info");
+          return;
+        }
+        Cart.updateQuantity(key, next, cap);
         paint();
         return;
       }
 
       if (e.target.closest("[data-remove]")) {
         Cart.remove(key);
-        toast("Item removed from your cart.", "info");
+        toast("The item has been removed from your cart.", "info");
         paint();
       }
     });
@@ -423,7 +471,15 @@ export function renderCartPage(refs) {
 
       // Quantity input
       if (e.target.matches("[data-qty-input]")) {
-        Cart.updateQuantity(key, e.target.value);
+        const line = Cart.get().find((l) => l.key === key);
+        const cap = line ? capFor(line) : Infinity;
+        const asked = Math.floor(Number(e.target.value));
+        const stored = Cart.updateQuantity(key, e.target.value, cap);
+        if (stored !== null && Number.isFinite(asked) && asked > stored) {
+          toast(`Only ${stored} available for this option.`, "info");
+        } else {
+          toast("Your cart has been updated.", "success", 1600);
+        }
         paint();
         return;
       }

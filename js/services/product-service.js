@@ -11,8 +11,6 @@ import { CONFIG } from "../config.js";
 import { store, slugify } from "../utils.js";
 import settings from "./settings-service.js";
 
-const LS_PRODUCTS = "products_override";
-const LS_CATEGORIES = "categories_override";
 
 /* ---------- tiny backend REST helper (no SDK required) --------------------- */
 
@@ -39,28 +37,102 @@ async function rest(path, options = {}) {
   return res.json();
 }
 
-/* ---------- Demo catalogue ------------------------------------------------ */
+/* ---------- Demo catalogue ------------------------------------------------
+   The catalogue always comes from data/*.json. localStorage never holds a
+   copy of it (an old build did, which froze the catalogue after one order).
+   It only keeps two small layers on top:
+     • LS_EDITS   — products/categories the owner edited or deleted in admin
+     • LS_DELTAS  — units sold per product (and per variant option) by demo
+                    orders, subtracted from the JSON stock at read time
+   -------------------------------------------------------------------------- */
+
+const LS_EDITS = "catalogue_edits";
+const LS_DELTAS = "stock_deltas";
+const LEGACY_KEYS = ["products_override", "categories_override"];
 
 let demoProducts = null;
 let demoCategories = null;
 
 async function fetchJson(file) {
-  const res = await fetch(`data/${file}`, { cache: "no-cache" });
+  // Resolve relative to this module so it works from /admin/* pages too.
+  const url = new URL(`../../data/${file}`, import.meta.url);
+  const res = await fetch(url, { cache: "no-cache" });
   if (!res.ok) throw new Error(`Could not load data/${file} (${res.status})`);
   return res.json();
 }
 
+function readEdits() {
+  const e = store.get(LS_EDITS, null) || {};
+  return {
+    products: e.products && typeof e.products === "object" ? e.products : {},
+    deletedProducts: Array.isArray(e.deletedProducts) ? e.deletedProducts : [],
+    categories: e.categories && typeof e.categories === "object" ? e.categories : {},
+    deletedCategories: Array.isArray(e.deletedCategories) ? e.deletedCategories : [],
+  };
+}
+
+function writeEdits(e) {
+  store.set(LS_EDITS, e);
+}
+
+function readDeltas() {
+  const d = store.get(LS_DELTAS, null);
+  return d && typeof d === "object" ? d : {};
+}
+
+/** Key for a variant option inside the delta map. */
+function optionKey(groupName, label) {
+  return `${groupName}:${label}`;
+}
+
+/** Return a copy of a raw product with sold units subtracted. */
+function applyDelta(raw, delta) {
+  if (!delta) return raw;
+  const copy = JSON.parse(JSON.stringify(raw));
+  copy.stock = Math.max(0, (Number(copy.stock) || 0) - (Number(delta.total) || 0));
+  const sold = delta.variants || {};
+  for (const group of copy.variants || []) {
+    for (const opt of group.options || []) {
+      const n = Number(sold[optionKey(group.name, opt.label)]) || 0;
+      if (n && typeof opt.stock === "number") opt.stock = Math.max(0, opt.stock - n);
+    }
+  }
+  return copy;
+}
+
+/** Merge base rows with owner edits/deletions (edits win, new ids are added). */
+function overlay(baseRows, editsById, deletedIds) {
+  const deleted = new Set(deletedIds.map(String));
+  const seen = new Set();
+  const out = [];
+  for (const row of baseRows) {
+    const id = String(row.id);
+    seen.add(id);
+    if (deleted.has(id)) continue;
+    out.push(editsById[id] || row);
+  }
+  // products/categories the owner created in admin
+  for (const [id, row] of Object.entries(editsById)) {
+    if (!seen.has(id) && !deleted.has(id)) out.unshift(row);
+  }
+  return out;
+}
+
 async function loadDemo() {
+  // Drop the legacy frozen-catalogue copies from older builds.
+  LEGACY_KEYS.forEach((k) => store.remove(k));
   if (!demoProducts || !demoCategories) {
     const [p, c] = await Promise.all([fetchJson("products.json"), fetchJson("categories.json")]);
     demoProducts = p.products || [];
     demoCategories = c.categories || [];
   }
-  const productOverrides = store.get(LS_PRODUCTS, null);
-  const categoryOverrides = store.get(LS_CATEGORIES, null);
+  const edits = readEdits();
+  const deltas = readDeltas();
+  const productsList = overlay(demoProducts, edits.products, edits.deletedProducts)
+    .map((row) => applyDelta(row, deltas[String(row.id)]));
   return {
-    products: productOverrides || demoProducts,
-    categories: categoryOverrides || demoCategories,
+    products: productsList,
+    categories: overlay(demoCategories, edits.categories, edits.deletedCategories),
   };
 }
 
@@ -85,6 +157,11 @@ function normaliseProduct(raw) {
     shortDescription: raw.shortDescription || raw.short_description || "",
     description: raw.description || "",
     variants: Array.isArray(raw.variants) ? raw.variants : [],
+    // Owner-supplied label details (shown on the product page only when set)
+    ingredients: raw.ingredients || "",
+    usage: raw.usage || "",
+    warnings: raw.warnings || "",
+    expiryInfo: raw.expiryInfo || raw.expiry_info || "",
     rating: raw.rating ?? null,
     reviewCount: Number(raw.reviewCount ?? raw.review_count ?? 0),
     featured: Boolean(raw.featured),
@@ -103,6 +180,8 @@ function normaliseCategory(raw) {
     slug: raw.slug || slugify(raw.name || raw.id),
     description: raw.description || "",
     image: raw.image || "",
+    intro: Array.isArray(raw.intro) ? raw.intro.filter(Boolean).map(String) : (raw.intro ? [String(raw.intro)] : []),
+    button: raw.button || "",
     active: raw.active !== false,
     sortOrder: Number(raw.sortOrder ?? raw.sort_order ?? 99),
   };
@@ -345,11 +424,15 @@ class ProductService {
 
   async saveProduct(record) {
     if (CONFIG.demoMode) {
-      const all = await this.getProducts({ includeInactive: true });
-      const idx = all.findIndex((p) => p.id === record.id);
+      // Only the edited record is stored. Its stock is the absolute figure the
+      // owner saw/typed, so any sold-unit delta for it is folded in and reset.
       const normalised = normaliseProduct({ ...record });
-      if (idx >= 0) all[idx] = normalised; else all.unshift(normalised);
-      store.set(LS_PRODUCTS, all);
+      const edits = readEdits();
+      edits.products[normalised.id] = normalised;
+      edits.deletedProducts = edits.deletedProducts.filter((id) => id !== normalised.id);
+      writeEdits(edits);
+      const deltas = readDeltas();
+      if (deltas[normalised.id]) { delete deltas[normalised.id]; store.set(LS_DELTAS, deltas); }
       return normalised;
     }
     // Production: upsert through backend with the anon key; the DB policy
@@ -370,6 +453,10 @@ class ProductService {
       short_description: record.shortDescription || null,
       description: record.description || null,
       variants: record.variants || [],
+      ingredients: record.ingredients || null,
+      usage: record.usage || null,
+      warnings: record.warnings || null,
+      expiry_info: record.expiryInfo || null,
       featured: !!record.featured,
       is_new: !!record.isNew,
       is_best_seller: !!record.isBestSeller,
@@ -381,8 +468,10 @@ class ProductService {
 
   async deleteProduct(id) {
     if (CONFIG.demoMode) {
-      const all = await this.getProducts({ includeInactive: true });
-      store.set(LS_PRODUCTS, all.filter((p) => p.id !== id));
+      const edits = readEdits();
+      delete edits.products[String(id)];
+      if (!edits.deletedProducts.includes(String(id))) edits.deletedProducts.push(String(id));
+      writeEdits(edits);
       return true;
     }
     await rest(`products?id=eq.${encodeURIComponent(id)}`, { method: "DELETE" });
@@ -391,11 +480,11 @@ class ProductService {
 
   async saveCategory(record) {
     if (CONFIG.demoMode) {
-      const all = await this.getCategories({ includeInactive: true });
-      const idx = all.findIndex((c) => c.id === record.id);
       const normalised = normaliseCategory(record);
-      if (idx >= 0) all[idx] = normalised; else all.push(normalised);
-      store.set(LS_CATEGORIES, all);
+      const edits = readEdits();
+      edits.categories[normalised.id] = normalised;
+      edits.deletedCategories = edits.deletedCategories.filter((id) => id !== normalised.id);
+      writeEdits(edits);
       return normalised;
     }
     const row = {
@@ -413,18 +502,46 @@ class ProductService {
 
   async deleteCategory(id) {
     if (CONFIG.demoMode) {
-      const all = await this.getCategories({ includeInactive: true });
-      store.set(LS_CATEGORIES, all.filter((c) => c.id !== id));
+      const edits = readEdits();
+      delete edits.categories[String(id)];
+      if (!edits.deletedCategories.includes(String(id))) edits.deletedCategories.push(String(id));
+      writeEdits(edits);
       return true;
     }
     await rest(`categories?id=eq.${encodeURIComponent(id)}`, { method: "DELETE" });
     return true;
   }
 
+  /**
+   * Demo mode: record units sold by an order as stock deltas — per product AND
+   * per chosen variant option (an earlier build only decremented the product
+   * total, so a sold-out shade kept showing as available).
+   * @param {Array} lines [{ productId, variant: {group: label}, quantity }]
+   */
+  recordSale(lines) {
+    if (!CONFIG.demoMode) return;
+    const deltas = readDeltas();
+    for (const line of lines || []) {
+      const qty = Math.max(0, parseInt(line.quantity, 10) || 0);
+      if (!qty) continue;
+      const id = String(line.productId);
+      const d = deltas[id] || { total: 0, variants: {} };
+      d.total = (Number(d.total) || 0) + qty;
+      d.variants = d.variants || {};
+      for (const [group, label] of Object.entries(line.variant || {})) {
+        const k = optionKey(group, label);
+        d.variants[k] = (Number(d.variants[k]) || 0) + qty;
+      }
+      deltas[id] = d;
+    }
+    store.set(LS_DELTAS, deltas);
+  }
+
   /** Reset demo-mode overrides (admin "restore defaults" action). */
   resetDemoOverrides() {
-    store.remove(LS_PRODUCTS);
-    store.remove(LS_CATEGORIES);
+    store.remove(LS_EDITS);
+    store.remove(LS_DELTAS);
+    LEGACY_KEYS.forEach((k) => store.remove(k));
   }
 }
 

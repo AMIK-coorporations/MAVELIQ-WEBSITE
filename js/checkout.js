@@ -57,14 +57,11 @@ function renderPaymentOptions(host) {
 
 function renderSummary(host, list) {
   if (!host) return;
-  const sub = Cart.subtotal(list);
-  const disc = Cart.discount(list);
-  const delivery = Cart.deliveryCharge(list);
-  const total = sub - disc + delivery;
+  const { subtotal: sub, discount: disc, delivery, total } = Cart.totals(list);
   const d = settings.delivery;
 
   host.innerHTML = `
-    <h2>Your Order</h2>
+    <h2>Review Your Order</h2>
     <div class="mini-items">
       ${list
         .map(
@@ -125,7 +122,7 @@ export async function initCheckout() {
   // Demo-mode honesty notice
   if (demoNotice) demoNotice.hidden = !CONFIG.demoMode;
 
-  const list = await Cart.refreshPrices();
+  let list = await Cart.refreshPrices();
 
   if (!list.length) {
     layout?.setAttribute("hidden", "");
@@ -168,6 +165,20 @@ export async function initCheckout() {
       return;
     }
 
+    // Re-check prices/stock just before placing the order
+    const before = Cart.total(list);
+    const fresh = await Cart.refreshPrices();
+    if (!fresh.length) {
+      toast("One or more products are no longer available.", "error");
+      return;
+    }
+    if (Cart.total(fresh) !== before || fresh.length !== list.length) {
+      list = fresh;
+      renderSummary(summaryHost, list);
+      toast("Your order total has changed. Please review it before confirming.", "info", 6000);
+      return;
+    }
+
     const paymentInput = form.querySelector('input[name="paymentMethod"]:checked');
     if (!paymentInput) {
       toast("Choose a payment method to continue.", "error");
@@ -184,10 +195,11 @@ export async function initCheckout() {
       city: String(fd.get("city") || "").trim(),
       instructions: String(fd.get("instructions") || "").trim(),
     };
+    const note = String(fd.get("orderNote") || "").trim().slice(0, 500);
 
     const consent = form.querySelector('#consent');
     if (consent && !consent.checked) {
-      toast("Please accept the terms to place your order.", "error");
+      toast("Please review and accept the applicable terms.", "error");
       return;
     }
 
@@ -202,17 +214,21 @@ export async function initCheckout() {
         items: Cart.toOrderItems(list),
         paymentMethod: paymentInput.value,
         discountCode: Cart.discountCode,
+        note,
       });
 
-      // Success: store a marker for the confirmation page, clear the cart
+      // Success: hand the order to the confirmation page for THIS tab only.
+      // sessionStorage (not localStorage) so the customer's name, phone and
+      // address are not left behind in the browser after the visit.
       sessionStorage.setItem("maveliq:last_order_ref", order.reference);
-      localStorage.setItem("maveliq:last_order", JSON.stringify(order));
+      sessionStorage.setItem("maveliq:last_order", JSON.stringify(order));
+      localStorage.removeItem("maveliq:last_order");   // clean up older builds
       Cart.clear();
 
       window.location.href = `order-confirmation.html?ref=${encodeURIComponent(order.reference)}`;
     } catch (err) {
       console.error("Checkout failed", err);
-      toast(err.message || "We could not place your order. Please try again.", "error", 6000);
+      toast(err.message || "We could not complete your order. Please check your information and try again.", "error", 6000);
       submitting = false;
       btn?.classList.remove("is-loading");
       btn?.removeAttribute("disabled");
@@ -236,8 +252,7 @@ export async function initCheckout() {
     const input = $("#promoCode", summaryHost);
     const code = (input?.value || "").trim().toUpperCase();
     if (!code) return;
-    const codes = settings.get("discountCodes", {}) || {};
-    if (!codes[code]) {
+    if (!settings.discountRule(code)) {
       toast("That discount code is not valid.", "error");
       Cart.discountCode = "";
       renderSummary(summaryHost, Cart.get());
