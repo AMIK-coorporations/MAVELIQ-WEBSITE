@@ -63,7 +63,7 @@ export const CONFIG = {
   // and the floating chat button — all of them stay hidden while it is empty.
   contact: {
     phone: "",            // TODO owner: verified phone, e.g. "+92 300 1234567"
-    whatsapp: "",         // TODO owner: WhatsApp number, digits only with country code, e.g. "923001234567"
+    whatsapp: "923124254111", // Owner WhatsApp (0312 4254111)
     email: "",            // TODO owner: working support email, e.g. "support@maveliq.com"
     address: "",          // TODO owner: business address (optional — leave empty to hide)
     city: "",             // TODO owner: city (optional)
